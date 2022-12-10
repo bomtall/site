@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script type="text/javascript" src="../script/main_script.js"></script>
-		<link rel="stylesheet" href="../css/cvstyle.css">
-		<link rel="stylesheet" href="../css/gallery.css">
-		<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
-		<title>Blog</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-	</head>
-	<body>
-		<div id="navbar">
-			<a href="cv.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
-			<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-			<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
-			<a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../script/main_script.js"></script>
+	<link rel="stylesheet" href="../css/cvstyle.css">
+	<link rel="stylesheet" href="../css/gallery.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+	<title>Blog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+</head>
+
+<body>
+	<div id="navbar">
+		<a href="../index.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+		<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
+				aria-hidden="true"></i></a>
+		<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
+		<a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
+	</div>
+	<div id="loginbar">
+		<form name="loginForm" onsubmit="return validateLogin()">
+			<label for="adminemail">Admin Email:</label>
+			<input type="email" id="adminemail" adminemail="adminemail"></input>
+			<label for="adminpassword">Password:</label>
+			<input type="password" id="adminpassword" adminpassword="adminpassword"></input>
+			<input type="submit" value="Log in">
+		</form>
+	</div>
+
+	<div class="content">
+		<header>
+			<p class=fancyborder>Blog</p>
+		</header>
+		<div class="imgcontainer">
+			<img class="imgcontainerimg" onclick="openModal(this)" src="../images/fontainebleau2.jpeg"
+				alt="Climbing in Fontainebleau">
 		</div>
-		<div id="loginbar">
-			<form name="loginForm" onsubmit="return validateLogin()">
-				<label for="adminemail">Admin Email:</label>
-				<input type="email" id="adminemail" adminemail="adminemail"></input>
-				<label for="adminpassword">Password:</label>
-				<input type="password" id="adminpassword" adminpassword="adminpassword"></input>
-				<input type="submit" value="Log in">
-			</form>
-		</div>
-		
-		<div class="content">
-			<header>
-				<p class=fancyborder>Blog</p>
-			</header>
-			<div class="imgcontainer">
-				<img class="imgcontainerimg" onclick="openModal(this)" src="../images/fontainebleau2.jpeg" alt="Climbing in Fontainebleau">
-			</div>
-			<p class="statement">Welcome<br><br>
-				On my blog I share some of my work from my career in Data Analytics so far; projects from work and university as well as some relevant personal projects.
-				<br>I hope you enjoy taking a look.
-			</p>
-			<div class="row">
-				<div class="leftcolumn">
-					<div class="container">
+		<p class="statement">Welcome<br><br>
+			On my blog I share some of my work from my career in Data Analytics so far; projects from work and
+			university as well as some relevant personal projects.
+			<br>I hope you enjoy taking a look.
+		</p>
+		<div class="row">
+			<div class="leftcolumn">
+				<div class="container">
 
 					<!-- Full-width images with number text -->
 					<div class="mySlides">
@@ -70,55 +75,65 @@
 					<!-- Thumbnail images -->
 					<div class="row">
 						<div class="column">
-						<img class="demo cursor" src="../images/powerapps1.png" style="width:100%" onclick="currentSlide(1)" alt="Welcome Screen">
+							<img class="demo cursor" src="../images/powerapps1.png" style="width:100%"
+								onclick="currentSlide(1)" alt="Welcome Screen">
 						</div>
 						<div class="column">
-						<img class="demo cursor" src="../images/topology.png" style="width:100%" onclick="currentSlide(2)" alt="Topology">
+							<img class="demo cursor" src="../images/topology.png" style="width:100%"
+								onclick="currentSlide(2)" alt="Topology">
 						</div>
 						<div class="column">
-						<img class="demo cursor" src="../images/powerapps2.png" style="width:100%" onclick="currentSlide(3)" alt="KPI Data Collection">
+							<img class="demo cursor" src="../images/powerapps2.png" style="width:100%"
+								onclick="currentSlide(3)" alt="KPI Data Collection">
 						</div>
 
-						</div>
 					</div>
 				</div>
-				<div class="rightcolumn">
-					<p>
-						<b>PowerApps Development - Trade Contractor League Table</b><br><br>
-						One of the tools available to me at Skanska is PowerApps. I can use this low-code app building software to create internal applications which improve
-						data collection and validation within the business. Writing code to validate inputs within the app and storing the results in SQL Databases means that
-						I have trusted data for analysis and automated report building. Creating interactive reports in Power BI, leadership have actionable information and trends
-						to monitor performance. Project teams can discuss KPI scores with contractors and work to make improvements together. Posters created from the Power BI reports
-						are displayed on sites for contractors to understand where they stack up and how their performance is percieved by Skanska. Success of the project means that
-						Directors from the contracting companies have requested the reports to monitor performance.
-					</p>
-				</div>
 			</div>
-			<div class="row">
-				<div class="leftsecondcolumn">
-					//<iframe alt="Data Story" allowfullscreen="true" src="https://powerbivideos.blob.core.windows.net/graphvideo/borehole3.mp4?sp=r&st=2022-11-14T14:37:50Z&se=2023-02-01T22:37:50Z&spr=https&sv=2021-06-08&sr=b&sig=gyT4hKDD73pqo689ogD1LXhWdYyIUv0zhrAeAtdFkuo%3D" width="100%" height="400px"></iframe>
-					
-				</div>
-				<div class="rightsecondcolumn">
-					<iframe alt="Data Story" src="tclt_story_updated2.html" width="100%" height="600px"></iframe>
-				</div>
+			<div class="rightcolumn">
+				<p>
+					<b>PowerApps Development - Trade Contractor League Table</b><br><br>
+					One of the tools available to me at Skanska is PowerApps. I can use this low-code app building
+					software to create internal applications which improve
+					data collection and validation within the business. Writing code to validate inputs within the app
+					and storing the results in SQL Databases means that
+					I have trusted data for analysis and automated report building. Creating interactive reports in
+					Power BI, leadership have actionable information and trends
+					to monitor performance. Project teams can discuss KPI scores with contractors and work to make
+					improvements together. Posters created from the Power BI reports
+					are displayed on sites for contractors to understand where they stack up and how their performance
+					is percieved by Skanska. Success of the project means that
+					Directors from the contracting companies have requested the reports to monitor performance.
+				</p>
 			</div>
 		</div>
-		<footer>
-			<p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
-			<img href="../images/QR.png" alt="QR_Code">
+		<div class="row">
+			<div class="leftsecondcolumn">
+				//<iframe alt="Data Story" allowfullscreen="true"
+					src="https://powerbivideos.blob.core.windows.net/graphvideo/borehole3.mp4?sp=r&st=2022-11-14T14:37:50Z&se=2023-02-01T22:37:50Z&spr=https&sv=2021-06-08&sr=b&sig=gyT4hKDD73pqo689ogD1LXhWdYyIUv0zhrAeAtdFkuo%3D"
+					width="100%" height="400px"></iframe>
 
-		</footer>
-		
-		<!-- The Modal -->
-		<div id="myModal" class="modal">
-			<span class="close">&times;</span>
-			<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
-			<img class="modal-content" id="img01">
-			<div id="caption"></div>
+			</div>
+			<div class="rightsecondcolumn">
+				<iframe alt="Data Story" src="tclt_story_updated2.html" width="100%" height="600px"></iframe>
+			</div>
 		</div>
+	</div>
+	<footer>
+		<p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
+		<img href="../images/QR.png" alt="QR_Code">
 
-		<script>
+	</footer>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+
+	<script>
 		let slideIndex = 1;
 		showSlides(slideIndex);
 
@@ -137,17 +152,17 @@
 			let slides = document.getElementsByClassName("mySlides");
 			let dots = document.getElementsByClassName("demo");
 			let captionText = document.getElementById("caption");
-			if (n > slides.length) {slideIndex = 1}
-			if (n < 1) {slideIndex = slides.length}
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
 			for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
+				slides[i].style.display = "none";
 			}
 			for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" active", "");
+				dots[i].className = dots[i].className.replace(" active", "");
 			}
-			slides[slideIndex-1].style.display = "block";
-			dots[slideIndex-1].className += " active";
-			captionText.innerHTML = dots[slideIndex-1].alt;
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			captionText.innerHTML = dots[slideIndex - 1].alt;
 		}
 
 
@@ -164,18 +179,19 @@
 		var span = document.getElementsByClassName("close")[0];
 
 		// When the user clicks on <span> (x), close the modal
-			span.onclick = function() {close_modal()}
+		span.onclick = function () { close_modal() }
 
-		$(document).ready(function(){
-			$("#admin").click(function(){
-				
-				if($("#loginbar").is(":visible")) {
+		$(document).ready(function () {
+			$("#admin").click(function () {
+
+				if ($("#loginbar").is(":visible")) {
 					$("#loginbar").toggle();
-				} else if (confirm("This login is only for administrators of the site") == true) {$("#loginbar").toggle();}
+				} else if (confirm("This login is only for administrators of the site") == true) { $("#loginbar").toggle(); }
 			});
 		});
 
-		
-		</script>
-	</body>
+
+	</script>
+</body>
+
 </html>
