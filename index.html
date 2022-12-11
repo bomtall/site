@@ -167,21 +167,23 @@
 				</div>
 
 			</div>
-			<div class="row">
-				<div class="leftsecondcolumn">
-					<div class="imgcontainer climb">
-						<img src="images/kalymnos3.png" onclick="openModal(this)" alt="Climbing in Kalymnos, Greece"
-							class="imgcontainerimg">
-					</div>
+		</div>
+
+		<div class="row">
+			<div class="leftsecondcolumn">
+				<div class="imgcontainer climb">
+					<img src="images/kalymnos3.png" onclick="openModal(this)" alt="Climbing in Kalymnos, Greece"
+						class="imgcontainerimg">
 				</div>
-				<div class="rightsecondcolumn">
-					<div class="imgcontainer climb">
-						<img src="images/font.jpeg" onclick="openModal(this)" alt="Climbing in Fontainebleau, France"
-							class="imgcontainerimg">
-					</div>
+			</div>
+			<div class="rightsecondcolumn">
+				<div class="imgcontainer climb">
+					<img src="images/font.jpeg" onclick="openModal(this)" alt="Climbing in Fontainebleau, France"
+						class="imgcontainerimg">
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<footer>
 
@@ -197,31 +199,6 @@
 		<div id="caption"></div>
 	</div>
 	<script>
-
-		// window.onscroll = function () { sticky_scroll() };
-
-		// var navbar = document.getElementById("navbar");
-		// var sticky = navbar.offsetTop;
-
-		var cert = document.getElementById("certificate")
-		document.getElementById("btn").onclick = function () { openModal(cert) };
-		var cert2 = document.getElementById("certificate2")
-		document.getElementById("btn2").onclick = function () { openModal(cert2) };
-
-		// Get the modal
-		var modal = document.getElementById("myModal");
-
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		//var img = document.getElementById("myImg");
-		var modalFrame = document.getElementById("frame01")
-		var modalImg = document.getElementById("img01");
-		var captionText = document.getElementById("caption");
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function () { close_modal() }
 
 		$(document).ready(function () {
 			$("#admin").click(function () {
@@ -242,6 +219,7 @@
 	</script>
 	<script type="text/javascript" src="script/scrollbar.js"></script>
 	<script type="text/javascript" src="script/main_script.js"></script>
+	<script type="text/javascript" src="script/image_viewer.js"></script>
 
 
 
