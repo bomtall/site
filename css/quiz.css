@@ -2,12 +2,14 @@
     max-width: 500px;
 }
 
-.quizForm input[type=text], .quizForm input[type=number] {
+.quizForm input[type=text],
+.quizForm input[type=number] {
     width: 100%;
 }
 
 .graphButton {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
+    /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -17,25 +19,26 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
     transition-duration: 0.4s;
     border-radius: 10px;
-  }
+}
 
-  .slidecontainer {
-    width: 50%;
+.slidecontainer {
+    width: 100%;
     flex-direction: column;
     padding: 2px;
-  }
+}
 
-  .slider {
-      width: 75%;
-  }
-  
-  #my_dataviz{
-      padding: 2px;
-  }
+.slider {
+    width: 75%;
+}
 
-  #my_dataviz :hover {
+#my_dataviz {
+    padding: 2px;
+}
+
+#my_dataviz :hover {
     cursor: crosshair;
 }
