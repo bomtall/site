@@ -5,8 +5,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script type="text/javascript" src="../script/main_script.js"></script>
-
     <link rel="stylesheet" href="../css/cvstyle.css">
     <link rel="stylesheet" href="../css/quiz.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -15,41 +13,59 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="leftcolumn">
-            <div id="my_dataviz"></div>
-        </div>
+    <div id="navbar">
+        <a href="../index.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
+                aria-hidden="true"></i></a>
+        <a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="examples.html">Blog <i class="fa fa-laptop" aria-hidden="true"></i></a>
+        <a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+        <a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="leftcolumn">
+                <div id="my_dataviz"></div>
+            </div>
 
-        <div class="rightcolumn">
-            <div class="slidecontainer">
+            <div class="rightcolumn">
+                <div class="slidecontainer">
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="leftcolumn">
-                        <p id="sliderVals"></p>
+                        <div class="leftcolumn">
+                            <p id="sliderVals"></p>
+                        </div>
+                        <div class="rightcolumn">
+                            <input type="radio" id="positive" name="sign" value="pos" onclick="changeGraph()">
+                            <label for="positive">f(x)</label><br>
+                            <input type="radio" id="negative" name="sign" value="neg" onclick="changeGraph()">
+                            <label for="negative">-f(x)</label><br>
+                        </div>
                     </div>
-                    <div class="rightcolumn">
-                        <input type="radio" id="positive" name="sign" value="pos" onclick="changeGraph()">
-                        <label for="positive">f(x)</label><br>
-                        <input type="radio" id="negative" name="sign" value="neg" onclick="changeGraph()">
-                        <label for="negative">-f(x)</label><br>
-                    </div>
+
+
+                    <div id="sliderDataviz"></div>
+                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderX">
+                    <label for="sliderX">Shift in x</label><br>
+                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderY">
+                    <label for="sliderY">Shift in y</label><br>
+                    <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp">
+                    <label for="sliderExp">Exponent</label><br>
+                    <input type="range" min="-2.25" max="2.25" value=1 step="0.01" class="slider" id="sliderMult">
+                    <label for="sliderMult">Stretch/Compress</label><br>
+
                 </div>
-
-
-                <div id="sliderDataviz"></div>
-                <input type="range" min=-99 max=99 value=5 class="slider" id="sliderX">
-                <label for="sliderX">Shift in x</label><br>
-                <input type="range" min=-99 max=99 value=5 class="slider" id="sliderY">
-                <label for="sliderY">Shift in y</label><br>
-                <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp">
-                <label for="sliderExp">Exponent</label><br>
-                <input type="range" min="-2.25" max="2.25" value=1 step="0.01" class="slider" id="sliderMult">
-                <label for="sliderMult">Stretch/Compress</label><br>
-
             </div>
         </div>
-    </div>
+        <footer>
 
+            <p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
+            <img src="../images/QR.png" alt="QR_Code">
+        </footer>
+    </div>
 </body>
 <script type="text/javascript" src="../script/graph.js"></script>
+<script type="text/javascript" src="../script/scrollbar.js"></script>
+<script type="text/javascript" src="../script/main_script.js"></script>
