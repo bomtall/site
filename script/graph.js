@@ -42,8 +42,8 @@ if ($(window).width() < 500) {
     w = 300;
     h = 300;
 } else {
-    w = 400;
-    h = 400;
+    w = 500;
+    h = 500;
 }
 
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
