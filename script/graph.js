@@ -5,7 +5,7 @@
 
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 40, bottom: 30, left: 40 },
-    width = 600 - margin.left - margin.right,
+    width = 400 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -16,6 +16,7 @@ var svg = d3.select("#my_dataviz")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
+    ;
 
 
 //Create a rect on top of the svg area: this rectangle recovers mouse position
@@ -27,7 +28,8 @@ svg
     .attr('height', height)
     .on('mouseover', loc_mouseover)
     .on('mousemove', loc_mousemove)
-    .on('mouseout', loc_mouseout);
+    .on('mouseout', loc_mouseout)
+    ;
 
 var focusText = svg
     .append('g')
@@ -35,6 +37,14 @@ var focusText = svg
     .style("opacity", 0)
     .attr("text-anchor", "left")
     .attr("alignment-baseline", "middle")
+    ;
+
+var tooltip = d3.select('body')
+    .append('div')
+    .style('position', 'absolute')
+    .style('padding', '1px, 10px')
+    .style('background', 'white')
+    .style('opacity', 0)
     ;
 
 function loc_mouseover() {
@@ -186,14 +196,6 @@ function changeGraph() {
                 .style('opacity', 0)
 
         })
-
-
-    var tooltip = d3.select('body')
-        .append('div')
-        .style('position', 'absolute')
-        .style('padding', '1px, 10px')
-        .style('background', 'white')
-        .style('opacity', 0);
 
     d3.select('path').on('mouseover', function (d) {
         tooltip.html(d)
