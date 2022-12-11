@@ -131,7 +131,7 @@ header {
 }
 
 .imgcontainerimg {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
   vertical-align: middle;
   border: 0px;
@@ -140,7 +140,7 @@ header {
 
 }
 
-.imgcontainerimg:hover {
+.imgcontainer img:hover {
   opacity: 0.7;
 }
 
@@ -369,17 +369,20 @@ footer {
 @media (max-width: 600px) {
   .row {
     flex-direction: column;
+
     clear: both;
   }
 
   .rightcolumn {
     border: 1px solid;
     border-image: repeating-linear-gradient(#30e8bf, #ff8235) 1;
-    flex: 100%;
+    flex: 50%;
+    max-width: 100%;
   }
 
   .leftcolumn {
     border: 1px solid;
+    max-width: 100%;
     border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
     flex: 100%;
   }
@@ -397,7 +400,7 @@ footer {
   }
 
   .statement {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .modal-content {
@@ -408,4 +411,6 @@ footer {
     font-size: 10px;
     padding: 5px;
   }
+
+
 }
