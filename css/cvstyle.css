@@ -131,7 +131,7 @@ header {
 }
 
 .imgcontainerimg {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
   vertical-align: middle;
   border: 0px;
@@ -140,7 +140,7 @@ header {
 
 }
 
-.imgcontainer img:hover {
+.imgcontainerimg:hover {
   opacity: 0.7;
 }
 
@@ -369,7 +369,6 @@ footer {
 @media (max-width: 600px) {
   .row {
     flex-direction: column;
-
     clear: both;
   }
 
