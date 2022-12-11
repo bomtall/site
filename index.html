@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 
 <head>
@@ -8,7 +7,7 @@
 	<link rel="stylesheet" href="css/cvstyle.css">
 	<link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 	<title>Curriculum Vitae</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 
 <body>
@@ -26,10 +25,10 @@
 	<div id="loginbar">
 		<form name="loginForm" onsubmit="return validateLogin()">
 			<label for="adminemail">Admin Email:</label>
-			<input type="email" id="adminemail" adminemail="adminemail"></input>
+			<input type="email" id="adminemail"></input>
 			<label for="adminpassword">Password:</label>
-			<input type="password" id="adminpassword" adminpassword="adminpassword"></input>
-			<input type="submit" value="Log in">
+			<input type="password" id="adminpassword"></input>
+			<input type="submit" value="Log in"></input>
 		</form>
 	</div>
 
@@ -128,7 +127,7 @@
 							As part of an apprenticeship <a
 								href="https://www.instituteforapprenticeships.org/apprenticeship-standards/digital-and-technology-solutions-specialist-integrated-degree-v1-0">Details</a>
 						</p>
-					</li><br>
+					</li>
 					<li>
 						<b>2020-21 A-Levels</b><br>
 						<p>Pembrokeshire College - OCR Computer Science (A*)<br>
@@ -158,13 +157,12 @@
 
 
 				<div class="row">
-					<div class="leftcolumn">
-						<iframe id="certificate" class="certs" alt="CertificateTOTY"
-							src="documents/Tom Ball.pdf#toolbar=0"></iframe>
+					<div class="leftcolumn certcontainer">
+						<iframe id="certificate" class="certs" src="documents/TomBall.pdf#toolbar=0"></iframe>
 						<button id="btn">View</button>
 					</div>
-					<div class="rightcolumn">
-						<iframe id="certificate2" class="certs" alt="CertificateML"
+					<div class="rightcolumn certcontainer">
+						<iframe id="certificate2" class="certs"
 							src="documents/ML_Regression_Classification.pdf#toolbar=0"></iframe>
 						<button id="btn2">View</button>
 					</div>
@@ -189,9 +187,8 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<footer>
 
+	<footer>
 		<p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
 		<img src="images/QR.png" alt="QR_Code">
 	</footer>
@@ -199,7 +196,7 @@
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<span class="close">&times;</span>
-		<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
+		<iframe class="modal-content" id="frame01" src=""></iframe>
 		<img class="modal-content" id="img01">
 		<div id="caption"></div>
 	</div>

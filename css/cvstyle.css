@@ -125,7 +125,7 @@ header {
   background-image: linear-gradient(to right, #30e8bf, #ff8235);
   background-clip: border-box;
   background-origin: border-box;
-  border: 2px solid transparent;
+  border: 4px solid transparent;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 3px 8px rgba(0, 0, 0, 0.8);
 
 }
@@ -210,19 +210,15 @@ header ul {
   padding: 0;
 }
 
-.gridcontainer {
-  float: left;
-  display: grid;
-  grid-template-columns: 250px 250px;
-  grid-template-rows: 325px 20px;
-  grid-column-gap: 15px;
-}
-
 .certs {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
   height: 320px;
+}
+
+.certcontainer {
+  border: 0px;
 }
 
 .node text {
@@ -303,6 +299,7 @@ footer {
   display: block;
   width: 80%;
   max-width: 700px;
+  height: auto
 }
 
 /* Caption of Modal Image */
