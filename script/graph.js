@@ -147,14 +147,25 @@ function changeGraph() {
     const data = [];
     for (let i = 0; i < numPoints; i++) {
         let xi = Math.random() * 100.0 * (Math.round(Math.random()) ? 1 : -1);
-        let yi = signVal * ((((parseFloat(xi) + (parseFloat(xShift))) * parseFloat(xMult)) ** parseFloat(exp)) + parseFloat(yShift));
+        let yi = signVal * ((((parseFloat(xi) * parseFloat(xMult)) + (parseFloat(xShift))) ** parseFloat(exp)) + parseFloat(yShift));
 
         data.push([parseFloat(xi), parseFloat(yi)]);
     }
 
+    let sign1 = ""
+    let sign2 = ""
 
+    if (xShift >= 0) {
+        sign1 = "+"
+    }
 
-    output.innerHTML = `Equation: y = (((x + ${xShift}) * ${xMult}) ** ${exp}) + ${yShift}`;
+    if (yShift >= 0) {
+        sign2 = "+"
+    }
+
+    output.innerHTML = `Equation: $$ y = (${xMult}x ${sign1} ${xShift})^${exp} ${sign2} ${yShift}$$`;
+
+    MathJax.typeset();
 
 
 
