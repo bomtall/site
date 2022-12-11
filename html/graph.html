@@ -37,7 +37,7 @@
         <div id="sliderDataviz"></div>
         <input type="range" min=-99 max=99 value=5 class="slider" id="sliderX">
         <label for="sliderX">Shift in x</label><br>
-        <input type="range" min=-499 max=499 value=5 class="slider" id="sliderY">
+        <input type="range" min=-99 max=99 value=5 class="slider" id="sliderY">
         <label for="sliderY">Shift in y</label><br>
         <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp">
         <label for="sliderExp">Exponent</label><br>
@@ -140,7 +140,7 @@
     }
 
     // X Axis
-    const x = d3.scaleLinear()
+    var x = d3.scaleLinear()
         .domain([-100, 100])
         .range([0, width - (margin.left + margin.right)]);
 
@@ -150,8 +150,8 @@
 
 
     // Y Axis
-    const y = d3.scaleLinear()
-        .domain([-500, 500])
+    var y = d3.scaleLinear()
+        .domain([-100, 100])
         .range([height - (margin.top + margin.bottom), 0]);
 
 
@@ -161,7 +161,7 @@
 
 
 
-    // svg.append("path")
+    var path = svg.append("path")
     // .datum(data)
     // .attr("fill", "none")
     // .attr("stroke", "steelblue")
@@ -185,7 +185,7 @@
 
 
     function changeGraph() {
-        svg.selectAll("path").remove();
+        //svg.selectAll("path").remove();
 
 
 
@@ -217,29 +217,29 @@
 
         data.sort(sortFunction);
 
-        // X Axis
-        const x = d3.scaleLinear()
-            .domain([-100, 100])
-            .range([0, width - (margin.left + margin.right)]);
+        // // X Axis
+        // const x = d3.scaleLinear()
+        //     .domain([-100, 100])
+        //     .range([0, width - (margin.left + margin.right)]);
 
-        svg.append("g")
-            .attr("transform", "translate(0," + (height - (margin.top + margin.bottom)) / 2 + ")")
-            .call(d3.axisBottom(x));
-
-
-        // Y Axis
-        const y = d3.scaleLinear()
-            .domain([-500, 500])
-            .range([height - (margin.top + margin.bottom), 0]);
+        // svg.append("g")
+        //     .attr("transform", "translate(0," + (height - (margin.top + margin.bottom)) / 2 + ")")
+        //     .call(d3.axisBottom(x));
 
 
-        svg.append("g")
-            .attr("transform", "translate(" + (width - (margin.right + margin.left)) / 2 + ")")
-            .call(d3.axisLeft(y));
+        // // Y Axis
+        // const y = d3.scaleLinear()
+        //     .domain([-100, 100])
+        //     .range([height - (margin.top + margin.bottom), 0]);
 
 
+        // svg.append("g")
+        //     .attr("transform", "translate(" + (width - (margin.right + margin.left)) / 2 + ")")
+        //     .call(d3.axisLeft(y));
 
-        var path = svg.append("path")
+
+        //= svg.append("path")
+        path
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "steelblue")
