@@ -46,14 +46,15 @@
                     </div>
 
 
-                    <div id="sliderDataviz"></div>
-                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderX">
+
+                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderX" oninput="changeGraph()">
                     <label for="sliderX">Shift in x</label><br>
-                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderY">
+                    <input type="range" min=-99 max=99 value=5 class="slider" id="sliderY" oninput="changeGraph()">
                     <label for="sliderY">Shift in y</label><br>
-                    <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp">
+                    <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp" oninput="changeGraph()">
                     <label for="sliderExp">Exponent</label><br>
-                    <input type="range" min="-2.25" max="2.25" value=1 step="0.01" class="slider" id="sliderMult">
+                    <input type="range" min="-2.25" max="2.25" value=1 step="0.01" class="slider" id="sliderMult"
+                        oninput="changeGraph()">
                     <label for="sliderMult">Stretch</label><br>
 
                 </div>

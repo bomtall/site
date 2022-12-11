@@ -1,21 +1,68 @@
 
 
 
+// $(window).on("resize", function () {
+//     if ($(window).width() < 600) {
+//         d3.select("svg").remove();
+
+//         changeGraph();
+//     }
+// });
 
 
+// function makeSVG(w, h){
+//     var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+//     width = w - margin.left - margin.right,
+//     height = h - margin.top - margin.bottom;
+
+// // append the svg object to the body of the page
+// var svg = d3.select("#my_dataviz")
+//     // .attr("preserveAspectRatio", "xMinYMin meet")
+//     // .attr("viewBox", "0 0 400 400")
+//     // .classed("svg-content", true)
+//     .append("svg")
+//     .attr("width", width + margin.left + margin.right)
+//     .attr("height", height + margin.top + margin.bottom)
+//     .append("g")
+//     .attr("transform",
+//         "translate(" + margin.left + "," + margin.top + ")")
+
+//     return svg
+// }
+
+// svg = makeSVG()
+
+
+
+///-----------------------------------------------------------------------------------------------------------------------------------------------------
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 40, bottom: 30, left: 40 },
-    width = 400 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+let w = 0;
+let h = 0;
+if ($(window).width() < 500) {
+    w = 300;
+    h = 300;
+} else {
+    w = 400;
+    h = 400;
+}
+
+var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+    width = w - margin.left - margin.right,
+    height = h - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
+    // .attr("preserveAspectRatio", "xMinYMin meet")
+    // .attr("viewBox", "0 0 400 400")
+    // .classed("svg-content", true)
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
+
+
     ;
 
 
@@ -66,7 +113,7 @@ function loc_mousemove() {
 
 
 
-    let coord = [x.invert(d3.mouse(this)[0]).toFixed(2), y.invert(d3.mouse(this)[1]).toFixed(2)]
+    //let coord = [x.invert(d3.mouse(this)[0]).toFixed(2), y.invert(d3.mouse(this)[1]).toFixed(2)]
 
 
     focusText
@@ -93,21 +140,20 @@ function sortFunction(a, b) {
 // X Axis
 var x = d3.scaleLinear()
     .domain([-100, 100])
-    .range([0, width - (margin.left + margin.right)]);
+    .range([0, width]);
 
 svg.append("g")
-    .attr("transform", "translate(0," + (height - margin.top - margin.bottom) / 2 + ")")
+    .attr("transform", "translate(0," + (height) / 2 + ")")
     .call(d3.axisBottom(x));
 
 
 // Y Axis
 var y = d3.scaleLinear()
     .domain([-100, 100])
-    .range([height - (margin.top + margin.bottom), 0]);
-
+    .range([height, 0]);
 
 svg.append("g")
-    .attr("transform", "translate(" + (width - (margin.right + margin.left)) / 2 + ")")
+    .attr("transform", "translate(" + (width) / 2 + ")")
     .call(d3.axisLeft(y));
 
 
@@ -124,13 +170,9 @@ var exponent = document.getElementById("sliderExp");
 var multVal = document.getElementById("sliderMult");
 var output = document.getElementById("sliderVals");
 
-shiftX.oninput = function () { changeGraph() };
-shiftY.oninput = function () { changeGraph() };
-exponent.oninput = function () { changeGraph() };
-multVal.oninput = function () { changeGraph() };
-
 //------------------------------------------------------Update Transofrmation Graph---------------------------------------------------//
 function changeGraph() {
+
 
     let xShift = document.getElementById("sliderX").value,
         yShift = document.getElementById("sliderY").value,
@@ -163,7 +205,7 @@ function changeGraph() {
         sign2 = "+"
     }
 
-    output.innerHTML = `Equation: $$ y = (${xMult}x ${sign1} ${xShift})^${exp} ${sign2} ${yShift}$$`;
+    output.innerHTML = `Function: $$ y = (${xMult}x ${sign1} ${xShift})^${exp} ${sign2} ${yShift}$$`;
 
     MathJax.typeset();
 
