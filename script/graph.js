@@ -37,7 +37,6 @@
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------
 // set the dimensions and margins of the graph
 
-$("#circleControls").hide();
 
 
 let w = 0;
@@ -46,8 +45,8 @@ if ($(window).width() < 500) {
     w = 300;
     h = 300;
 } else {
-    w = 500;
-    h = 500;
+    w = 600;
+    h = 600;
 }
 
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
@@ -62,6 +61,7 @@ var svg = d3.select("#my_dataviz")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    //.style('background', "#F0FFF7")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
@@ -166,6 +166,18 @@ var circle = svg.append("circle");
 var pos = document.getElementById('positive')
 pos.checked = true;
 
+const xAxisGrid = d3.axisBottom(x).tickSize(-width).tickFormat('').ticks(10);
+const yAxisGrid = d3.axisLeft(y).tickSize(-height).tickFormat('').ticks(10);
+
+svg.append('g')
+    .attr('class', 'axis-grid')
+    .attr('transform', 'translate(0,' + height + ')')
+    .call(xAxisGrid)
+    .attr('opacity', 0.05)
+svg.append('g')
+    .attr('class', 'axis-grid')
+    .attr('opacity', 0.05)
+    .call(yAxisGrid);
 
 var shiftX = document.getElementById("sliderX");
 var shiftY = document.getElementById("sliderY");
@@ -178,6 +190,8 @@ rScale = d3.scaleLinear()
     .range([0, width]);
 
 
+
+//-----------------------------------------------------------Plot Circles------------------------------------------------------------------//
 
 function drawCircle() {
 
@@ -228,7 +242,7 @@ function drawCircle() {
 // d3.select(`.graphButton:nth-child(${button_index})`)
 //     .style('background', 'red')
 
-//------------------------------------------------------Update Transofrmation Graph---------------------------------------------------//
+//------------------------------------------------------Plot Lines-------------------------------------------------------------------------------//
 function changeGraph() {
 
     $("#circleControls").hide();
@@ -337,3 +351,10 @@ function changeGraph() {
 
 
 }
+$(document).ready(function () {
+    $("#circleControls").hide();
+    d3.select("#plotLineButton")
+        .style("background", "lightgreen")
+        ;
+    changeGraph();
+})
