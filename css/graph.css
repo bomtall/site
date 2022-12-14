@@ -32,3 +32,9 @@
 #my_dataviz :hover {
     cursor: crosshair;
 }
+
+#circleControls {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+}

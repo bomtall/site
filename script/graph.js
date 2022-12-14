@@ -36,6 +36,10 @@
 
 ///-----------------------------------------------------------------------------------------------------------------------------------------------------
 // set the dimensions and margins of the graph
+
+$("#circleControls").hide();
+
+
 let w = 0;
 let h = 0;
 if ($(window).width() < 500) {
@@ -61,9 +65,8 @@ var svg = d3.select("#my_dataviz")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
-
-
     ;
+
 
 
 //Create a rect on top of the svg area: this rectangle recovers mouse position
@@ -157,8 +160,8 @@ svg.append("g")
     .call(d3.axisLeft(y));
 
 
-
-var path = svg.append("path")
+var path = svg.append("path");
+var circle = svg.append("circle");
 
 var pos = document.getElementById('positive')
 pos.checked = true;
@@ -168,11 +171,79 @@ var shiftX = document.getElementById("sliderX");
 var shiftY = document.getElementById("sliderY");
 var exponent = document.getElementById("sliderExp");
 var multVal = document.getElementById("sliderMult");
-var output = document.getElementById("sliderVals");
+var output = document.getElementById("plottedFunction");
+
+rScale = d3.scaleLinear()
+    .domain([0, 200])
+    .range([0, width]);
+
+
+
+function drawCircle() {
+
+    $("#lineControls").hide()
+    $("#circleControls").show("slow", "swing");
+
+    d3.select("#plotCircleButton")
+        .style('background', 'lightgreen')
+
+    d3.select("#plotLineButton")
+        .style("background", "lightgrey")
+
+    path
+        .attr("fill", "none")
+        .attr("stroke", "none")
+
+    let r = document.getElementById("sliderR").value
+    let xCentre = document.getElementById("xCentre").value
+    let yCentre = document.getElementById("yCentre").value
+
+    if (xCentre > 0) {
+        signVal1 = "";
+    } else { signVal1 = " + " }
+
+    if (yCentre > 0) {
+        signVal2 = "";
+    } else { signVal2 = " + " }
+
+
+
+    svg.select('circle')
+        .attr('cx', x(xCentre))
+        .attr('cy', y(yCentre))
+        .attr('r', rScale(r))
+        .style('fill', 'none')
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        ;
+
+    output.innerHTML = `Function: $$(x ${signVal1}${xCentre * -1})^2 + (y ${signVal2}${yCentre * -1})^2 = ${r}^2$$`;
+
+    MathJax.typeset();
+}
+
+// d3.selectAll(".graphButton")
+//     .style('background', '#4CAF50')
+
+// d3.select(`.graphButton:nth-child(${button_index})`)
+//     .style('background', 'red')
 
 //------------------------------------------------------Update Transofrmation Graph---------------------------------------------------//
 function changeGraph() {
 
+    $("#circleControls").hide();
+    $("#lineControls").show("slow", "swing")
+
+    d3.select("#plotCircleButton")
+        .style('background', 'lightgrey')
+
+    d3.select("#plotLineButton")
+        .style("background", "lightgreen")
+
+
+    svg.select('circle')
+        .attr("fill", "none")
+        .attr("stroke", "none")
 
     let xShift = document.getElementById("sliderX").value,
         yShift = document.getElementById("sliderY").value,
