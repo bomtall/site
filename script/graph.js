@@ -1,57 +1,27 @@
 
 
 
-// $(window).on("resize", function () {
-//     if ($(window).width() < 600) {
-//         d3.select("svg").remove();
+function dimensions() {
+    let w = 0;
+    let h = 0;
+    if ($(window).width() < 500) {
+        w = 300;
+        h = 300;
+    } else {
+        w = 600;
+        h = 600;
+    }
 
-//         changeGraph();
-//     }
-// });
+    w = w - margin.left - margin.right;
+    h = h - margin.top - margin.bottom
 
+    return { width: w, height: h }
 
-// function makeSVG(w, h){
-//     var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-//     width = w - margin.left - margin.right,
-//     height = h - margin.top - margin.bottom;
-
-// // append the svg object to the body of the page
-// var svg = d3.select("#my_dataviz")
-//     // .attr("preserveAspectRatio", "xMinYMin meet")
-//     // .attr("viewBox", "0 0 400 400")
-//     // .classed("svg-content", true)
-//     .append("svg")
-//     .attr("width", width + margin.left + margin.right)
-//     .attr("height", height + margin.top + margin.bottom)
-//     .append("g")
-//     .attr("transform",
-//         "translate(" + margin.left + "," + margin.top + ")")
-
-//     return svg
-// }
-
-// svg = makeSVG()
-
-
-
-///-----------------------------------------------------------------------------------------------------------------------------------------------------
-// set the dimensions and margins of the graph
-
-
-
-let w = 0;
-let h = 0;
-if ($(window).width() < 500) {
-    w = 300;
-    h = 300;
-} else {
-    w = 600;
-    h = 600;
 }
 
-var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-    width = w - margin.left - margin.right,
-    height = h - margin.top - margin.bottom;
+// set margins for graph
+var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+var plot = dimensions();
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -59,8 +29,8 @@ var svg = d3.select("#my_dataviz")
     // .attr("viewBox", "0 0 400 400")
     // .classed("svg-content", true)
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", plot.width + margin.left + margin.right)
+    .attr("height", plot.height + margin.top + margin.bottom)
     //.style('background', "#F0FFF7")
     .append("g")
     .attr("transform",
@@ -74,8 +44,8 @@ svg
     .append('rect')
     .style("fill", "none")
     .style("pointer-events", "all")
-    .attr('width', width)
-    .attr('height', height)
+    .attr('width', plot.width)
+    .attr('height', plot.height)
     .on('mouseover', loc_mouseover)
     .on('mousemove', loc_mousemove)
     .on('mouseout', loc_mouseout)
@@ -143,35 +113,39 @@ function sortFunction(a, b) {
 // X Axis
 var x = d3.scaleLinear()
     .domain([-100, 100])
-    .range([0, width]);
+    .range([0, plot.width]);
 
 svg.append("g")
-    .attr("transform", "translate(0," + (height) / 2 + ")")
+    .attr("transform", "translate(0," + (plot.height) / 2 + ")")
     .call(d3.axisBottom(x));
 
 
 // Y Axis
 var y = d3.scaleLinear()
     .domain([-100, 100])
-    .range([height, 0]);
+    .range([plot.height, 0]);
 
 svg.append("g")
-    .attr("transform", "translate(" + (width) / 2 + ")")
+    .attr("transform", "translate(" + (plot.width) / 2 + ")")
     .call(d3.axisLeft(y));
 
 
 var path = svg.append("path");
+var path2 = svg.append("path");
 var circle = svg.append("circle");
 
 var pos = document.getElementById('positive')
+var neg = document.getElementById('negative')
+var xNeg = document.getElementById('xNegative')
+var doubleNeg = document.getElementById("doubleNegative")
 pos.checked = true;
 
-const xAxisGrid = d3.axisBottom(x).tickSize(-width).tickFormat('').ticks(10);
-const yAxisGrid = d3.axisLeft(y).tickSize(-height).tickFormat('').ticks(10);
+const xAxisGrid = d3.axisBottom(x).tickSize(-plot.width).tickFormat('').ticks(10);
+const yAxisGrid = d3.axisLeft(y).tickSize(-plot.height).tickFormat('').ticks(10);
 
 svg.append('g')
     .attr('class', 'axis-grid')
-    .attr('transform', 'translate(0,' + height + ')')
+    .attr('transform', 'translate(0,' + plot.height + ')')
     .call(xAxisGrid)
     .attr('opacity', 0.05)
 svg.append('g')
@@ -187,7 +161,7 @@ var output = document.getElementById("plottedFunction");
 
 rScale = d3.scaleLinear()
     .domain([0, 200])
-    .range([0, width]);
+    .range([0, plot.width]);
 
 
 
@@ -196,15 +170,13 @@ rScale = d3.scaleLinear()
 function drawCircle() {
 
     $("#lineControls").hide()
+    $("#shifts").show();
     $("#circleControls").show("slow", "swing");
 
-    d3.select("#plotCircleButton")
-        .style('background', 'lightgreen')
-
-    d3.select("#plotLineButton")
-        .style("background", "lightgrey")
-
     path
+        .attr("fill", "none")
+        .attr("stroke", "none")
+    path2
         .attr("fill", "none")
         .attr("stroke", "none")
 
@@ -236,26 +208,39 @@ function drawCircle() {
     MathJax.typeset();
 }
 
-// d3.selectAll(".graphButton")
-//     .style('background', '#4CAF50')
 
-// d3.select(`.graphButton:nth-child(${button_index})`)
-//     .style('background', 'red')
+function getSignVals() {
+    signVal = 1;
+    xSignVal = 1
+
+    if (neg.checked == true) {
+        signVal = -1;
+    }
+
+    if (xNeg.checked == true) {
+        xSignVal = -1
+    }
+
+    if (doubleNeg.checked == true) {
+        signVal = -1
+        xSignVal = -1
+    }
+
+    return [signVal, xSignVal]
+}
 
 //------------------------------------------------------Plot Lines-------------------------------------------------------------------------------//
 function changeGraph() {
 
     $("#circleControls").hide();
+    $("#shifts").show();
     $("#lineControls").show("slow", "swing")
-
-    d3.select("#plotCircleButton")
-        .style('background', 'lightgrey')
-
-    d3.select("#plotLineButton")
-        .style("background", "lightgreen")
 
 
     svg.select('circle')
+        .attr("fill", "none")
+        .attr("stroke", "none")
+    path2
         .attr("fill", "none")
         .attr("stroke", "none")
 
@@ -263,19 +248,14 @@ function changeGraph() {
         yShift = document.getElementById("sliderY").value,
         xMult = document.getElementById("sliderMult").value,
         exp = document.getElementById("sliderExp").value,
-        signVal = 0;
 
-    if (pos.checked == true) {
-        signVal = 1;
-    } else { signVal = -1; }
-
+        signs = getSignVals();
 
     const numPoints = 1000;
     const data = [];
     for (let i = 0; i < numPoints; i++) {
-        let xi = Math.random() * 100.0 * (Math.round(Math.random()) ? 1 : -1);
-        let yi = signVal * ((((parseFloat(xi) * parseFloat(xMult)) + (parseFloat(xShift))) ** parseFloat(exp)) + parseFloat(yShift));
-
+        let xi = Math.random() * 100.00 * (Math.round(Math.random()) ? 1 : -1);
+        let yi = signs[0] * (((((signs[1] * parseFloat(xi)) * parseFloat(xMult)) + (parseFloat(xShift))) ** parseFloat(exp)) + parseFloat(yShift));
         data.push([parseFloat(xi), parseFloat(yi)]);
     }
 
@@ -341,20 +321,108 @@ function changeGraph() {
             .style('top', d3.event.pageY + 'px')
             .style('opacity', .9)
     })
+}
 
+function selectPlot() {
 
-
-
-
-
-
-
+    let plot = document.querySelector('input[name="selectPlot"]:checked').value
+    if (plot == "line") {
+        changeGraph();
+    } else if (plot == "circle") {
+        drawCircle()
+    } else { oneOverX() }
 
 }
-$(document).ready(function () {
+
+
+
+//----------------------------------------------------1/x---------------------------------------------------
+
+function oneOverX() {
     $("#circleControls").hide();
+    $("#lineControls").show("slow", "swing");
+    $("#shifts").hide();
+
+
+    svg.select('circle')
+        .attr("fill", "none")
+        .attr("stroke", "none")
+
+
+    let xShift = document.getElementById("sliderX").value,
+        yShift = document.getElementById("sliderY").value,
+        xMult = document.getElementById("sliderMult").value,
+        exp = document.getElementById("sliderExp").value,
+
+        signs = getSignVals();
+
+    const numPoints = 10000;
+    const data1 = [];
+    const data2 = [];
+    for (let i = 0; i < numPoints; i++) {
+        let xi = Math.random() * 100.00000
+        //let yi1 = signs[0] * (1 / (xMult * (signs[1] * -xi) + parseFloat(xShift))) + parseFloat(yShift)
+        //let yi2 = signs[0] * (1 / (xMult * (signs[1] * xi) + parseFloat(xShift))) + parseFloat(yShift)
+        let yi1 = signs[0] * (1 / (xMult * (signs[1] * -xi)) ** parseFloat(exp))
+        let yi2 = signs[0] * (1 / (xMult * (signs[1] * xi)) ** parseFloat(exp))
+
+        data1.push([parseFloat(-xi), parseFloat(yi1)]);
+        data2.push([parseFloat(xi), parseFloat(yi2)]);
+    }
+
+    data1.sort(sortFunction);
+    data2.sort(sortFunction);
+
+    path
+        .datum(data1)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", d3.line()
+            .x(function (d) { return x(d[0]) })
+            .y(function (d) { return y(d[1]) })
+        )
+
+    path2
+        .datum(data2)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", d3.line()
+            .x(function (d) { return x(d[0]) })
+            .y(function (d) { return y(d[1]) })
+        )
+
+    let xm = xMult
+    if (xMult == 1) {
+        xm = ""
+    }
+
+    let xSign = ""
+    let fSign = ""
+    if (signs[1] < 0) {
+        xSign = "-"
+    }
+    if (signs[0] < 0) {
+        fSign = "-"
+    }
+    output.innerHTML = `Function: $$ y = ${fSign}\\frac{1} { ${xSign}${xm}x^${exp} }$$`;
+
+    MathJax.typeset();
+
+}
+//------------------------------------------------------------Initial State----------------------------------------
+
+$(document).ready(function () {
+
+    $("#circleControls").hide();
+
     d3.select("#plotLineButton")
         .style("background", "lightgreen")
         ;
+
+    $("#selectLine").prop("checked", "true");
+
     changeGraph();
+
 })
