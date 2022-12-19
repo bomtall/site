@@ -11,12 +11,20 @@
     <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ["\\(", "\\)"]],
+            processEscapes: true,
+          }
+        }
+      </script>
     <title>Graph</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 
 <body>
-    <div id="navbar">
+    <nav id="navbar">
         <a href="../index.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
                 aria-hidden="true"></i></a>
@@ -25,8 +33,8 @@
         <a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
         <a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
-    </div>
-    <div id="loginbar">
+    </nav>
+    <nav id="loginbar">
         <form name="loginForm" onsubmit="return validateLogin()">
             <label for="adminemail">Admin Email:</label>
             <input type="email" id="adminemail"></input>
@@ -34,8 +42,12 @@
             <input type="password" id="adminpassword"></input>
             <input type="submit" value="Log in"></input>
         </form>
-    </div>
+    </nav>
     <div class="content">
+        <header>
+            <p class=fancyborder>Graph Transformations</p>
+        </header>
+
         <div class="row">
             <div class="leftcolumn">
                 <div id="my_dataviz"></div>
@@ -84,6 +96,11 @@
                                 <input type="range" min=-100 max=100 value=10 class="slider" id="yCentre"
                                     oninput="drawCircle()">
                                 <label for="yCentre">Centre y</label><br>
+
+                                <input type="radio" id="showArea" name="area" value="show" onclick="plotArea(this)">
+                                <label for="showArea" class="functionSign">Show Area</label>
+                                <input type="radio" id="hideArea" name="area" value="hide" onclick="plotArea(this)">
+                                <label for="hideArea" class="functionSign"> Hide Area </label><br>
                             </form>
                         </div>
                         <div class="rightcolumn">
@@ -94,7 +111,7 @@
                                 onclick="selectPlot()">
                             <label for="selectCircle">Plot Circles</label><br>
                             <input type="radio" id="select1/x" name="selectPlot" value="1/x" onclick="selectPlot()">
-                            <label for="select1/x">Plot 1/x</label><br>
+                            <label id="1/xLabel" for="select1/x"></label><br>
 
                             <p id="plottedFunction"></p>
 

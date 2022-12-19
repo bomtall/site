@@ -194,7 +194,7 @@ function drawCircle() {
 
 
 
-    svg.select('circle')
+    circle
         .attr('cx', x(xCentre))
         .attr('cy', y(yCentre))
         .attr('r', rScale(r))
@@ -203,9 +203,28 @@ function drawCircle() {
         .attr("stroke-width", 1.5)
         ;
 
-    output.innerHTML = `Function: $$(x ${signVal1}${xCentre * -1})^2 + (y ${signVal2}${yCentre * -1})^2 = ${r}^2$$`;
+    output.innerHTML = `$$f(x) = (x ${signVal1}${xCentre * -1})^2 + (y ${signVal2}${yCentre * -1})^2 = ${r}^2$$`;
 
     MathJax.typeset();
+
+    let area = document.getElementById("showArea")
+
+    if (area.checked == true) {
+        plotArea(area)
+    }
+
+
+}
+
+function plotArea(radio) {
+    if (radio.value == "show") {
+        circle
+            .style('fill', 'lightgreen')
+    } else {
+        circle
+            .style('fill', 'none')
+
+    }
 }
 
 
@@ -270,7 +289,7 @@ function changeGraph() {
         sign2 = "+"
     }
 
-    output.innerHTML = `Function: $$ y = (${xMult}x ${sign1} ${xShift})^${exp} ${sign2} ${yShift}$$`;
+    output.innerHTML = `$$ f(x) = (${xMult}x ${sign1} ${xShift})^${exp} ${sign2} ${yShift}$$`;
 
     MathJax.typeset();
 
@@ -406,7 +425,7 @@ function oneOverX() {
     if (signs[0] < 0) {
         fSign = "-"
     }
-    output.innerHTML = `Function: $$ y = ${fSign}\\frac{1} { ${xSign}${xm}x^${exp} }$$`;
+    output.innerHTML = `$$ f(x) = ${fSign}\\frac{1} { ${xSign}${xm}x^${exp} } $$`;
 
     MathJax.typeset();
 
@@ -423,6 +442,12 @@ $(document).ready(function () {
 
     $("#selectLine").prop("checked", "true");
 
+    document.getElementById("1/xLabel").innerHTML = "\\( \\frac{1}{x} \\)"
+
+    MathJax.typeset();
+
     changeGraph();
 
 })
+
+
