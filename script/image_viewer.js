@@ -23,13 +23,21 @@ function close_modal() {
     modal.style.display = "none";
 }
 
+
+
 var cert = document.getElementById("certificate")
 
-document.getElementById("btn").onclick = function () { openModal(cert) };
+if (typeof (cert) != 'undefined' && cert != null) {
+    document.getElementById("btn").onclick = function () { openModal(cert) };
+}
 
 var cert2 = document.getElementById("certificate2")
 
-document.getElementById("btn2").onclick = function () { openModal(cert2) };
+if (typeof (cert2) != 'undefined' && cert2 != null) {
+    document.getElementById("btn2").onclick = function () { openModal(cert2) };
+}
+
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
