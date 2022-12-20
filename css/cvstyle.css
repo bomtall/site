@@ -13,7 +13,7 @@ header {
   background: white;
   text-align: center;
   font-family: Times New Roman;
-  font-size: 4vw;
+  font-size: 3.5vw;
   color: #2c5364;
   width: 100%;
   margin-top: 30px;
@@ -103,13 +103,37 @@ header {
 .fancyborder {
   border-width: 4px;
   border-style: solid;
-  border-image: linear-gradient(to right, #30e8bf, #ff8235) 1;
+  border-image: linear-gradient(#30e8bf, #ff8235) 1;
   text-align: center;
   width: 60%;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   padding: 10px;
-  letter-spacing: 1vw;
+  letter-spacing: 1.5vw;
+}
+
+#spacer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+#spaceLeft {
+  border-right: 1px solid;
+  border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  height: 1vw;
+}
+
+#spaceRight {
+  border-left: 1px solid;
+  border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  height: 1vw;
 }
 
 .imgcontainer {
@@ -119,10 +143,9 @@ header {
   overflow: hidden;
   border-radius: 50%;
   /*position: relative;*/
-  margin: 6px auto;
+  margin: 0px auto;
   text-align: center;
-  margin-bottom: 10px;
-  background-image: linear-gradient(to right, #30e8bf, #ff8235);
+  background-image: linear-gradient(#30e8bf, #ff8235);
   background-clip: border-box;
   background-origin: border-box;
   border: 4px solid transparent;
@@ -154,6 +177,8 @@ header {
   padding: 0px;
   margin: 0px;
   -webkit-background-clip: text;
+
+
 }
 
 .climb {
