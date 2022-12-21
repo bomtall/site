@@ -5,10 +5,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <link rel="stylesheet" href="../css/cvstyle.css">
+    <link rel="stylesheet" href="../css/templateStyle.css">
     <link rel="stylesheet" href="../css/quiz.css">
     <link rel="stylesheet" href="../css/graph.css">
-    <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">
@@ -29,7 +30,7 @@
         <a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
                 aria-hidden="true"></i></a>
         <a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
-        <a href="examples.html">Blog <i class="fa fa-laptop" aria-hidden="true"></i></a>
+        <a href="graph.html">Graph <i class="fa fa-laptop" aria-hidden="true"></i></a>
         <a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
         <a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
@@ -45,12 +46,23 @@
     </nav>
     <div class="content">
         <header>
-            <p class=fancyborder>Graph Transformations</p>
+            <h1 class="pageTitle">Graph Transformations</h1>
+            <div id="spacer">
+                <div id="spaceLeft"></div>
+                <div id="spaceRight"></div>
+            </div>
+            <figure class="imgcontainer">
+                <img class="imgcontainerimg" onclick="openModal(this)" src="../images/work.jpg" alt="Tom - Portrait">
+            </figure>
+            <div id="spacer">
+                <div id="spaceLeft"></div>
+                <div id="spaceRight"></div>
+            </div>
         </header>
 
         <div class="row">
             <div class="leftcolumn">
-                <div id="my_dataviz"></div>
+                <figure id="my_dataviz"></figure>
             </div>
 
             <div class="rightcolumn">
@@ -134,5 +146,5 @@
     </div>
 </body>
 <script type="text/javascript" src="../script/graph.js"></script>
-<script type="text/javascript" src="../script/scrollbar.js"></script>
+<script type="text/javascript" src="../script/navbar.js"></script>
 <script type="text/javascript" src="../script/main_script.js"></script>

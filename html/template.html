@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="../css/templateStyle.css">
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <a href="../index.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
+                aria-hidden="true"></i></a>
+        <a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="examples.html">Blog <i class="fa fa-laptop" aria-hidden="true"></i></a>
+        <a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+        <a href="graph.html"> Graph <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+        <a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
+    </nav>
+
+
+    <nav id="loginbar">
+        <form name="loginForm" onsubmit="return validateLogin()">
+            <label for="adminemail">Admin Email:</label>
+            <input type="email" id="adminemail"></input>
+            <label for="adminpassword">Password:</label>
+            <input type="password" id="adminpassword"></input>
+            <input type="submit" value="Log in"></input>
+        </form>
+    </nav>
+
+
+    <section class="content">
+
+        <header>
+
+            <h1 class="pageTitle">Page Title</h1>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft"></div>
+                <div class="spaceRight"></div>
+            </div>
+
+            <figure class="imgcontainer">
+                <img class="imgcontainerimg" onclick="openModal(this)" src="../images/font.jpeg" alt="Tom - Portrait">
+            </figure>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft"></div>
+                <div class="spaceRight"></div>
+            </div>
+
+            <article class="pageIntro">
+
+                <h2 id="pageSubtitle">Subtitle</h2>
+                <p>
+                    A paragraph of text introducing the page, outlining its content and purpose.
+                </p>
+
+            </article>
+
+        </header>
+
+        <section class="row">
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="hiddenSpacerOrange spaceLeft"></div>
+                <div class="hiddenSpacerOrange spaceRight"></div>
+            </div>
+
+            <section class="leftcolumn">
+                <article>
+                    <h3>Article Title</h3>
+                    <!--Content-->
+                    <p>
+                        Content on the left of the page
+                    </p>
+                </article>
+            </section>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft hiddenSpacerBlue"></div>
+                <div class="spaceRight hiddenSpacerBlue"></div>
+            </div>
+
+
+            <section class="rightcolumn">
+                <article>
+                    <h3>Article Title</h3>
+                    <!--Content-->
+                    <p>
+                        Content on the right of the page
+                    </p>
+                </article>
+            </section>
+
+        </section>
+
+
+        <!--Decorative spacing elements-->
+        <div class="spacer">
+            <div class="hiddenSpacerOrange spaceLeft"></div>
+            <div class="hiddenSpacerOrange spaceRight"></div>
+        </div>
+
+        <section class="row">
+
+            <section class="leftsecondcolumn">
+                <article>
+                    <h3>Article Title</h3>
+                    <!--Content-->
+                    <p>
+                        Content on the left of the page
+                    </p>
+                </article>
+            </section>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft hiddenSpacerBlue"></div>
+                <div class="spaceRight hiddenSpacerBlue"></div>
+            </div>
+
+            <section class="rightsecondcolumn">
+                <article>
+                    <h3>Article Title</h3>
+                    <!--Content-->
+                    <p id="genericParagraph">
+                        Content on the right of the page
+                    </p>
+                </article>
+            </section>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="hiddenSpacerOrange spaceLeft"></div>
+                <div class="hiddenSpacerOrange spaceRight"></div>
+            </div>
+
+        </section>
+
+    </section>
+
+    <footer>
+        <p style="width:100%">Thank you for visiting my website....</p>
+    </footer>
+
+</body>
+
+</html>
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--My JavaScript Modules-->
+<script type="text/javascript" src="../script/navbar.js"></script>
+<script type="text/javascript" src="../script/main_script.js"></script>
+
+<script>
+    //Any Javascript required here
+</script>
