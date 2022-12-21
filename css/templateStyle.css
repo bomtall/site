@@ -16,7 +16,7 @@ header {
   margin-top: 30px;
 }
 
-/* Style the navbar */
+/*Navigation bar styles*/
 #navbar {
   overflow: hidden;
   background: linear-gradient(#0f2027, #2c5364 25%, #203a43, #0f2027);
@@ -34,17 +34,19 @@ header {
   display: none;
 }
 
-/* Navbar links */
+/* Navigation bar links*/
 #navbar a {
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px;
+  padding: 0.5vw 1vw;
   margin: 0px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.5vw;
 }
+
+
 
 /* Page content 
 .content {
@@ -83,6 +85,19 @@ header {
   cursor: pointer;
 }
 
+.pageTitle {
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(#30e8bf, #ff8235) 1;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 0px;
+  padding: 10px;
+  font-size: 3.5vw;
+  letter-spacing: 1.5vw;
+}
+
 .pageIntro {
   border-width: 4px;
   border-style: solid;
@@ -97,18 +112,7 @@ header {
   color: #2c5364;
 }
 
-.pageTitle {
-  border-width: 4px;
-  border-style: solid;
-  border-image: linear-gradient(#30e8bf, #ff8235) 1;
-  text-align: center;
-  width: 75%;
-  margin: auto;
-  margin-bottom: 0px;
-  padding: 10px;
-  font-size: 3.5vw;
-  letter-spacing: 1.5vw;
-}
+
 
 #pageSubtitle {
   text-align: center;
@@ -159,19 +163,16 @@ header {
   height: auto;
   overflow: hidden;
   border-radius: 50%;
-  /*position: relative;*/
   margin: 0px auto;
   text-align: center;
-  background-image: linear-gradient(#30e8bf, #ff8235);
-  background-clip: border-box;
+
   background-origin: border-box;
+
+  background-image: linear-gradient(#30e8bf, #ff8235);
   border: 4px solid transparent;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 3px 8px rgba(0, 0, 0, 0.8);
 
 }
-
-
-
 
 .imgcontainerimg {
   max-width: 100%;
@@ -427,10 +428,9 @@ footer {
     width: 100%;
   }
 
-  #navbar a {
-    font-size: 10px;
-    padding: 5px;
-  }
+  /* #navbar a {
+    font-size: 2.5vw;
+  } */
 
   .hiddenSpacerBlue {
     display: block;
