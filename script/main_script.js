@@ -47,12 +47,3 @@ function markQuiz() {
 
 }
 
-
-
-const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function () {
-    const myObj = JSON.parse(this.responseText);
-    console.log(myObj);
-};
-xmlhttp.open("GET", "../json/quiz_data.json");
-xmlhttp.send();

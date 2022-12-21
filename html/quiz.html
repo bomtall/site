@@ -3,11 +3,10 @@
 
 <head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://d3js.org/d3.v4.js"></script>
+
 	<link rel="stylesheet" href="../css/templateStyle.css">
 	<link rel="stylesheet" href="../css/quiz.css">
-	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<title>Curriculum Vitae</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
@@ -51,9 +50,9 @@
 			<form name="quiz" class="quizForm">
 				<label for="name">Your Nickname</label>
 				<input type="text" id="name" name="name"></input>
-				<label for="q1">What is 5 + 25?</label>
+				<label for="q1" id="q1_label">What is 5 + 25?</label>
 				<input type="number" id="q1" q1="q1"></input>
-				<label for="q2">What is 18 / 3?</label>
+				<label for="q2" id="q2_label">What is 18 / 3?</label>
 				<input type="number" id="q2" q2="q2"></input>
 				<input type="button" onclick="return markQuiz()" value="Check Answers">
 
@@ -94,8 +93,11 @@
 
 </body>
 <div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v4.js"></script>
 
 	<script type="text/javascript" src="../script/main_script.js"></script>
+	<script type="text/javascript" src="../script/quiz.js"></script>
 	<script type="text/javascript" src="../script/image_viewer.js"></script>
 	<script type="text/javascript" src="../script/navbar.js"></script>
 	<script>

@@ -1,10 +1,22 @@
 {
     "q1": {
         "question": "For f(x), what does the transformation -f(x) do?",
-        "answer": "Reflect f(x) over the x axis"
+        "real_answer": "Reflect f(x) over the x axis",
+        "answers": [
+            "Reflect f(x) over the y axis",
+            "Make all y values negative",
+            "Reflect f(x) over the x axis",
+            "Make all x values negative"
+        ]
     },
     "q2": {
         "question": "For f(x), what does the transformation f(-x) do?",
-        "answer": "Reflect f(x) over the y axis"
+        "real_answer": "Reflect f(x) over the y axis",
+        "answers": [
+            "Reflect f(x) over the y axis",
+            "Make all x values negative",
+            "Reflect f(x) over the x axis",
+            "Make all y values negative"
+        ]
     }
 }
