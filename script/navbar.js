@@ -13,3 +13,20 @@ function sticky_scroll() {
         loginbar.classList.remove("sticky2");
     }
 }
+
+$(document).ready(function () {
+    $("#admin").click(function () {
+
+        if ($("#loginbar").is(":visible")) {
+            $("#loginbar").toggle();
+        } else if (confirm("This login is only for administrators of the site") == true) { $("#loginbar").toggle(); }
+
+
+    });
+});
+$(document).ready(function () {
+    $("#gcses").click(function () {
+        $("#gcses_list").toggle();
+    });
+
+});

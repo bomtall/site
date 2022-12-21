@@ -1,0 +1,10 @@
+{
+    "q1": {
+        "question": "For f(x), what does the transformation -f(x) do?",
+        "answer": "Reflect f(x) over the x axis"
+    },
+    "q2": {
+        "question": "For f(x), what does the transformation f(-x) do?",
+        "answer": "Reflect f(x) over the y axis"
+    }
+}

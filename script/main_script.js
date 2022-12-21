@@ -1,13 +1,13 @@
 
-function sticky_scroll() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-        loginbar.classList.add("sticky2")
-    } else {
-        navbar.classList.remove("sticky");
-        loginbar.classList.remove("sticky2");
-    }
-}
+// function sticky_scroll() {
+//     if (window.pageYOffset >= sticky) {
+//         navbar.classList.add("sticky")
+//         loginbar.classList.add("sticky2")
+//     } else {
+//         navbar.classList.remove("sticky");
+//         loginbar.classList.remove("sticky2");
+//     }
+// }
 
 
 
@@ -47,3 +47,12 @@ function markQuiz() {
 
 }
 
+
+
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function () {
+    const myObj = JSON.parse(this.responseText);
+    console.log(myObj);
+};
+xmlhttp.open("GET", "../json/quiz_data.json");
+xmlhttp.send();
