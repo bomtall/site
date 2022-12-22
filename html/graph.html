@@ -44,33 +44,77 @@
             <input type="submit" value="Log in"></input>
         </form>
     </nav>
-    <div class="content">
+
+
+    <main class="content">
         <header>
-            <h1 class="pageTitle">Graph Transformations</h1>
-            <div id="spacer">
-                <div id="spaceLeft"></div>
-                <div id="spaceRight"></div>
+            <h1 class="pageTitle">Graphs</h1>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft"></div>
+                <div class="spaceRight"></div>
             </div>
+
+
             <figure class="imgcontainer">
                 <img class="imgcontainerimg" onclick="openModal(this)" src="../images/work.jpg" alt="Tom - Portrait">
             </figure>
-            <div id="spacer">
-                <div id="spaceLeft"></div>
-                <div id="spaceRight"></div>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft"></div>
+                <div class="spaceRight"></div>
             </div>
+
+
+            <article class="pageIntro">
+
+                <h2 id="pageSubtitle">Transformations</h2>
+                <p>
+                    On this page you can use the interactive graph below to gain some intuition on graph
+                    transformations. You can plot different types of graphs, use the controls to change values in the
+                    equation and see this reflected on the chart.
+                    Try all of the combinations available and you will have the knowledge to pass the quiz on this
+                    website. You can read a bit further into this topic below to consolidate your knowledge before
+                    attempting the quiz. Enjoy!
+                </p>
+
+            </article>
+
+
         </header>
 
         <div class="row">
-            <div class="leftcolumn">
-                <figure id="my_dataviz"></figure>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="hiddenSpacerOrange spaceLeft"></div>
+                <div class="hiddenSpacerOrange spaceRight"></div>
             </div>
 
-            <div class="rightcolumn">
+            <article class="leftcolumn">
+                <h3>Interactive SVG Chart</h3>
+                <!--Interactive SVG Graph Placed inside this element-->
+                <figure id="my_dataviz"></figure>
+            </article>
+
+            <!--Decorative spacing elements-->
+            <div class="spacer">
+                <div class="spaceLeft hiddenSpacerBlue"></div>
+                <div class="spaceRight hiddenSpacerBlue"></div>
+            </div>
+
+            <article class="rightcolumn">
+                <h3>Graph Details</h3>
+                <p id="plottedFunction"></p>
+
                 <div class="slidecontainer">
 
                     <div class="row">
 
                         <div class="leftcolumn">
+                            <h3>Graph Controls</h3>
                             <div id="lineControls">
                                 <div id="shifts">
                                     <input type="range" min=-99 max=99 value=0 class="slider" id="sliderX"
@@ -115,7 +159,15 @@
                                 <label for="hideArea" class="functionSign"> Hide Area </label><br>
                             </form>
                         </div>
-                        <div class="rightcolumn">
+
+                        <!--Decorative spacing elements-->
+                        <div class="spacer">
+                            <div class="spaceLeft hiddenSpacerBlue"></div>
+                            <div class="spaceRight hiddenSpacerBlue"></div>
+                        </div>
+
+                        <article class="rightcolumn">
+                            <h3>Graph Type</h3>
 
                             <input type="radio" id="selectLine" name="selectPlot" value="line" onclick="selectPlot()">
                             <label for="selectLine">Plot Lines</label><br>
@@ -125,10 +177,12 @@
                             <input type="radio" id="select1/x" name="selectPlot" value="1/x" onclick="selectPlot()">
                             <label id="1/xLabel" for="select1/x"></label><br>
 
-                            <p id="plottedFunction"></p>
 
 
-                        </div>
+
+                        </article>
+
+
                     </div>
 
 
@@ -136,14 +190,21 @@
 
 
                 </div>
-            </div>
+
+            </article>
+
+        </div>
+        <!--Decorative spacing elements-->
+        <div class="spacer">
+            <div class="hiddenSpacerOrange spaceLeft"></div>
+            <div class="hiddenSpacerOrange spaceRight"></div>
         </div>
         <footer>
 
             <p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
             <img src="../images/QR.png" alt="QR_Code">
         </footer>
-    </div>
+        </div>
 </body>
 <script type="text/javascript" src="../script/graph.js"></script>
 <script type="text/javascript" src="../script/navbar.js"></script>

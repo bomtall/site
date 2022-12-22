@@ -22,6 +22,7 @@ header {
   background: linear-gradient(#0f2027, #2c5364 25%, #203a43, #0f2027);
   box-shadow: 0px 2px 5px;
   width: 100%;
+  z-index: 1;
 }
 
 #loginbar {
@@ -81,7 +82,7 @@ header {
 .pageTitle {
   border-width: 4px;
   border-style: solid;
-  border-image: linear-gradient(#30e8bf, #ff8235) 1;
+  border-image: linear-gradient(to right, #30e8bf, #ff8235, #30e8bf) 1;
   text-align: center;
   width: 75%;
   margin: auto;
@@ -193,14 +194,6 @@ header {
   align-content: center;
 }
 
-.leftcolumn,
-.rightcolumn {
-  flex: 50%;
-  background: white;
-  padding: 20px;
-  font-size: 18px;
-}
-
 .leftcolumn {
   border-right: 1px solid;
 }
@@ -209,10 +202,16 @@ header {
   border-left: 1px solid;
 }
 
-.rightcolumn,
-.leftcolumn {
+.leftcolumn,
+.rightcolumn {
+  flex: 50%;
+  background: white;
+  padding: 20px;
+  font-size: 18px;
   border-image: repeating-linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
 }
+
+
 
 /* Style the list inside the menu */
 header ul {
@@ -228,7 +227,7 @@ header ul {
   height: 320px;
 }
 
-.certcontainer {
+.borderlessColumn {
   border: 0px;
 }
 
@@ -242,14 +241,6 @@ header ul {
 .link {
   stroke: #999;
   stroke-opacity: .4;
-}
-
-h3 {
-  color: #1ABC9C;
-  text-align: center;
-  font-style: italic;
-  font-size: 14px;
-
 }
 
 .examples {
@@ -392,16 +383,16 @@ footer {
     margin-right: 2px;
   }
 
-
   /* Set opposite gradients for left and right columns */
   .rightcolumn {
-    border-image: repeating-linear-gradient(#30e8bf, #ff8235) 1;
+    border-image: linear-gradient(#30e8bf, #ff8235) 1;
   }
 
   .leftcolumn {
-    border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
-
+    border-image: linear-gradient(#ff8235, #30e8bf) 1;
   }
+
+
 
   /* Make hidden spacers visible */
   .hiddenSpacerBlue {
