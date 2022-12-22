@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
+  color: #2c5364;
   padding: 0px;
   margin: 0;
 }
@@ -11,7 +12,6 @@ body {
 /* Header contains title, main page photo and the page intro paragraph */
 header {
   text-align: center;
-  color: #2c5364;
   width: 100%;
   margin-top: 30px;
 }
@@ -45,13 +45,6 @@ header {
   text-decoration: none;
   font-size: 1.5vw;
 }
-
-
-
-/* Page content 
-.content {
-  padding-top: 16px;
-}*/
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -109,7 +102,6 @@ header {
   padding: 10px;
   font-size: 24px;
   align-content: center;
-  color: #2c5364;
 }
 
 
@@ -202,34 +194,24 @@ header {
 }
 
 .leftcolumn,
-.rightcolumn,
-.leftsecondcolumn,
-.rightsecondcolumn {
-  flex: 50;
+.rightcolumn {
+  flex: 50%;
   background: white;
   padding: 20px;
   font-size: 18px;
-  color: #2c5364;
 }
 
-.leftcolumn,
-.leftsecondcolumn {
+.leftcolumn {
   border-right: 1px solid;
 }
 
-.rightcolumn,
-.rightsecondcolumn {
+.rightcolumn {
   border-left: 1px solid;
 }
 
 .rightcolumn,
 .leftcolumn {
-  border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
-}
-
-.rightsecondcolumn,
-.leftsecondcolumn {
-  border-image: repeating-linear-gradient(#30e8bf, #ff8235) 1;
+  border-image: repeating-linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
 }
 
 /* Style the list inside the menu */
@@ -391,33 +373,47 @@ footer {
 }
 
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+/* Media rule */
 @media (max-width: 600px) {
+
+  /* Make columns stack */
   .row {
     flex-direction: column;
     clear: both;
   }
 
+  /* When columns stack make border appear on all sides */
+  /* Set margins so border is not right at the screen edge */
   .rightcolumn,
-  .leftcolumn,
-  .rightsecondcolumn,
-  .leftsecondcolumn {
+  .leftcolumn {
     border: 2px solid;
-    flex: 50%;
     max-width: 100%;
     margin-left: 2px;
     margin-right: 2px;
   }
 
-  .rightcolumn,
-  .rightsecondcolumn {
+
+  /* Set opposite gradients for left and right columns */
+  .rightcolumn {
     border-image: repeating-linear-gradient(#30e8bf, #ff8235) 1;
   }
 
-  .leftcolumn,
-  .leftsecondcolumn {
+  .leftcolumn {
     border-image: repeating-linear-gradient(#ff8235, #30e8bf) 1;
 
+  }
+
+  /* Make hidden spacers visible */
+  .hiddenSpacerBlue {
+    display: block;
+    border-image: none;
+    border-color: #30e8bf;
+  }
+
+  .hiddenSpacerOrange {
+    display: block;
+    border-image: none;
+    border-color: #ff8235;
   }
 
   .statement {
@@ -432,19 +428,6 @@ footer {
     font-size: 2.5vw;
   } */
 
-  .hiddenSpacerBlue {
-    display: block;
-    border-image: none;
-    border-color: #30e8bf;
 
-
-  }
-
-  .hiddenSpacerOrange {
-    display: block;
-    border-image: none;
-    border-color: #ff8235;
-
-  }
 
 }
