@@ -22,7 +22,7 @@
         ]
     },
     "q3": {
-        "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 )\\, where is the centre?",
+        "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), where is the centre?",
         "answer": "(5, 10)",
         "hint": "",
         "options": [
@@ -33,7 +33,7 @@
         ]
     },
     "q4": {
-        "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 )\\, what is the length of the radius?",
+        "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), what is the length of the radius?",
         "answer": "5",
         "hint": "",
         "options": [

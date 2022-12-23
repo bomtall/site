@@ -92,62 +92,12 @@
                 <h3> Quiz</h3>
 
 
-                <form name="quiz" class="quizForm">
-
-
-
-                    <!--Questiion 1-->
-                    <label id="q1_label" class="questionLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="0" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="0" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="0" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="0" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <!--Questiion 2-->
-                    <label id="q2_label" class="questionLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <!--Questiion 3-->
-                    <label id="q2_label" class="questionLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-                    <input type="radio" class="quizRadios" name="1" value="">
-                    <label class="quizRadioLabels"></label><br>
-
-
-
-
-
-                    <input type="button" onclick="return markQuiz()" value="Check Answers">
+                <form name="quiz" id="quizForm" class="quizForm">
 
                 </form>
+
+                <input type="button" onclick="return markQuiz()" value="Check Answers">
+
                 <p id="outputbox"></p>
             </article>
 
@@ -160,13 +110,10 @@
 
             <section class="rightcolumn">
                 <article>
+
                     <h3>Article Title</h3>
                     <label for="name">Enter your nickname</label>
                     <input type="text" id="nickname" name="name"></input><br>
-
-                    <form name="quizTest" id="testForm" class="quizForm">
-
-                    </form>
 
                 </article>
             </section>

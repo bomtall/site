@@ -42,28 +42,28 @@ function loadQuiz(data) {
 
     //Put data into HTML elements
 
-    for (let i = 0; i < qLabels.length; i++) {
-        qLabels[i].innerHTML = questions[i]
-    }
+    // for (let i = 0; i < qLabels.length; i++) {
+    //     qLabels[i].innerHTML = questions[i]
+    // }
 
-    for (let i = 0; i < optionLabels.length; i++) {
-        optionLabels[i].innerHTML = options[i]
-        radios[i].value = options[i]
-    }
+    // for (let i = 0; i < optionLabels.length; i++) {
+    //     optionLabels[i].innerHTML = options[i]
+    //     radios[i].value = options[i]
+    // }
 
 
 
 
 
     //test form element creation
-    let form = document.getElementById("testForm");
+    let form = document.getElementById("quizForm");
 
     for (i = 0; i < questions.length; i++) {
 
         q = document.createElement("label");
         q.id = "q" + i;
-        q.class = "questionLabels";
-        q.innerHTML = questions[i];
+        q.classList.add("questionLabels");
+        q.innerHTML = (i + 1) + ". " + questions[i];
         form.append(q);
 
         br = document.createElement("br");
@@ -74,12 +74,12 @@ function loadQuiz(data) {
 
             rad = document.createElement("input");
             rad.type = "radio";
-            rad.class = "quizRadios";
+            rad.classList.add("quizRadios");
             rad.name = i;
             rad.value = options[j + (i * 4)];
 
             lab = document.createElement("label")
-            lab.class = "quizRadioLabels"
+            lab.classList.add("quizRadioLabels");
             lab.innerHTML = options[j + (i * 4)]
 
             br = document.createElement("br")
@@ -94,19 +94,11 @@ function loadQuiz(data) {
         MathJax.typeset();
     }
 
-
-
-
-
-
-
-
-
-
 }
 
+
 // Function to check each user option against answers
-function markQuiz(data) {
+function markQuiz() {
 
     let score = 0
 
@@ -126,7 +118,7 @@ function markQuiz(data) {
         let q = Number(responses[i][0])
 
         console.log(responses[i][0])
-        console.log[answers[q]]
+
 
         if (answers[q] == responses[i][1]) {
             score += 1

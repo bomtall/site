@@ -8,6 +8,6 @@
 }
 
 .questionLabels {
-    padding-top: 25px;
-    padding-bottom: 15px;
+    display: block;
+    margin-top: 30px;
 }
