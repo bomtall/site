@@ -34,7 +34,7 @@
     },
     "q4": {
         "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), what is the length of the radius?",
-        "answer": "5",
+        "answer": "\\( \\sqrt[2]{25} \\)",
         "hint": "",
         "options": [
             "\\( 25 \\)",
@@ -89,7 +89,7 @@
     },
     "q9": {
         "question": "Which is true for \\( f(x) = \\frac{1}{x} \\) ?",
-        "answer": "",
+        "answer": "\\( \\frac{1}{x} \\) is undefined when \\( x = 0 \\)",
         "hint": "",
         "options": [
             "When \\( x \\) is positive, \\( y \\) is negative",
@@ -100,7 +100,7 @@
     },
     "q10": {
         "question": "Which is true?",
-        "answer": "A cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
+        "answer": "A positive cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
         "hint": "",
         "options": [
             "A positive cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
