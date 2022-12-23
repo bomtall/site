@@ -44,7 +44,7 @@
         ]
     },
     "q5": {
-        "question": "Which is true for \\( f(x) = \frac{1}{x^2} \\) :",
+        "question": "Which is true for \\( f(x) = \\frac{1}{x^2} \\) :",
         "answer": "\\( f(x) > 0 \\) for all \\( x \\)",
         "hint": "",
         "options": [
