@@ -12,6 +12,8 @@ var radios = document.getElementsByClassName("quizRadios");
 var output = document.getElementById("outputbox")
 var nickname = document.getElementById("nickname")
 
+var form = document.getElementById("quizForm");
+
 // Get data
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", "https://raw.githubusercontent.com/bomtall/site/main/json/quiz_data.json");
@@ -55,8 +57,8 @@ function loadQuiz(data) {
 
 
 
-    //test form element creation
-    let form = document.getElementById("quizForm");
+    // Create HTML elements needed for quiz form and populate with form data
+
 
     for (i = 0; i < questions.length; i++) {
 
@@ -97,7 +99,7 @@ function loadQuiz(data) {
 }
 
 
-// Function to check each user option against answers
+// Function to check each selected user option against true answers
 function markQuiz() {
 
     let score = 0
@@ -131,8 +133,6 @@ function markQuiz() {
 
     }
 
-    console.log(responses);
-    console.log(score);
     output.innerHTML = nickname.value + ", your score is " + score;
 
 }
