@@ -67,6 +67,9 @@ function loadQuiz(data) {
             lab = document.createElement("label")
             lab.classList.add("quizRadioLabels");
             lab.innerHTML = options[j + (i * 4)]
+            lab.id = String(i) + String(j)
+
+            console.log(toString(i) + toString(j));
 
             br = document.createElement("br")
 
@@ -89,8 +92,11 @@ function markQuiz() {
     for (i = 0; i < options.length; i++) {
 
         if (radios[i].checked == true) {
-            console.log("true");
-            responses.push([radios[i].name, radios[i].value])
+
+
+
+            responses.push([radios[i].name, radios[i].value, optionLabels[i].id])
+
         }
 
 
@@ -105,13 +111,16 @@ function markQuiz() {
 
 
         if (answers[q] == responses[i][1]) {
-            score += 1
+
+
+            // highlight correctly selected option
+            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "lightgreen" });
+
+            // increment user's score
+            score += 1;
+        } else {
+            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "red" });
         }
-
-
-
-        //look up which answer is checked for each question
-        //compare to real answer in answers list above
 
     }
 

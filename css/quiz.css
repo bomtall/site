@@ -1,5 +1,5 @@
 .quizForm {
-    width: 90%;
+    width: 100%;
 }
 
 .quizForm input[type=text],
@@ -14,6 +14,7 @@
 
 .quizRadioLabels {
     margin: 5px;
+    padding: 5px;
 }
 
 .quizRadios {
