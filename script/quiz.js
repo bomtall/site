@@ -52,7 +52,56 @@ function loadQuiz(data) {
     }
 
 
-    MathJax.typeset();
+
+
+
+    //test form element creation
+    let form = document.getElementById("testForm");
+
+    for (i = 0; i < questions.length; i++) {
+
+        q = document.createElement("label");
+        q.id = "q" + i;
+        q.class = "questionLabels";
+        q.innerHTML = questions[i];
+        form.append(q);
+
+        br = document.createElement("br");
+        form.appendChild(br);
+
+
+        for (j = 0; j < 4; j++) {
+
+            rad = document.createElement("input");
+            rad.type = "radio";
+            rad.class = "quizRadios";
+            rad.name = i;
+            rad.value = options[j + (i * 4)];
+
+            lab = document.createElement("label")
+            lab.class = "quizRadioLabels"
+            lab.innerHTML = options[j + (i * 4)]
+
+            br = document.createElement("br")
+
+            form.appendChild(rad);
+            form.appendChild(lab);
+            form.appendChild(br)
+
+
+        }
+
+        MathJax.typeset();
+    }
+
+
+
+
+
+
+
+
+
 
 }
 
