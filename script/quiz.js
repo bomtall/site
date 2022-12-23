@@ -26,6 +26,7 @@ xmlhttp.onload = function () {
 
 };
 
+
 //Load the quiz data into arrays and then into elements
 function loadQuiz(data) {
 
@@ -42,24 +43,7 @@ function loadQuiz(data) {
 
     }
 
-    //Put data into HTML elements
-
-    // for (let i = 0; i < qLabels.length; i++) {
-    //     qLabels[i].innerHTML = questions[i]
-    // }
-
-    // for (let i = 0; i < optionLabels.length; i++) {
-    //     optionLabels[i].innerHTML = options[i]
-    //     radios[i].value = options[i]
-    // }
-
-
-
-
-
     // Create HTML elements needed for quiz form and populate with form data
-
-
     for (i = 0; i < questions.length; i++) {
 
         q = document.createElement("label");
@@ -89,8 +73,6 @@ function loadQuiz(data) {
             form.appendChild(rad);
             form.appendChild(lab);
             form.appendChild(br)
-
-
         }
 
         MathJax.typeset();
