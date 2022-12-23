@@ -44,10 +44,15 @@
         ]
     },
     "q5": {
-        "question": "",
-        "answer": "",
+        "question": "Which is true for \\( f(x) = \frac{1}{x^2} \\) :",
+        "answer": "\\( f(x) > 0 \\) for all \\( x \\)",
         "hint": "",
-        "options": []
+        "options": [
+            "\\( f(x) < 0 \\) for all \\( x \\)",
+            "\\( f(x) > 0 \\) for all \\( x \\)",
+            "\\( f(x) \\) travels through the origin \\( (0, 0) \\)",
+            "\\( f(x) \\) is a quadratic"
+        ]
     },
     "q6": {
         "question": "",
