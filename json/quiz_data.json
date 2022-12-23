@@ -1,33 +1,33 @@
 {
     "q1": {
-        "question": "For f(x), what does the transformation -f(x) do?",
-        "answer": "Reflect f(x) over the x axis",
+        "question": "For \\( f(x) \\), what does the transformation \\( -f(x)\\) do?",
+        "answer": "Reflect \\( f(x) \\) over the \\( x \\) axis",
         "hint": "",
         "options": [
-            "Reflect f(x) over the y axis",
-            "Make all y values negative",
-            "Reflect f(x) over the x axis",
-            "Make all x values negative"
+            "Reflect \\( f(x) \\) over the \\( y \\) axis",
+            "Make all \\( y \\) values negative",
+            "Reflect \\( f(x) \\) over the \\( x \\) axis",
+            "Make all \\( x \\) values negative"
         ]
     },
     "q2": {
-        "question": "For f(x), what does the transformation f(-x) do?",
-        "answer": "Reflect f(x) over the y axis",
+        "question": "For \\( f(x) \\), what does the transformation \\( f(-x) \\) do?",
+        "answer": "Reflect \\( f(x) \\) over the \\( y \\) axis",
         "hint": "",
         "options": [
-            "Reflect f(x) over the y axis",
-            "Make all x values negative",
-            "Reflect f(x) over the x axis",
-            "Make all y values negative"
+            "Reflect \\( f(x) \\) over the \\( y \\) axis",
+            "Make all \\( x \\) values negative",
+            "Reflect \\( f(x) \\) over the \\( x \\) axis",
+            "Make all \\( y \\) values negative"
         ]
     },
     "q3": {
         "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), where is the centre?",
-        "answer": "(5, 10)",
+        "answer": "\\( (5, 10) \\)",
         "hint": "",
         "options": [
             "(10, 5)",
-            "(5, 10)",
+            "\\( (5, 10) \\)",
             "(-5, -10)",
             "(-10, -5)"
         ]
@@ -39,7 +39,7 @@
         "options": [
             "25",
             "50",
-            "25^2",
+            "\\( 25^2 \\)",
             "5"
         ]
     },
