@@ -92,8 +92,8 @@
         "answer": "",
         "hint": "",
         "options": [
-            "When (\\ x \\) is positive, (\\ y \\) is negative",
-            "When (\\ x \\) is negative, (\\ y \\) is positive",
+            "When \\( x \\) is positive, \\( y \\) is negative",
+            "When \\( x \\) is negative, \\( y \\) is positive",
             "\\( \\frac{1}{x} \\) is undefined when \\( x = 0 \\)",
             "for f(x) = \\( \\frac{1}{x} \\), \\( y \\) is always positive"
         ]
