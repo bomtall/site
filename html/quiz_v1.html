@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+	<link rel="stylesheet" href="../css/template.css">
+	<link rel="stylesheet" href="../css/quiz.css">
+	<link rel="stylesheet" href="../css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<title>Curriculum Vitae</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+</head>
+
+<body>
+
+	<div id="navbar">
+		<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
+				aria-hidden="true"></i></a>
+		<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
+		<a href="examples.html">Blog <i class="fa fa-laptop" aria-hidden="true"></i></a>
+		<a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+		<a href="graph.html"> Graph <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+		<a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
+	</div>
+	<div id="loginbar">
+		<form name="loginForm" onsubmit="return validateLogin()">
+			<label for="adminemail">Admin Email:</label>
+			<input type="email" id="adminemail" adminemail="adminemail"></input>
+			<label for="adminpassword">Password:</label>
+			<input type="password" id="adminpassword" adminpassword="adminpassword"></input>
+			<input type="submit" value="Log in">
+		</form>
+	</div>
+
+	<header>
+		<h1 class=pageTitle>Quiz</h1>
+		<div class="imgcontainer">
+			<img class="imgcontainerimg" onclick="openModal(this)" src="../images/work.jpg" alt="Tom - Portrait">
+		</div>
+		<h2 id="pageSubtitle">Let's get quizical!</h2>
+		<p class=statement>Take my quiz and see your score!
+		</p>
+	</header>
+
+
+
+	<div class="row">
+		<div class="leftcolumn">
+			<form name="quiz" class="quizForm">
+				<label for="name">Your Nickname</label>
+				<input type="text" id="name" name="name"></input>
+				<label for="q1" id="q1_label">What is 5 + 25?</label>
+				<input type="number" id="q1" q1="q1"></input>
+				<label for="q2" id="q2_label">What is 18 / 3?</label>
+				<input type="number" id="q2" q2="q2"></input>
+				<input type="button" onclick="return markQuiz()" value="Check Answers">
+
+			</form>
+			<p id="outputbox"></p>
+		</div>
+		<div class="rightcolumn">
+
+
+
+			<div id="my_dataviz"></div>
+			<div class="equations">
+				<input class="graphButton" type="button" onclick="changeGraph(-10, 1, 0, 2, 1)" value="y = (x-10)**2">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 1, 0, 2, 2)" value="y = x**2">
+				<input class="graphButton" type="button" onclick="changeGraph(10, 1, 0, 2, 3)" value="y = (x+10)**2">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 0.1, 0, 2, 4)" value="y = (x/10)**2">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 10, 0, 2, 5)" value="y = (x*10)**2">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 1, 50, 2, 6)" value="y = x**2 + 50">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 0.1, 50, 3, 7)" value="y = x**3 + 50">
+				<input class="graphButton" type="button" onclick="changeGraph(0, 0.05, 50, 4, 8)" value="y = x**4 + 50">
+			</div>
+
+			<div class="slidecontainer">
+				<div id="sliderDataviz"></div>
+				<input type="range" min="-100" max="100" value="0" class="slider" id="sliderX">
+				<input type="range" min="0" max="500" value="0" class="slider" id="sliderY">
+				<p id="sliderVals"></p>
+			</div>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<iframe class="modal-content" id="frame01" src=""></iframe>
+			<img class="modal-content" id="img01">
+			<div id="caption"></div>
+		</div>
+
+</body>
+<div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v4.js"></script>
+
+	<script type="text/javascript" src="../script/main_script.js"></script>
+	<script type="text/javascript" src="../script/quiz.js"></script>
+	<script type="text/javascript" src="../script/image_viewer.js"></script>
+	<script type="text/javascript" src="../script/navbar.js"></script>
+	<script>
+
+
+
+
+		// set the dimensions and margins of the graph
+		var margin = { top: 10, right: 40, bottom: 30, left: 40 },
+			width = 500 - margin.left - margin.right,
+			height = 500 - margin.top - margin.bottom;
+
+		// append the svg object to the body of the page
+		var svg = d3.select("#my_dataviz")
+			.append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.on("mouseover", (e) => console.log(d3.pointer(e)))
+			.append("g")
+			.attr("transform",
+				"translate(" + margin.left + "," + margin.top + ")");
+
+		const numPoints = 10000;
+		const data = [];
+		for (let i = 0; i < numPoints; i++) {
+			let x = Math.random() * 99.0 * (Math.round(Math.random()) ? 1 : -1);
+			let y = (x) ** 2
+			data.push([x, y]);
+		}
+
+		data.sort(sortFunction);
+
+		function sortFunction(a, b) {
+			if (a[0] === b[0]) {
+				return 0;
+			}
+			else {
+				return (a[0] < b[0]) ? -1 : 1;
+			}
+		}
+
+		// X Axis
+		const x = d3.scaleLinear()
+			.domain([-100, 100])
+			.range([0, 420]);
+
+		svg.append("g")
+			.attr("transform", "translate(0," + 420 + ")")
+			.call(d3.axisBottom(x));
+
+
+		// Y Axis
+		const y = d3.scaleLinear()
+			.domain([0, 500])
+			.range([420, 0]);
+
+
+		svg.append("g")
+			.attr("transform", "translate(210)")
+			.call(d3.axisLeft(y));
+
+
+
+		// svg.append("path")
+		// .datum(data)
+		// .attr("fill", "none")
+		// .attr("stroke", "steelblue")
+		// .attr("stroke-width", 1.5)
+		// .attr("d", d3.line()
+		// 	.x(function(d) { return x(d[0]) })
+		// 	.y(function(d) { return y(d[1]) })
+		// )
+
+		function changeGraph(xShift, multVal, yShift, exponent, button_index) {
+
+			svg.selectAll("path").remove();
+			const numPoints = 10000;
+			const data = [];
+			for (let i = 0; i < numPoints; i++) {
+				let x = Math.random() * 100.0 * (Math.round(Math.random()) ? 1 : -1);
+				let y = (((x + xShift) * multVal) ** exponent) + yShift;
+				data.push([x, y]);
+			}
+
+			d3.selectAll(".graphButton")
+				.style('background', '#4CAF50')
+
+			d3.select(`.graphButton:nth-child(${button_index})`)
+				.style('background', 'red')
+
+			data.sort(sortFunction);
+
+			// X Axis
+			const x = d3.scaleLinear()
+				.domain([-100, 100])
+				.range([0, 420]);
+
+			svg.append("g")
+				.attr("transform", "translate(0," + 420 + ")")
+				.call(d3.axisBottom(x));
+
+
+			// Y Axis
+			const y = d3.scaleLinear()
+				.domain([0, 500])
+				.range([420, 0]);
+
+
+			svg.append("g")
+				.attr("transform", "translate(210)")
+				.call(d3.axisLeft(y));
+
+
+
+
+			svg.append("path")
+				.datum(data)
+				.attr("fill", "none")
+				.attr("stroke", "steelblue")
+				.attr("stroke-width", 1.5)
+				.attr("d", d3.line()
+					.x(function (d) { return x(d[0]) })
+					.y(function (d) { return y(d[1]) })
+				)
+		}
+
+
+		var sliderX = document.getElementById("sliderX");
+		var sliderY = document.getElementById("sliderY");
+		var output = document.getElementById("sliderVals");
+		//output.innerHTML = slider.value; // Display the default slider value
+
+		// Update the current slider value (each time you drag the slider handle)
+		sliderX.oninput = function () {
+
+			svg.selectAll("circle").remove();
+
+			let xi = document.getElementById("sliderX").value;
+			let yi = document.getElementById("sliderY").value;
+			output.innerHTML = `Coordinates (${xi}, ${yi})`;
+
+			let data = [[xi, yi]];
+
+			svg.append('g')
+				.selectAll("dot")
+				.data(data).enter()
+				.append("circle")
+				.attr("cx", function (d) { return x(d[0]) })
+				.attr("cy", function (d) { return y(d[1]) })
+				.attr("r", 3)
+				.style("fill", "Red");
+		}
+
+
+		sliderY.oninput = function () {
+
+			svg.selectAll("circle").remove();
+
+			let xi = document.getElementById("sliderX").value;
+			let yi = document.getElementById("sliderY").value;
+			output.innerHTML = `Coordinates (${xi}, ${yi})`;
+
+			let data = [[xi, yi]];
+
+			svg.append('g')
+				.selectAll("dot")
+				.data(data).enter()
+				.append("circle")
+				.attr("cx", function (d) { return x(d[0]) })
+				.attr("cy", function (d) { return y(d[1]) })
+				.attr("r", 3)
+				.style("fill", "Red");
+		}
+
+	</script>

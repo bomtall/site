@@ -109,84 +109,75 @@
                 <h3>Graph Details</h3>
                 <p id="plottedFunction"></p>
 
-                <div class="slidecontainer">
+                <div class="row">
 
-                    <div class="row">
-
-                        <div class="leftcolumn">
-                            <h3>Graph Controls</h3>
-                            <div id="lineControls">
-                                <div id="shifts">
-                                    <input type="range" min=-99 max=99 value=0 class="slider" id="sliderX"
-                                        oninput="selectPlot()">
-                                    <label for="sliderX">Shift in x</label><br>
-                                    <input type="range" min=-99 max=99 value=0 class="slider" id="sliderY"
-                                        oninput="selectPlot()">
-                                    <label for="sliderY">Shift in y</label><br>
-                                </div>
-                                <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp"
+                    <div class="leftcolumn borderlessColumn">
+                        <h3>Graph Controls</h3>
+                        <div id="lineControls">
+                            <div id="shifts">
+                                <input type="range" min=-99 max=99 value=0 class="slider" id="sliderX"
                                     oninput="selectPlot()">
-                                <label for="sliderExp">Exponent</label><br>
-                                <input type="range" min="0.001" max="2.000" value=1 step="0.001" class="slider"
-                                    id="sliderMult" oninput="selectPlot()">
-                                <label for="sliderMult">Stretch</label><br>
-
-                                <input type="radio" id="negative" name="sign" value="neg" onclick="selectPlot()">
-                                <label for="negative" class="functionSign">-f(x)</label>
-                                <input type="radio" id="positive" name="sign" value="pos" onclick="selectPlot()">
-                                <label for="positive" class="functionSign"> f(x) </label><br>
-                                <input type="radio" id="xNegative" name="sign" value="xNeg" onclick="selectPlot()">
-                                <label for="negative" class="functionSign">f(-x)</label>
-                                <input type="radio" id="doubleNegative" name="sign" value="doubleNeg"
-                                    onclick="selectPlot()">
-                                <label for="negative" class="functionSign">-f(-x)</label>
-
+                                <label for="sliderX">Shift in x</label><br>
+                                <input type="range" min=-99 max=99 value=0 class="slider" id="sliderY"
+                                    oninput="selectPlot()">
+                                <label for="sliderY">Shift in y</label><br>
                             </div>
-                            <form id="circleControls">
-                                <input type="range" min=1 max=100 value=10 class="slider" id="sliderR"
-                                    oninput="drawCircle()">
-                                <label for="sliderR">Radius</label><br>
-                                <input type="range" min=-100 max=100 value=10 class="slider" id="xCentre"
-                                    oninput="drawCircle()">
-                                <label for="xCentre">Centre x</label><br>
-                                <input type="range" min=-100 max=100 value=10 class="slider" id="yCentre"
-                                    oninput="drawCircle()">
-                                <label for="yCentre">Centre y</label><br>
+                            <input type="range" min=1 max=4 value=2 class="slider" id="sliderExp"
+                                oninput="selectPlot()">
+                            <label for="sliderExp">Exponent</label><br>
+                            <input type="range" min="0.001" max="2.000" value=1 step="0.001" class="slider"
+                                id="sliderMult" oninput="selectPlot()">
+                            <label for="sliderMult">Stretch</label><br>
 
-                                <input type="radio" id="showArea" name="area" value="show" onclick="plotArea(this)">
-                                <label for="showArea" class="functionSign">Show Area</label>
-                                <input type="radio" id="hideArea" name="area" value="hide" onclick="plotArea(this)">
-                                <label for="hideArea" class="functionSign"> Hide Area </label><br>
-                            </form>
-                        </div>
-
-                        <!--Decorative spacing elements-->
-                        <div class="spacer">
-                            <div class="spaceLeft hiddenSpacerBlue"></div>
-                            <div class="spaceRight hiddenSpacerBlue"></div>
-                        </div>
-
-                        <article class="rightcolumn">
-                            <h3>Graph Type</h3>
-
-                            <input type="radio" id="selectLine" name="selectPlot" value="line" onclick="selectPlot()">
-                            <label for="selectLine">Plot Lines</label><br>
-                            <input type="radio" id="selectCircle" name="selectPlot" value="circle"
+                            <input type="radio" id="negative" name="sign" value="neg" onclick="selectPlot()">
+                            <label for="negative" class="functionSign">-f(x)</label>
+                            <input type="radio" id="positive" name="sign" value="pos" onclick="selectPlot()">
+                            <label for="positive" class="functionSign"> f(x) </label><br>
+                            <input type="radio" id="xNegative" name="sign" value="xNeg" onclick="selectPlot()">
+                            <label for="negative" class="functionSign">f(-x)</label>
+                            <input type="radio" id="doubleNegative" name="sign" value="doubleNeg"
                                 onclick="selectPlot()">
-                            <label for="selectCircle">Plot Circles</label><br>
-                            <input type="radio" id="select1/x" name="selectPlot" value="1/x" onclick="selectPlot()">
-                            <label id="1/xLabel" for="select1/x"></label><br>
+                            <label for="negative" class="functionSign">-f(-x)</label>
 
+                        </div>
+                        <form id="circleControls">
+                            <input type="range" min=1 max=100 value=10 class="slider" id="sliderR"
+                                oninput="drawCircle()">
+                            <label for="sliderR">Radius</label><br>
+                            <input type="range" min=-100 max=100 value=10 class="slider" id="xCentre"
+                                oninput="drawCircle()">
+                            <label for="xCentre">Centre x</label><br>
+                            <input type="range" min=-100 max=100 value=10 class="slider" id="yCentre"
+                                oninput="drawCircle()">
+                            <label for="yCentre">Centre y</label><br>
 
-
-
-                        </article>
-
-
+                            <input type="radio" id="showArea" name="area" value="show" onclick="plotArea(this)">
+                            <label for="showArea" class="functionSign">Show Area</label>
+                            <input type="radio" id="hideArea" name="area" value="hide" onclick="plotArea(this)">
+                            <label for="hideArea" class="functionSign"> Hide Area </label><br>
+                        </form>
                     </div>
 
+                    <!--Decorative spacing elements-->
+                    <div class="spacer">
+                        <div class="spaceLeft hiddenSpacerBlue"></div>
+                        <div class="spaceRight hiddenSpacerBlue"></div>
+                    </div>
+
+                    <article class="rightcolumn borderlessColumn">
+                        <h3>Graph Type</h3>
+
+                        <input type="radio" id="selectLine" name="selectPlot" value="line" onclick="selectPlot()">
+                        <label for="selectLine">Plot Lines</label><br>
+                        <input type="radio" id="selectCircle" name="selectPlot" value="circle" onclick="selectPlot()">
+                        <label for="selectCircle">Plot Circles</label><br>
+                        <input type="radio" id="select1/x" name="selectPlot" value="1/x" onclick="selectPlot()">
+                        <label id="1/xLabel" for="select1/x"></label><br>
 
 
+
+
+                    </article>
 
 
                 </div>
