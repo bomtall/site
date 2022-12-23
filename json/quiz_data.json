@@ -44,7 +44,7 @@
         ]
     },
     "q5": {
-        "question": "Which is true for \\( f(x) = \\frac{1}{x^2} \\) :",
+        "question": "Which is true for \\( f(x) = \\frac{1}{x^2} \\) ?",
         "answer": "\\( f(x) > 0 \\) for all \\( x \\)",
         "hint": "",
         "options": [
@@ -55,33 +55,58 @@
         ]
     },
     "q6": {
-        "question": "",
-        "answer": "",
+        "question": "For \\( f(x) \\), what does the transformation \\( f(x + 2) \\) do?",
+        "answer": "Shift \\( f(x) \\) in \\( x \\) by \\( -2 \\)",
         "hint": "",
-        "options": []
+        "options": [
+            "Shift \\( f(x) \\) in \\( x \\) by \\( -2 \\)",
+            "Shift \\( f(x) \\) in \\( y \\) by \\( -2 \\)",
+            "Shift \\( f(x) \\) in \\( x \\) by \\( +2 \\)",
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\2x \\)"
+        ]
     },
     "q7": {
-        "question": "",
-        "answer": "",
+        "question": "For \\( f(x) \\), what does the transformation \\( f(x) + 10 \\) do?",
+        "answer": "Shift \\( f(x) \\) in \\( y \\) by \\( +10 \\)",
         "hint": "",
-        "options": []
+        "options": [
+            "Shift \\( f(x) \\) in \\( y \\) by \\( +10 \\)",
+            "Alters the gradient of  \\( f(x) \\)",
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{10} \\)",
+            "Shift \\( f(x) \\) in \\( y \\) by \\( -10 \\)"
+        ]
     },
     "q8": {
-        "question": "",
-        "answer": "",
+        "question": "For \\( f(x) \\), what does the transformation \\( f(2x) \\) do?",
+        "answer": "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{2} \\)",
         "hint": "",
-        "options": []
+        "options": [
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{2} \\)",
+            "Stretch \\( f(x) \\) in \\( x \\) by \\( \\frac{1}{2} \\)",
+            "Stretch \\( f(x) \\) in \\( x \\) by \\( \\2 \\)",
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\2 \\)"
+        ]
     },
     "q9": {
-        "question": "",
+        "question": "Which is true for \\( f(x) = \\frac{1}{x} \\) ?",
         "answer": "",
         "hint": "",
-        "options": []
+        "options": [
+            "When (\\ x \\) is positive, (\\ y \\) is negative",
+            "When (\\ x \\) is negative, (\\ y \\) is positive",
+            "\\( \\frac{1}{x} \\) is undefined when \\( x = 0 \\)",
+            "for f(x) = \\( \\frac{1}{x} \\), \\( y \\) is always positive"
+        ]
     },
     "q10": {
-        "question": "",
-        "answer": "",
+        "question": "Which is true?",
+        "answer": "A cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
         "hint": "",
-        "options": []
+        "options": [
+            "A positive cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
+            "A positive quadratic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
+            "A positive quartic graph starts from \\( - \\infty \\) and returns to \\( - \\infty \\)",
+            "A negative quadratic graph starts from \\( + \\infty \\) and returns to \\( + \\infty \\)"
+        ]
     }
 }
