@@ -62,7 +62,7 @@
             "Shift \\( f(x) \\) in \\( x \\) by \\( -2 \\)",
             "Shift \\( f(x) \\) in \\( y \\) by \\( -2 \\)",
             "Shift \\( f(x) \\) in \\( x \\) by \\( +2 \\)",
-            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\2x \\)"
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\times 2 \\)"
         ]
     },
     "q7": {
@@ -83,8 +83,8 @@
         "options": [
             "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{2} \\)",
             "Stretch \\( f(x) \\) in \\( x \\) by \\( \\frac{1}{2} \\)",
-            "Stretch \\( f(x) \\) in \\( x \\) by \\( \\2 \\)",
-            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\2 \\)"
+            "Stretch \\( f(x) \\) in \\( x \\) by \\( 2 \\)",
+            "Stretch \\( f(x) \\) in \\( y \\) by \\( 2 \\)"
         ]
     },
     "q9": {
