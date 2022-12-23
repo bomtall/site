@@ -11,3 +11,11 @@
     display: block;
     margin-top: 30px;
 }
+
+.quizRadioLabels {
+    margin: 5px;
+}
+
+.quizRadios {
+    margin: 10px;
+}
