@@ -3,48 +3,36 @@
 var questions = [];
 var options = [];
 var answers = [];
+var responses = [];
 
 // Get elements to put data into
-var optionlabels = document.getElementsByClassName("quizRadioLabels")
-var qlabels = document.getElementsByClassName("questionLabels")
+var qLabels = document.getElementsByClassName("questionLabels");
+var optionLabels = document.getElementsByClassName("quizRadioLabels");
+var radios = document.getElementsByClassName("quizRadios");
+var output = document.getElementById("outputbox")
+var nickname = document.getElementById("nickname")
 
-
-var getAnswers = false
-
-//Get the quiz data json object and pass to loadQuiz function
+// Get data
 const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function () {
-
-    if (getAnswers) {
-        markQuiz(JSON.parse(this.responseText));
-    } else {
-        loadQuiz(JSON.parse(this.responseText));
-    }
-
-
-
-};
-
 xmlhttp.open("GET", "https://raw.githubusercontent.com/bomtall/site/main/json/quiz_data.json");
 xmlhttp.send();
 
+// When requesting data send to load quiz function
+xmlhttp.onload = function () {
 
+    loadQuiz(JSON.parse(this.responseText));
 
-//Load the quiz questions and possible answers into the elements
+};
+
+//Load the quiz data into arrays and then into elements
 function loadQuiz(data) {
 
-    for (const [key, value] of Object.entries(data)) {
 
-        console.log(key);
-        console.log(value);
+    //Load data
+    for (const [key, value] of Object.entries(data)) {
 
         questions.push(value.question);
         answers.push(value.answer);
-
-        console.log(value.question);
-        console.log(value.answer);
-
-        console.log(value.options);
 
         for (i = 0; i < value.options.length; i++) {
             options.push(value.options[i])
@@ -52,53 +40,59 @@ function loadQuiz(data) {
 
     }
 
-    for (let i = 0; i < qlabels.length; i++) {
-        qlabels[i].innerHTML = questions[i]
+    //Put data into HTML elements
+
+    for (let i = 0; i < qLabels.length; i++) {
+        qLabels[i].innerHTML = questions[i]
+    }
+
+    for (let i = 0; i < optionLabels.length; i++) {
+        optionLabels[i].innerHTML = options[i]
+        radios[i].value = options[i]
     }
 
 
+    MathJax.typeset();
+
 }
 
-
-
-function loadAnswers() {
-    getAnswers = true;
-
-    xmlhttp.open("GET", "https://raw.githubusercontent.com/bomtall/site/main/json/quiz_data.json");
-    xmlhttp.send();
-}
-
-
-
-
+// Function to check each user option against answers
 function markQuiz(data) {
-
-    let answers = []
-
-    for (const [key, value] of Object.entries(data)) {
-        console.log(`${key}: ${value}`);
-
-        console.log(value['real_answer']);
-
-        answers.push(value['real_answer'])
-
-
-    }
 
     let score = 0
 
-    for (i = 0; i < answers.length; i++) {
+    for (i = 0; i < options.length; i++) {
+
+        if (radios[i].checked == true) {
+            console.log("true");
+            responses.push([radios[i].name, radios[i].value])
+        }
+
+
+
+    }
+
+    for (i = 0; i < responses.length; i++) {
+
+        let q = Number(responses[i][0])
+
+        console.log(responses[i][0])
+        console.log[answers[q]]
+
+        if (answers[q] == responses[i][1]) {
+            score += 1
+        }
+
+
 
         //look up which answer is checked for each question
         //compare to real answer in answers list above
 
-
-
     }
 
-    console.log(answers)
-
+    console.log(responses);
+    console.log(score);
+    output.innerHTML = nickname.value + ", your score is " + score;
 
 }
-
 

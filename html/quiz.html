@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ["\\(", "\\)"]],
+            processEscapes: true,
+          }
+        }
+      </script>
 </head>
 
 <body>
@@ -82,48 +91,61 @@
             <article class="leftcolumn">
                 <h3> Quiz</h3>
 
-                <label for="name">Your Nickname</label>
-                <input type="text" id="nickname" name="name"></input><br>
 
                 <form name="quiz" class="quizForm">
 
-                    <div id="questions">
-
-                        <!--Questiion 1-->
-                        <label for="a1" id="q1_label" class="questionLabels">Question 1</label><br>
-
-                        <input type="radio" id="A" class="inputs" name="a1" value="">
-                        <label for="A" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="B" class="inputs" name="a1" value="">
-                        <label for="B" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="C" class="inputs" name="a1" value="">
-                        <label for="C" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="D" class="inputs" name="a1" value="">
-                        <label for="D" class="quizRadioLabels"></label><br>
-
-                        <!--Questiion 2-->
-                        <label for="a2" id="q2_label" class="questionLabels">Question 2</label><br>
-
-                        <input type="radio" id="E" class="inputs" name="a2" value="">
-                        <label for="E" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="F" class="inputs" name="a2" value="">
-                        <label for="F" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="G" class="inputs" name="a2" value="">
-                        <label for="G" class="quizRadioLabels"></label><br>
-
-                        <input type="radio" id="H" class="inputs" name="a2" value="">
-                        <label for="H" class="quizRadioLabels"></label><br>
-
-                    </div>
 
 
+                    <!--Questiion 1-->
+                    <label id="q1_label" class="questionLabels"></label><br>
 
-                    <input type="button" onclick="return loadAnswers()" value="Check Answers">
+                    <input type="radio" class="quizRadios" name="0" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="0" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="0" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="0" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <!--Questiion 2-->
+                    <label id="q2_label" class="questionLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <!--Questiion 3-->
+                    <label id="q2_label" class="questionLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+                    <input type="radio" class="quizRadios" name="1" value="">
+                    <label class="quizRadioLabels"></label><br>
+
+
+
+
+
+                    <input type="button" onclick="return markQuiz()" value="Check Answers">
 
                 </form>
                 <p id="outputbox"></p>
@@ -139,10 +161,9 @@
             <section class="rightcolumn">
                 <article>
                     <h3>Article Title</h3>
-                    <!--Content-->
-                    <p>
-                        Content on the right of the page
-                    </p>
+                    <label for="name">Enter your nickname</label>
+                    <input type="text" id="nickname" name="name"></input><br>
+
                 </article>
             </section>
 
