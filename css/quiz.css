@@ -20,3 +20,126 @@
 .quizRadios {
     margin: 10px;
 }
+
+#submitQuiz {
+
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    margin: 10px;
+    padding: 5px;
+    font-size: 2vw;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: buttonAnime;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#submitQuiz:hover {
+    background-color: #3e8e41
+}
+
+#submitQuiz:active {
+    background-color: #3e8e41;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(4px);
+}
+
+@keyframes buttonAnime {
+    0% {
+        background-image: linear-gradient(to right, #4CAF50, #4CAF50, #4CAF50, #4CAF50);
+        left: 25%;
+        top: 0px;
+    }
+
+    89% {
+        background-image: linear-gradient(to right, #4CAF50, #4CAF50, #4CAF50, #4CAF50);
+        left: 26%;
+        top: 0px;
+    }
+
+    90% {
+        background-image: linear-gradient(to right, #30e8bf, #4CAF50, #4CAF50, #4CAF50);
+        left: 27%;
+        top: 0px;
+    }
+
+    92% {
+        background-image: linear-gradient(to right, #4CAF50, #30e8bf, #4CAF50, #4CAF50);
+        left: 28%;
+        top: 0px;
+    }
+
+    94% {
+        background-image: linear-gradient(to right, #4CAF50, #4CAF50, #30e8bf, #4CAF50);
+        left: 27%;
+        top: 0px;
+    }
+
+    96% {
+        background-image: linear-gradient(to right, #4CAF50, #4CAF50, #4CAF50, #30e8bf);
+        left: 26%;
+        top: 0px;
+    }
+
+    100% {
+        background-image: linear-gradient(to right, #4CAF50, #4CAF50, #4CAF50);
+        left: 25%;
+        top: 0px;
+    }
+}
+
+
+.hint {
+    display: inline-block;
+    left: 40%;
+    position: relative;
+    width: 20%;
+    margin: 50px;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: hintAnime;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hintAnime {
+    98% {
+        transform: rotate(0deg);
+    }
+
+    99% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.hint:hover {
+    background-color: #3e8e41
+}
+
+.hint:active {
+    background-color: #3e8e41;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(4px);
+}

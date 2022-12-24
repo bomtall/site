@@ -93,14 +93,24 @@
 
 
 
-                <label for="name">Enter your nickname</label>
+                <h4>Enter your nickname:</h4>
                 <input type="text" id="nickname" name="name"></input><br>
 
-                <input type="button" onclick="return markQuiz()" value="Check Answers">
+                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
+                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
+                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
+                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
 
 
 
                 <p id="outputbox"></p>
+
+            </article>
+
+
+
+
+
             </article>
 
             <!--Decorative spacing elements-->
@@ -139,9 +149,7 @@
                 <article>
                     <h3>Article Title</h3>
                     <!--Content-->
-                    <p>
-                        Content on the left of the page
-                    </p>
+                    <input type="button" id="submitQuiz" onclick="return markQuiz()" value="Check Answers">
                 </article>
             </section>
 

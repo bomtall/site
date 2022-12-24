@@ -69,8 +69,6 @@ function loadQuiz(data) {
             lab.innerHTML = options[j + (i * 4)]
             lab.id = String(i) + String(j)
 
-            console.log(toString(i) + toString(j));
-
             br = document.createElement("br")
 
             form.appendChild(rad);
@@ -89,42 +87,49 @@ function markQuiz() {
 
     let score = 0
 
+
+    // create array of responses nb - not all questions may have a response
     for (i = 0; i < options.length; i++) {
 
         if (radios[i].checked == true) {
-
-
 
             responses.push([radios[i].name, radios[i].value, optionLabels[i].id])
 
         }
 
-
-
     }
 
     for (i = 0; i < responses.length; i++) {
 
+        // get question number string and convert to number to use as index
         let q = Number(responses[i][0])
 
-        console.log(responses[i][0])
 
-
+        // check responses against answers
         if (answers[q] == responses[i][1]) {
 
 
             // highlight correctly selected option
-            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "lightgreen" });
+            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "#30e8bf" });
 
             // increment user's score
             score += 1;
         } else {
-            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "red" });
+            // highlight incorrectly selected option
+            $(document.getElementById(responses[i][2])).css({ "border": "3px solid", "border-color": "#ff8235" });
         }
 
     }
 
+    $("#nickname").attr("disabled", true);
+    console.log(nickname.disabled);
+
+    // show user their total score
     output.innerHTML = nickname.value + ", your score is " + score;
+
+
+
+    //---------------------------------------------NEED TO ADD RESET OF GLOBAL ARRAYS AND QUIZ---------------------------------------------//
 
 }
 
