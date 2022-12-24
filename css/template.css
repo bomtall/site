@@ -208,7 +208,7 @@ header {
   background: white;
   padding: 20px;
   font-size: 18px;
-  border-image: repeating-linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
+  border-image: linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
 }
 
 
