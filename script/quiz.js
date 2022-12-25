@@ -98,7 +98,7 @@ function loadHints() {
         btn.type = "button";
         btn.classList.add("hintBtn");
         btn.id = "btn" + i;
-        btn.value = "Show Hints";
+        btn.value = "Show " + "Q" + (i + 1) + " Hint";
         btn.onclick = function () { showHint(this.id) };
 
         text = document.createElement("p");
@@ -106,7 +106,11 @@ function loadHints() {
         text.innerHTML = hints[i];
         text.id = "hint" + i;
 
+        br = document.createElement("br");
+
+
         container.appendChild(btn);
+        container.appendChild(br);
         container.appendChild(text);
 
 

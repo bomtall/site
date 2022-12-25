@@ -88,31 +88,18 @@
                 <div class="hiddenSpacerOrange spaceRight"></div>
             </div>
 
-            <article class="leftcolumn">
-                <h3> Quiz</h3>
-
-
+            <section class="leftcolumn">
+                <h3>Questions</h3>
 
                 <h4 class="nickname">Enter your nickname:</h4>
                 <input type="text" id="nickname" class="nickname" name="name"></input><br>
 
-                <div id="hintContainer"></div>
-                <!-- <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
-                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
-                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br>
-                <input type="button" class="hint" name="hintbutton" value="Show Hint"><br> -->
+                <form name="quiz" id="quizForm" class="quizForm">
+
+                </form>
 
 
-
-                <p id="outputbox"></p>
-
-            </article>
-
-
-
-
-
-            </article>
+            </section>
 
             <!--Decorative spacing elements-->
             <div class="spacer">
@@ -120,19 +107,13 @@
                 <div class="spaceRight hiddenSpacerBlue"></div>
             </div>
 
-
             <section class="rightcolumn">
-                <article>
-
-                    <h3>Questions</h3>
-
-                    <form name="quiz" id="quizForm" class="quizForm">
-
-                    </form>
-
-
+                <article id="hintContainer">
+                    <h3>Hints</h3>
+                    <p>Use this hints to help if you get stuck.</p>
 
                 </article>
+                <p>If you need more help, navigate back to the graph page and build more intuition.</p>
             </section>
 
         </section>
@@ -149,7 +130,8 @@
             <section class="leftcolumn">
                 <article>
                     <h3>Finish Quiz</h3>
-                    <!--Content-->
+                    <p>Click submit to mark your answers, questions will be highlighted so you can see what you got
+                        right and wrong.</p>
                     <input type="button" id="submitQuiz" onclick="return markQuiz()" value="Check Answers">
                 </article>
             </section>
@@ -162,11 +144,8 @@
 
             <section class="rightcolumn">
                 <article>
-                    <h3>Article Title</h3>
-                    <!--Content-->
-                    <p id="genericParagraph">
-                        Content on the right of the page
-                    </p>
+                    <h3>Results</h3>
+                    <p id="outputbox"></p>
                 </article>
             </section>
 
