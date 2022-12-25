@@ -23,12 +23,12 @@
 
 #submitQuiz {
 
-    display: inline-block;
+    display: block;
     position: relative;
-    width: 50%;
+    width: 60%;
     margin: 10px;
-    padding: 5px;
-    font-size: 2vw;
+    padding: 2%;
+    font-size: 100%;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -51,6 +51,13 @@
     background-color: #3e8e41;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: translateY(4px);
+}
+
+.nickname {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
 }
 
 @keyframes buttonAnime {
@@ -99,13 +106,16 @@
 
 
 .hint {
-    display: inline-block;
-    left: 40%;
+    display: block;
     position: relative;
-    width: 20%;
-    margin: 50px;
-    padding: 15px 25px;
-    font-size: 24px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 40%;
+    text-align: center;
+    padding: 2%;
+    font-size: 100%;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
