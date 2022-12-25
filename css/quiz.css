@@ -97,11 +97,7 @@
     }
 }
 
-/* .hintContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+
 
 
 .hintBtn {
@@ -124,21 +120,29 @@
     border-radius: 15px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: hintAnime;
-    animation-duration: 10s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
 }
 
 @keyframes hintAnime {
+    96% {
+        transform: rotate(0deg);
+    }
+
+    97% {
+        transform: rotate(5deg);
+    }
+
     98% {
         transform: rotate(0deg);
     }
 
     99% {
-        transform: rotate(5deg);
+        transform: rotate(-5deg);
     }
 
     100% {
-        transform: rotate(-5deg);
+        transform: rotate(0deg);
     }
 }
 
