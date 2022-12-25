@@ -46,12 +46,12 @@
     "q5": {
         "question": "Which is true for \\( f(x) = \\frac{1}{x^2} \\) ?",
         "answer": "\\( f(x) > 0 \\) for all \\( x \\)",
-        "hint": "",
+        "hint": "Plug in some values to test the statements, see which ones you can disprove and if you are left with one you cannot disprove, it must be correct",
         "options": [
             "\\( f(x) < 0 \\) for all \\( x \\)",
             "\\( f(x) > 0 \\) for all \\( x \\)",
             "\\( f(x) \\) travels through the origin \\( (0, 0) \\)",
-            "\\( f(x) \\) is a quadratic curve"
+            "\\( f(x) \\) is always increasing"
         ]
     },
     "q6": {

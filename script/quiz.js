@@ -3,6 +3,7 @@
 var questions = [];
 var options = [];
 var answers = [];
+var hints = [];
 var responses = [];
 
 // Get elements to put data into
@@ -36,6 +37,7 @@ function loadQuiz(data) {
 
         questions.push(value.question);
         answers.push(value.answer);
+        hints.push(value.hint);
 
         for (i = 0; i < value.options.length; i++) {
             options.push(value.options[i])
@@ -67,6 +69,8 @@ function loadQuiz(data) {
             lab = document.createElement("label")
             lab.classList.add("quizRadioLabels");
             lab.innerHTML = options[j + (i * 4)]
+
+            // give the label an id like a coordinate using loop variables
             lab.id = String(i) + String(j)
 
             br = document.createElement("br")
@@ -76,9 +80,47 @@ function loadQuiz(data) {
             form.appendChild(br)
         }
 
+
         MathJax.typeset();
+
+
     }
 
+    loadHints();
+
+}
+
+
+function loadHints() {
+    for (i = 0; i < hints.length; i++) {
+        container = document.getElementById("hintContainer");
+        btn = document.createElement("input");
+        btn.type = "button";
+        btn.classList.add("hintBtn");
+        btn.id = "btn" + i;
+        btn.value = "Show Hints";
+        btn.onclick = function () { showHint(this.id) };
+
+        text = document.createElement("p");
+        text.classList.add("hintText");
+        text.innerHTML = hints[i];
+        text.id = "hint" + i;
+
+        container.appendChild(btn);
+        container.appendChild(text);
+
+
+    }
+}
+
+function showHint(btn) {
+
+    let index = btn.slice(3);
+    let id = "hint" + index;
+
+    $(`#${id}`).toggle();
+
+    MathJax.typeset();
 }
 
 
