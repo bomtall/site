@@ -2,7 +2,7 @@
     "q1": {
         "question": "For \\( f(x) \\), what does the transformation \\( -f(x)\\) do?",
         "answer": "Reflect \\( f(x) \\) over the \\( x \\) axis",
-        "hint": "",
+        "hint": "When \\( f(x) \\) is negative, then \\( -f(x)\\) will make it positive. When \\( f(x) \\) is positive then \\( -f(x)\\) will make it negative.",
         "options": [
             "Reflect \\( f(x) \\) over the \\( y \\) axis",
             "Make all \\( y \\) values negative",
@@ -13,7 +13,7 @@
     "q2": {
         "question": "For \\( f(x) \\), what does the transformation \\( f(-x) \\) do?",
         "answer": "Reflect \\( f(x) \\) over the \\( y \\) axis",
-        "hint": "",
+        "hint": "When passing a positive value of \\( x \\) to \\( f(-x) \\) will make it appear as if you passed \\( -x \\) to \\( f(x) \\)",
         "options": [
             "Reflect \\( f(x) \\) over the \\( y \\) axis",
             "Make all \\( x \\) values negative",
@@ -24,7 +24,7 @@
     "q3": {
         "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), where is the centre?",
         "answer": "\\( (5, 10) \\)",
-        "hint": "",
+        "hint": "The centre is defined by a coordinate pair, an \\( x \\) value and a \\( y \\) value.",
         "options": [
             "\\( (10, 5) \\)",
             "\\( (5, 10) \\)",
@@ -35,7 +35,7 @@
     "q4": {
         "question": "For a circular graph with equation \\( (x-5)^2 + (y-10)^2 = 25 \\), what is the length of the radius?",
         "answer": "\\( \\sqrt[2]{25} \\)",
-        "hint": "",
+        "hint": "The equation of a circle graph: \\( (x-a)^2 + (y-b)^2 = r^2 \\)",
         "options": [
             "\\( 25 \\)",
             "\\( 50 \\)",
@@ -56,19 +56,19 @@
     },
     "q6": {
         "question": "For \\( f(x) \\), what does the transformation \\( f(x + 2) \\) do?",
-        "answer": "Shift \\( f(x) \\) in \\( x \\) by \\( -2 \\)",
-        "hint": "",
+        "answer": "Shift \\( f(x) \\) horizontally by \\( -2 \\)",
+        "hint": "Think of a simple case, \\( y = x \\) , at \\( x = 1 \\) , \\( y = 1 \\) perfoming \\( f(x + 2) \\) means that at \\( x = 1 \\) , \\( y = 3 \\) and at \\( y = 1 \\) \\( x = -1\\).",
         "options": [
-            "Shift \\( f(x) \\) in \\( x \\) by \\( -2 \\)",
-            "Shift \\( f(x) \\) in \\( y \\) by \\( -2 \\)",
-            "Shift \\( f(x) \\) in \\( x \\) by \\( +2 \\)",
-            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\times 2 \\)"
+            "Shift \\( f(x) \\) horizontally by \\( -2 \\)",
+            "Shift \\( f(x) \\) vertically by \\( -2 \\)",
+            "Shift \\( f(x) \\) horizontally by \\( +2 \\)",
+            "Stretch \\( f(x) \\) vertically by \\( \\times 2 \\)"
         ]
     },
     "q7": {
         "question": "For \\( f(x) \\), what does the transformation \\( f(x) + 10 \\) do?",
         "answer": "Shift \\( f(x) \\) in \\( y \\) by \\( +10 \\)",
-        "hint": "",
+        "hint": "Similar to the precvious question, think of a simple case with small easy numbers and apply the transformation to a simple graph such as \\( y = x \\).",
         "options": [
             "Shift \\( f(x) \\) in \\( y \\) by \\( +10 \\)",
             "Alters the gradient of  \\( f(x) \\)",
@@ -78,19 +78,19 @@
     },
     "q8": {
         "question": "For \\( f(x) \\), what does the transformation \\( f(2x) \\) do?",
-        "answer": "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{2} \\)",
-        "hint": "",
+        "answer": "Stretch \\( f(x) \\) horizontally by \\( \\frac{1}{2} \\)",
+        "hint": "Using a pen and pencil try try out the simple case for this one might make things easier, it is not as you might expect",
         "options": [
-            "Stretch \\( f(x) \\) in \\( y \\) by \\( \\frac{1}{2} \\)",
-            "Stretch \\( f(x) \\) in \\( x \\) by \\( \\frac{1}{2} \\)",
-            "Stretch \\( f(x) \\) in \\( x \\) by \\( 2 \\)",
-            "Stretch \\( f(x) \\) in \\( y \\) by \\( 2 \\)"
+            "Stretch \\( f(x) \\) horizontally by \\( \\frac{1}{2} \\)",
+            "Stretch \\( f(x) \\) vertically by \\( \\frac{1}{2} \\)",
+            "Stretch \\( f(x) \\) horizontally by \\( 2 \\)",
+            "Stretch \\( f(x) \\) vertically by \\( 2 \\)"
         ]
     },
     "q9": {
         "question": "Which is true for \\( f(x) = \\frac{1}{x} \\) ?",
         "answer": "\\( \\frac{1}{x} \\) is undefined when \\( x = 0 \\)",
-        "hint": "",
+        "hint": "You can try to prove or disprove these statements by plugging in values for \\( x \\), if you find a case that proves a statement false, you know that answer is incorrect.",
         "options": [
             "When \\( x \\) is positive, \\( y \\) is negative",
             "When \\( x \\) is negative, \\( y \\) is positive",
@@ -101,7 +101,7 @@
     "q10": {
         "question": "Which is true?",
         "answer": "A positive cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
-        "hint": "",
+        "hint": "Unless given a specific domain for \\( x \\), these graphs all travel from infinity in one direction and to infitiy in another, or the same direction. The question is about the shape of a cubic",
         "options": [
             "A positive cubic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
             "A positive quadratic graph starts from \\( - \\infty \\) and rises to \\( + \\infty \\)",
