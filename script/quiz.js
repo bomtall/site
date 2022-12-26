@@ -106,11 +106,7 @@ function loadHints() {
         text.innerHTML = hints[i];
         text.id = "hint" + i;
 
-        br = document.createElement("br");
-
-
         container.appendChild(btn);
-        container.appendChild(br);
         container.appendChild(text);
 
 
