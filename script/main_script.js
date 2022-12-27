@@ -1,21 +1,20 @@
 
-// function sticky_scroll() {
-//     if (window.pageYOffset >= sticky) {
-//         navbar.classList.add("sticky")
-//         loginbar.classList.add("sticky2")
-//     } else {
-//         navbar.classList.remove("sticky");
-//         loginbar.classList.remove("sticky2");
-//     }
-// }
+// function to make the login bar appear
+$(document).ready(function () {
+
+    $("#admin").click(function () {
+
+        if ($("#loginbar").is(":visible")) {
+
+            $("#loginbar").toggle();
+
+        } else if (confirm("This login is only for administrators of the site") == true) { $("#loginbar").toggle(); }
+
+    });
+});
 
 
-
-
-function close_modal() {
-    modal.style.display = "none";
-}
-
+// function to validate admin login
 function validateLogin() {
     let x = document.forms["loginForm"]["adminpassword"].value;
     if (x != "CorrectPassword") {
@@ -23,6 +22,13 @@ function validateLogin() {
     }
 };
 
+// function to make gcse's appear
+$(document).ready(function () {
+    $("#gcses").click(function () {
+        $("#gcses_list").toggle();
+    });
+
+});
 
 
 
