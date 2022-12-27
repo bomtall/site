@@ -25,13 +25,9 @@ var plot = dimensions();
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
-    // .attr("preserveAspectRatio", "xMinYMin meet")
-    // .attr("viewBox", "0 0 400 400")
-    // .classed("svg-content", true)
     .append("svg")
     .attr("width", plot.width + margin.left + margin.right)
     .attr("height", plot.height + margin.top + margin.bottom)
-    //.style('background', "#F0FFF7")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")

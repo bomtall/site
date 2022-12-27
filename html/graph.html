@@ -25,12 +25,11 @@
 </head>
 
 <body>
-    <nav id="navbar">
-        <a href="../index.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+    <nav id="navbar" class="navigation">
+        <a href="cv.html">CV <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
                 aria-hidden="true"></i></a>
         <a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
-        <a href="graph.html">Graph <i class="fa fa-laptop" aria-hidden="true"></i></a>
         <a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
         <a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
         <a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
@@ -195,8 +194,19 @@
             <p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
             <img src="../images/QR.png" alt="QR_Code">
         </footer>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <iframe class="modal-content" id="frame01" src=""></iframe>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
         </div>
+    </main>
+
+
 </body>
 <script type="text/javascript" src="../script/graph.js"></script>
+<script type="text/javascript" src="../script/image_viewer.js"></script>
 <script type="text/javascript" src="../script/navbar.js"></script>
 <script type="text/javascript" src="../script/main_script.js"></script>

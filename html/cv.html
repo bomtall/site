@@ -1,190 +1,271 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 
 <head>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-	<link rel="stylesheet" href="../css/cvstyle.css">
-	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 	<title>Curriculum Vitae</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	<link rel="stylesheet" href="../css/template.css">
+	<link rel="stylesheet" href="../css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-	<div id="navbar">
+	<!--Main Navigation Bar-->
+	<nav id="navbar" class="navigation">
 		<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
 				aria-hidden="true"></i></a>
 		<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
 		<a href="examples.html">Blog <i class="fa fa-laptop" aria-hidden="true"></i></a>
 		<a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 		<a href="quiz.html"> Quiz <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+		<a href="graph.html"> Graph <i class="fa fa-question-circle" aria-hidden="true"></i></a>
 		<a id="admin">Admin <i class="fa fa-user" aria-hidden="true"></i></a>
-	</div>
-	<div id="loginbar">
+	</nav>
+
+	<!--Pop-out Admin Login Bar-->
+	<nav id="loginbar" class="sticky">
 		<form name="loginForm" onsubmit="return validateLogin()">
 			<label for="adminemail">Admin Email:</label>
-			<input type="email" id="adminemail" adminemail="adminemail"></input>
+			<input type="email" id="adminemail"></input>
 			<label for="adminpassword">Password:</label>
-			<input type="password" id="adminpassword" adminpassword="adminpassword"></input>
-			<input type="submit" value="Log in">
+			<input type="password" id="adminpassword"></input>
+			<input type="submit" value="Log in"></input>
 		</form>
-	</div>
+	</nav>
 
-	<div class="content">
+
+	<main class="content">
 		<header>
-			<p class=fancyborder>Thomas Ball</p>
-			<div class="imgcontainer">
-				<img class="imgcontainerimg" onclick="openModal(this)" src="../images/portrait_square.jpg"
-					alt="Tom - Portrait">
+			<h1 class="pageTitle">Thomas Ball</h1>
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft"></div>
+				<div class="spaceRight"></div>
 			</div>
-			<p id="analyst">Data Analyst</p>
-			<p class=statement>After being a successful and self-employed painter and decorator for 12 years in North
-				Yorkshire, I returned to education as a mature student and achieved A-Levels in Computer Science &
-				Mathematics.
-				I then applied to a degree apprenticeship opportunity with Skanska UK and moved to London.
-				With this opportunity I have been able to apply many of my skills to Construction which is a complex
-				industry going through a period of intense digitalisation.
-				I have been mainly focused on automating data collection, storage and presentation using Python and
-				Power BI. I also developed some applications for the business using Microsoft PowerApps and Azure SQL
-				databases.
-				These applications have now been deployed to the IT production environemnt and are used by staff
-				internally.
-				I have had the opportunity to present my work and analysis to senior leadership teams within the
-				business with fantastic feedback and was awarded Trainee of The Year for Skanska UK. After one year on
-				the trainee scheme, I have been promoted early to a Data Analyst position.
-				<br><br>At university I have furthered my technical skills by building a statistics library in C, task
-				management software in Python and a website to showcase my work and CV. I am interested in mathematics,
-				analysis and machine learning but also cloud computing and data architecture.
-				I have scored very highly for my work so far which also included writing an academic literature review
-				on graph databases and property data analysis.
-				I am highly motivated, keen to advance my learning and enjoy working as a team.
-				I particularly enjoy writing code and I took the opportunity to attend EuroPython in 2022 where I became
-				a contributor to open source libraries for the first time.
-			</p>
+
+			<!--Main page photo-->
+			<figure class="imgcontainer">
+				<img class="imgcontainerimg" onclick="openModal(this)"
+					src="../images/profile_pic_edits/profile-pic (12).png" alt="Tom - Portrait">
+			</figure>
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft"></div>
+				<div class="spaceRight"></div>
+			</div>
+
+			<article class="pageIntro">
+
+				<h2 id="pageSubtitle">Data Analyst</h2>
+				<p>
+					After being a successful and self-employed painter and decorator for 12 years in North
+					Yorkshire, I returned to education as a mature student and achieved A-Levels in Computer Science &
+					Mathematics.
+					I then applied to a degree apprenticeship opportunity with Skanska UK and moved to London.
+					With this opportunity I have been able to apply many of my skills to Construction which is a complex
+					industry going through a period of intense digitalisation.
+					I have been mainly focused on automating data collection, storage and presentation using Python and
+					Power BI. I also developed some applications for the business using Microsoft PowerApps and Azure
+					SQL
+					databases.
+					These applications have now been deployed to the IT production environemnt and are used by staff
+					internally.
+					I have had the opportunity to present my work and analysis to senior leadership teams within the
+					business with fantastic feedback and was awarded Trainee of The Year for Skanska UK. After one year
+					on
+					the trainee scheme, I have been promoted early to a Data Analyst position.
+					<br><br>At university I have furthered my technical skills by building a statistics library in C,
+					task
+					management software in Python and a website to showcase my work and CV. I am interested in
+					mathematics,
+					analysis and machine learning but also cloud computing and data architecture.
+					I have scored very highly for my work so far which also included writing an academic literature
+					review
+					on graph databases and property data analysis.
+					I am highly motivated, keen to advance my learning and enjoy working as a team.
+					I particularly enjoy writing code and I took the opportunity to attend EuroPython in 2022 where I
+					became
+					a contributor to open source libraries for the first time.
+				</p>
+			</article>
 		</header>
-		<div class="row">
-			<div class="leftcolumn">
-				<h4>Experience</h4>
-				<ul>
-					<li>
-						<b>Data Analyst</b><br>Skanska UK<br>October 2022 - Present<br>
-						Python, SQL, Power BI, arcGIS Pro, PowerApps & Azure<br>
-						<a href="https://www.skanska.co.uk/">Skanska.co.uk</a>
-						<br><br>
-					</li>
-					<li>
-						<b>Trainee Data Analyst</b><br>Skanska UK<br>September 2021 - October 2022<br><br>
-					</li>
-					<li>
-						<b>Painter & Decorator</b><br>Self-Employed<br>2010 - 2021<br>
-						<p>Continuing a traditional family business of over 100 years in North Yorkshire. Decorating
-							luxury private residences to the highest standard.</p>
-					</li>
-					<li>
-						<b>Climbing Instructor</b><br>Parthian Climbing Harrogate<br>September 2014 - December 2015<br>
-						<p>Working part-time to introduce children and adults to rock climbing safely, sharing my own
-							passion for climbing with others.</p>
-					</li>
-					<li>
-						<b>Clerical Officer</b><br>The Royal Bank of Scotland Group<br>2007 - 2010<br>
-						<p>Phone operator performing security checks on high value and flagged transactions to detect
-							and prevent fraud</p>
-					</li>
-				</ul>
 
-				<h5>Awards & Other Qualifications</h5>
+		<section class="row">
 
-				<ul>
-					<li>Trainee of The Year Skanska UK 2021/22
-
-					</li>
-					<li>Site Management Safety Training Scheme CITB</li>
-					<li>Supervised Machine Learning: Regression & Classification - Stanford Online / DeepLearning.AI
-					</li>
-				</ul>
-
-				<h5>Hobbies & Interests</h5>
-				<ul>
-					<li>I enjoy rock climbing, it keeps me strong and healthy and takes me to amazing places</li>
-					<li>I practice Yoga, it allows me to switch off and relax</li>
-					<li>Growing up in Yorkshire I did lots of hikes in the dales and I still like to walk and explore
-					</li>
-				</ul>
-
-
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="hiddenSpacerOrange spaceLeft"></div>
+				<div class="hiddenSpacerOrange spaceRight"></div>
 			</div>
+
+			<section class="leftcolumn">
+				<article>
+					<h4>Experience</h4>
+					<ul>
+						<li>
+							<b>Data Analyst</b><br>Skanska UK<br>October 2022 - Present<br>
+							Python, SQL, Power BI, arcGIS Pro, PowerApps & Azure<br>
+							<a href="https://www.skanska.co.uk/">Skanska.co.uk</a>
+							<br><br>
+						</li>
+						<li>
+							<b>Trainee Data Analyst</b><br>Skanska UK<br>September 2021 - October 2022<br><br>
+						</li>
+						<li>
+							<b>Painter & Decorator</b><br>Self-Employed<br>2010 - 2021<br>
+							<p>Continuing a traditional family business of over 100 years in North Yorkshire. Decorating
+								luxury private residences to the highest standard.</p>
+						</li>
+						<li>
+							<b>Climbing Instructor</b><br>Parthian Climbing Harrogate<br>September 2014 - December
+							2015<br>
+							<p>Working part-time to introduce children and adults to rock climbing safely, sharing my
+								own
+								passion for climbing with others.</p>
+						</li>
+						<li>
+							<b>Clerical Officer</b><br>The Royal Bank of Scotland Group<br>2007 - 2010<br>
+							<p>Phone operator performing security checks on high value and flagged transactions to
+								detect
+								and prevent fraud</p>
+						</li>
+					</ul>
+
+					<h5>Awards & Other Qualifications</h5>
+
+					<ul>
+						<li>Trainee of The Year Skanska UK 2021/22
+
+						</li>
+						<li>Site Management Safety Training Scheme CITB</li>
+						<li>Supervised Machine Learning: Regression & Classification - Stanford Online / DeepLearning.AI
+						</li>
+					</ul>
+
+					<h5>Hobbies & Interests</h5>
+					<ul>
+						<li>I enjoy rock climbing, it keeps me strong and healthy and takes me to amazing places</li>
+						<li>I practice Yoga, it allows me to switch off and relax</li>
+						<li>Growing up in Yorkshire I did lots of hikes in the dales and I still like to walk and
+							explore
+						</li>
+					</ul>
+				</article>
+			</section>
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft hiddenSpacerBlue"></div>
+				<div class="spaceRight hiddenSpacerBlue"></div>
+			</div>
+
+
 
 			<div class="rightcolumn">
-				<h4>Education</h4>
-				<ul>
-					<li>
-						<b>London Southbank University 2021 - Present</b><br>
-						<p>2nd Year:<br>
-							BA Hons Digital Technology Solutions Professional (Data Analyst)<br>
-							As part of an apprenticeship <a
-								href="https://www.instituteforapprenticeships.org/apprenticeship-standards/digital-and-technology-solutions-specialist-integrated-degree-v1-0">Details</a>
-						</p>
-					</li><br>
-					<li>
-						<b>2020-21 A-Levels</b><br>
-						<p>Pembrokeshire College - OCR Computer Science (A*)<br>
-							Self-Studied - Edexcel Mathematics (A)
-					</li>
-					<li>
-						<b>Harrogate Grammar School 2002-09</b><br>
-						<p>A-Level Art & Design (C)<br><br></p>
+				<article>
+					<h4>Education</h4>
+					<ul>
+						<li>
+							<b>London Southbank University 2021 - Present</b><br>
+							<p>2nd Year:<br>
+								BA Hons Digital Technology Solutions Professional (Data Analyst)<br>
+								As part of an apprenticeship <a
+									href="https://www.instituteforapprenticeships.org/apprenticeship-standards/digital-and-technology-solutions-specialist-integrated-degree-v1-0">Details</a>
+							</p>
+						</li>
+						<li>
+							<b>2020-21 A-Levels</b><br>
+							<p>Pembrokeshire College - OCR Computer Science (A*)<br>
+								Self-Studied - Edexcel Mathematics (A)
+						</li>
+						<li>
+							<b>Harrogate Grammar School 2002-09</b><br>
+							<p>A-Level Art & Design (C)<br><br></p>
 
 
-						<p id="gcses">GCSEs:</p>
-						<ul id="gcses_list">
-							<li>Mathematics (A)</li>
-							<li>English Language (A)</li>
-							<li>Geography (A)</li>
-							<li>Art & Design (A)</li>
-							<li>Physics (B)</li>
-							<li>Chemistry (B)</li>
-							<li>Biology (B)</li>
-							<li>English Literature (B)</li>
-							<li>History (C)</li>
-							<li>ICT (C)</li>
-						</ul>
-					</li>
-				</ul>
+							<p id="gcses">GCSEs:</p>
+							<ul id="gcses_list">
+								<li>Mathematics (A)</li>
+								<li>English Language (A)</li>
+								<li>Geography (A)</li>
+								<li>Art & Design (A)</li>
+								<li>Physics (B)</li>
+								<li>Chemistry (B)</li>
+								<li>Biology (B)</li>
+								<li>English Literature (B)</li>
+								<li>History (C)</li>
+								<li>ICT (C)</li>
+							</ul>
+						</li>
+					</ul>
 
+					<!--Nested row for iframes displaying certificates-->
+					<div class="row">
+						<div class="leftcolumn borderlessColumn">
+							<iframe id="certificate" class="certs" src="../documents/TomBall.pdf#toolbar=0"></iframe>
+							<button id="btn">View</button>
+						</div>
 
+						<!--Decorative spacing elements-->
+						<div class="spacer">
+							<div class="spaceLeft hiddenSpacerBlue"></div>
+							<div class="spaceRight hiddenSpacerBlue"></div>
+						</div>
 
-				<div class="gridcontainer">
-					<iframe id="certificate" class="certs" alt="CertificateTOTY"
-						src="../documents/Tom Ball.pdf#toolbar=0"></iframe>
-					<iframe id="certificate2" class="certs" alt="CertificateML"
-						src="../documents/ML_Regression_Classification.pdf#toolbar=0"></iframe>
+						<div class="rightcolumn borderlessColumn">
+							<iframe id="certificate2" class="certs"
+								src="../documents/ML_Regression_Classification.pdf#toolbar=0"></iframe>
+							<button id="btn2">View</button>
+						</div>
 
-					<button id="btn">View</button>
-					<button id="btn2">View</button>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="leftsecondcolumn">
-					<div class="imgcontainer climb">
-						<img src="../images/kalymnos3.png" onclick="openModal(this)" alt="Climbing in Kalymnos, Greece"
-							class="imgcontainerimg">
 					</div>
-				</div>
-				<div class="rightsecondcolumn">
-					<div class="imgcontainer climb">
-						<img src="../images/font.jpeg" onclick="openModal(this)" alt="Climbing in Fontainebleau, France"
-							class="imgcontainerimg">
-					</div>
-				</div>
+				</article>
 			</div>
+		</section>
+
+		<!--Decorative spacing elements-->
+		<div class="spacer">
+			<div class="hiddenSpacerOrange spaceLeft"></div>
+			<div class="hiddenSpacerOrange spaceRight"></div>
 		</div>
-	</div>
-	<footer>
 
+
+		<div class="row">
+
+			<div class="leftcolumn">
+				<figure class="imgcontainer climb">
+					<img src="../images/kalymnos3.png" class="imgcontainerimg" onclick="openModal(this)"
+						alt="Climbing in Kalymnos, Greece">
+				</figure>
+			</div>
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft hiddenSpacerBlue"></div>
+				<div class="spaceRight hiddenSpacerBlue"></div>
+			</div>
+			<div class="rightcolumn">
+				<figure class="imgcontainer climb">
+					<img src="../images/font.jpeg" class="imgcontainerimg" onclick="openModal(this)"
+						alt="Climbing in Fontainebleau, France">
+				</figure>
+			</div>
+
+
+
+		</div>
+
+		<!--Decorative spacing elements-->
+		<div class="spacer">
+			<div class="hiddenSpacerOrange spaceLeft"></div>
+			<div class="hiddenSpacerOrange spaceRight"></div>
+		</div>
+	</main>
+
+	<footer>
 		<p>Thank you for looking at my blog. Scan the QR code to send me an email.</p>
 		<img src="../images/QR.png" alt="QR_Code">
 	</footer>
@@ -192,55 +273,17 @@
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<span class="close">&times;</span>
-		<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
+		<iframe class="modal-content" id="frame01" src=""></iframe>
 		<img class="modal-content" id="img01">
 		<div id="caption"></div>
 	</div>
-	<script>
 
-		// window.onscroll = function () { sticky_scroll() };
-
-		// var navbar = document.getElementById("navbar");
-		// var sticky = navbar.offsetTop;
-
-		var cert = document.getElementById("certificate")
-		document.getElementById("btn").onclick = function () { openModal(cert) };
-		var cert2 = document.getElementById("certificate2")
-		document.getElementById("btn2").onclick = function () { openModal(cert2) };
-
-		// Get the modal
-		var modal = document.getElementById("myModal");
-
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		//var img = document.getElementById("myImg");
-		var modalFrame = document.getElementById("frame01")
-		var modalImg = document.getElementById("img01");
-		var captionText = document.getElementById("caption");
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function () { close_modal() }
-
-		$(document).ready(function () {
-			$("#admin").click(function () {
-
-				if ($("#loginbar").is(":visible")) {
-					$("#loginbar").toggle();
-				} else if (confirm("This login is only for administrators of the site") == true) { $("#loginbar").toggle(); }
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../script/navbar.js"></script>
+	<script type="text/javascript" src="../script/main_script.js"></script>
+	<script type="text/javascript" src="../script/image_viewer.js"></script>
 
 
-			});
-		});
-		$(document).ready(function () {
-			$("#gcses").click(function () {
-				$("#gcses_list").toggle();
-			});
-		});
-
-	</script>
-	<script type="text/javascript" src="../script/scrollbar.js"></script>
 
 
 

@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+main {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.landingHeader {
+    margin-top: none;
+    height: 80vh;
+    background-color: #30e8bf;
+    color: white;
+    font-size: 3vw;
+    letter-spacing: 1.5vw;
+    padding: 50px;
+    margin: 0px;
+}
+
+
+#about p {
+    font-size: 28px;
+}
+
+#about {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 25px;
+}
+
+
+h1 {
+    position: relative;
+    margin: 0px;
+    z-index: 2;
+
+}
+
+.banner {
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(#30e8bf, #ff8235) 1;
+    margin-bottom: 0;
+    padding: 0;
+
+}
+
+.navigation+main {
+    padding-top: 60px;
+}
+
+#my_dataviz {
+    position: absolute;
+    top: 0px;
+
+}
+
+
+.orangeLeft {
+    display: block;
+    width: 50%;
+    border-right: 2px solid;
+    border-color: #ff8235;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.orangeRight {
+    display: block;
+    width: 50%;
+    border-left: 2px solid;
+    border-color: #ff8235;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .landingHeader {
+        height: 50vh;
+    }
+}

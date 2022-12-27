@@ -26,6 +26,10 @@ header {
 }
 
 #loginbar {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  z-index: 1;
   overflow: hidden;
   background: linear-gradient(#0f2027, #2c5364 25%, #203a43, #0f2027);
   box-shadow: 0px 2px 5px;
@@ -47,30 +51,14 @@ header {
   font-size: 1.5vw;
 }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
+.navigation {
   position: fixed;
   top: 0;
   width: 100%;
-
 }
 
-.sticky2 {
-  position: fixed;
-  top: 40px;
-  width: 100%;
-
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky+.content {
-  padding-top: 60px;
-  width: 100%;
-}
-
-.sticky2+.content {
-  padding-top: 60px;
-  width: 100%;
+.content {
+  padding-top: 80px;
 }
 
 #admin {
@@ -209,16 +197,24 @@ header {
   padding: 20px;
   font-size: 18px;
   border-image: linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
+
+
 }
 
-
+footer a {
+  flex: 50%;
+  color: white;
+  margin: 20px;
+  width: 100%;
+  font-size: 2vw;
+}
 
 /* Style the list inside the menu */
-header ul {
+/* header ul {
   font-size: 7px;
   list-style-type: none;
   padding: 0;
-}
+} */
 
 .certs {
   cursor: pointer;
