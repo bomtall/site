@@ -33,102 +33,118 @@
 	</div>
 
 	<main class="content">
-		<main class="content">
 
-			<header>
 
-				<h1 class="pageTitle">Page Title</h1>
+		<header>
 
-				<!--Decorative spacing elements-->
-				<div class="spacer">
-					<div class="spaceLeft"></div>
-					<div class="spaceRight"></div>
-				</div>
+			<h1 class="pageTitle">Page Title</h1>
 
-				<figure class="imgcontainer">
-					<img class="imgcontainerimg" onclick="openModal(this)" src="../images/fontainebleau2.jpeg"
-						alt="Tom -Climbing in Fontainebleau, France.">
-				</figure>
-
-				<!--Decorative spacing elements-->
-				<div class="spacer">
-					<div class="spaceLeft"></div>
-					<div class="spaceRight"></div>
-				</div>
-
-				<article class="pageIntro">
-
-					<h2 id="pageSubtitle">Welcome</h2>
-					<p>
-						On my blog I share some of my data analytics projects from work and university as well as some
-						relevant personal projects.
-						I also references I have found useful when learning to code and analyse data. On here I also
-						write summaries of academic or
-						computer science events I have attended and recommend upcoming events.
-					</p>
-					<p>
-						I hope you enjoy taking a look.
-					</p>
-
-				</article>
-			</header>
-
-			<div class="row">
-				<div class="leftcolumn">
-					<h3>Animating Telemetry Data Using Python</h3>
-					<iframe alt="Data Story" allowfullscreen="true"
-						src="https://powerbivideos.blob.core.windows.net/graphvideo/borehole3.mp4?sp=r&st=2022-11-14T14:37:50Z&se=2023-02-01T22:37:50Z&spr=https&sv=2021-06-08&sr=b&sig=gyT4hKDD73pqo689ogD1LXhWdYyIUv0zhrAeAtdFkuo%3D"
-						width="100%" height="400px"></iframe>
-
-				</div>
-				<div class="rightcolumn">
-					<h3>Blog Entry 01/12/2022 - Animating Data using MatPlotLib</h3>
-					<p>
-						One of the workshops I attended at EuroPython 2022 in Dublin was all about animating data using
-						MatplotLib and Python. The workshop was put on by Stephanie Molin, author of the book <a
-							href="https://www.packtpub.com/product/hands-on-data-analysis-with-pandas-second-edition/9781800563452"><i>Hands-On
-								Data
-								Analysis with Pandas</i></a>. I really enjoyed the workshop which showed me lots of new
-						things including the value in knowing libraries in-depth. The deep dive she gave into MatPlotLib
-						was really insightful and thorough.
-					</p>
-					<p>
-						Obviously, I was keen to use my new skills when I got back
-						to work. The first opportunity that came up, was some telemetry data which needed summarising. I
-						was emailed half a million data points in an Excel document. The data was temperature readings,
-						and the team were aware that the temperature had been exceeding a limit that it should not be.
-						They wanted to visualise and summarise this data. I created a Power BI report with some graphs
-						and slicers as well as some summary statistics calculated using Python. I wanted to take it a
-						step further though using my new knowledge learned at EuroPython. I decided to animate the data
-						using MatPlotLib and create a .mp4 file which I then hosted on Azure blob storage. It was the
-						first time I hosted anything on Azure myself and this was cool too, since I can generate a URL
-						and SAS token, embed the video in an iframe and include it on this website.
-					</p>
-				</div>
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft"></div>
+				<div class="spaceRight"></div>
 			</div>
-			<div class="row">
 
+			<figure class="imgcontainer">
+				<img class="imgcontainerimg" onclick="openModal(this)" src="../images/fontainebleau2.jpeg"
+					alt="Tom -Climbing in Fontainebleau, France.">
+			</figure>
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft"></div>
+				<div class="spaceRight"></div>
 			</div>
-		</main>
-		<footer>
-			<p style="width:100%">Thank you for visiting my website....</p>
-			<nav class="row">
-				<a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
-				<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
-				<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
-						aria-hidden="true"></i></a>
-			</nav>
-		</footer>
 
-		<!-- The Modal -->
-		<div id="myModal" class="modal">
-			<span class="close">&times;</span>
-			<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
-			<img class="modal-content" id="img01">
-			<div id="caption"></div>
+			<article class="pageIntro">
+
+				<h2 id="pageSubtitle">Welcome</h2>
+				<p>
+					On my blog I share some of my data analytics projects from work and university as well as some
+					relevant personal projects.
+					I also references I have found useful when learning to code and analyse data. On here I also
+					write summaries of academic or
+					computer science events I have attended and recommend upcoming events.
+				</p>
+				<p>
+					I hope you enjoy taking a look.
+				</p>
+
+			</article>
+		</header>
+
+		<div class="row">
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="hiddenSpacerOrange spaceLeft"></div>
+				<div class="hiddenSpacerOrange spaceRight"></div>
+			</div>
+
+			<article class="leftcolumn">
+				<h3>Animating Telemetry Data Using Python</h3>
+				<iframe alt="Data Story" allowfullscreen="true"
+					src="https://powerbivideos.blob.core.windows.net/graphvideo/borehole3.mp4?sp=r&st=2022-11-14T14:37:50Z&se=2023-02-01T22:37:50Z&spr=https&sv=2021-06-08&sr=b&sig=gyT4hKDD73pqo689ogD1LXhWdYyIUv0zhrAeAtdFkuo%3D"
+					width="100%" height="400px"></iframe>
+
+			</article>
+
+			<!--Decorative spacing elements-->
+			<div class="spacer">
+				<div class="spaceLeft hiddenSpacerBlue"></div>
+				<div class="spaceRight hiddenSpacerBlue"></div>
+			</div>
+
+			<article class="rightcolumn">
+				<h3>Blog Entry 01/12/2022 - Animating Data using MatPlotLib</h3>
+				<p>
+					One of the workshops I attended at EuroPython 2022 in Dublin was all about animating data using
+					MatplotLib and Python. The workshop was put on by Stephanie Molin, author of the book <a
+						href="https://www.packtpub.com/product/hands-on-data-analysis-with-pandas-second-edition/9781800563452"><i>Hands-On
+							Data
+							Analysis with Pandas</i></a>. I really enjoyed the workshop which showed me lots of new
+					things including the value in knowing libraries in-depth. The deep dive she gave into MatPlotLib
+					was really insightful and thorough.
+				</p>
+				<p>
+					Obviously, I was keen to use my new skills when I got back
+					to work. The first opportunity that came up, was some telemetry data which needed summarising. I
+					was emailed half a million data points in an Excel document. The data was temperature readings,
+					and the team were aware that the temperature had been exceeding a limit that it should not be.
+					They wanted to visualise and summarise this data. I created a Power BI report with some graphs
+					and slicers as well as some summary statistics calculated using Python. I wanted to take it a
+					step further though using my new knowledge learned at EuroPython. I decided to animate the data
+					using MatPlotLib and create a .mp4 file which I then hosted on Azure blob storage. It was the
+					first time I hosted anything on Azure myself and this was cool too, since I can generate a URL
+					and SAS token, embed the video in an iframe and include it on this website.
+				</p>
+			</article>
 		</div>
+		<!--Decorative spacing elements-->
+		<div class="spacer">
+			<div class="hiddenSpacerOrange spaceLeft"></div>
+			<div class="hiddenSpacerOrange spaceRight"></div>
+		</div>
+	</main>
+	<footer>
+		<p style="width:100%">Thank you for visiting my website....</p>
+		<nav class="row">
+			<a href="https://github.com/bomtall">GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+			<a href="mailto:bomtall1@hotmail.com">Email <i class="fa fa-envelope" aria-hidden="true"></i></a>
+			<a href="https://www.linkedin.com/in/bomtall">LinkedIn <i class="fa fa-linkedin-square"
+					aria-hidden="true"></i></a>
+		</nav>
+	</footer>
 
-		<script type="text/javascript" src="../script/image_viewer.js"></script>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<iframe class="modal-content" id="frame01" src="" width="100%" height=auto></iframe>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+
+	<script type="text/javascript" src="../script/image_viewer.js"></script>
 </body>
 
 </html>
