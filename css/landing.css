@@ -58,6 +58,7 @@ main {
 
 
 .banner {
+    position: relative;
     display: block;
     align-self: center;
     margin-left: auto;
