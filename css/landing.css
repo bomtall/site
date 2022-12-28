@@ -6,14 +6,12 @@
 body {
     font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
     text-align: center;
-
 }
 
 
 main {
     margin: 0px;
     padding: 0px;
-
 }
 
 
@@ -52,7 +50,7 @@ main {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     height: auto;
     border-width: 4px;
     border-style: solid;
@@ -66,21 +64,33 @@ main {
     padding-top: 60px;
 }
 
-.orangeLeft {
-    display: block;
-    width: 50%;
-    border-right: 2px solid;
-    border-color: #ff8235;
-    height: 50px;
-    margin: 0;
-    padding: 0;
+.spacerLeft,
+.spacerRight {
+    border-image: linear-gradient(#ff8235, #30e8bf) 1;
 }
 
+.orangeLeft,
+.spacerLeft {
+    border-right: 2px solid;
+}
+
+.orangeRight,
+.spacerRight {
+    border-left: 2px solid;
+
+}
+
+.orangeLeft,
 .orangeRight {
+    border-color: #ff8235;
+}
+
+.orangeLeft,
+.orangeRight,
+.spacerLeft,
+.spacerRight {
     display: block;
     width: 50%;
-    border-left: 2px solid;
-    border-color: #ff8235;
     height: 50px;
     margin: 0;
     padding: 0;
