@@ -388,8 +388,6 @@ footer {
     border-image: linear-gradient(#ff8235, #30e8bf) 1;
   }
 
-
-
   /* Make hidden spacers visible */
   .hiddenSpacerBlue {
     display: block;
@@ -411,9 +409,9 @@ footer {
     width: 100%;
   }
 
-  /* #navbar a {
-    font-size: 2.5vw;
-  } */
+  #navbar a {
+    font-size: 3vw;
+  }
 
 
 
