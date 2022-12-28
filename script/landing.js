@@ -1,21 +1,14 @@
-// function reload() {
-//     location.reload();
-// }
-
-// window.addEventListener("resize", reload());
-
-
-
-
 function dimensions() {
     let w = 0;
     let h = 0;
     if ($(window).width() < 500) {
         w = $(window).width();
-        h = $(window).height() / 2;
+        //h = $(window).height() / 3;
+        h = w / 1.9
     } else {
         w = $(window).width();
-        h = 0.8 * $(window).height();
+        //h = 0.8 * $(window).height();
+        h = w / 1.9
     }
 
     w = w - margin.left - margin.right;
@@ -26,17 +19,24 @@ function dimensions() {
 }
 
 // set margins for graph
-var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+var margin = { top: 5, right: 5, bottom: 5, left: 5 };
 var plot = dimensions();
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
     .append("svg")
-    .attr("width", plot.width + margin.left + margin.right)
-    .attr("height", plot.height + margin.top + margin.bottom)
+
+    .attr("class", "graph-svg-component")
+    .attr("viewBox", `0 0 ${plot.width + margin.left + margin.right} ${plot.height + margin.top + margin.bottom}`)
+    // .attr("color", "#30e8bf")
+    // .attr("width", plot.width + margin.left + margin.right)
+    // .attr("height", plot.height + margin.top + margin.bottom)
+
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
+
+
     ;
 
 
@@ -44,7 +44,6 @@ var svg = d3.select("#my_dataviz")
 //Create a rect on top of the svg area: this rectangle recovers mouse position
 svg
     .append('rect')
-    .attr('z-index', 1)
     .style("fill", "none")
     .style("pointer-events", "all")
     .attr('width', plot.width)
@@ -53,6 +52,9 @@ svg
     .on('mousemove', loc_mousemove)
     .on('mouseout', loc_mouseout)
     ;
+
+
+
 
 var focusText = svg
     .append('g')
@@ -181,6 +183,39 @@ path
         .curve(d3.curveCatmullRom.alpha(.5))
     )
 
+var title = svg
+    .append('g')
+    .append('text')
+    .style("opacity", 1)
+    .style('color', "white")
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "middle")
+
+title
+    .attr("class", "landingTitle")
+    .attr("x", (plot.width / 2))
+    .attr("y", plot.height / 4)
+    .attr("stroke", "white")
+    .attr("fill", "white")
+    .style("margin-left", "auto")
+    .style("margin-right", "auto")
+
+
+title.append('tspan')
+    .text('Learn')
+    .attr("x", (plot.width / 2))
+    .attr("y", plot.height / 8)
+
+title.append('tspan')
+    .text("Graph Transformations")
+    .attr("x", (plot.width / 2))
+    .attr("y", plot.height / 4)
+
+
+title.append('tspan')
+    .text("With Tom")
+    .attr("x", (plot.width / 2))
+    .attr("y", plot.height / 2.5)
 
 
 
