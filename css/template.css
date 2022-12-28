@@ -25,6 +25,18 @@ header {
   z-index: 1;
 }
 
+/* Navigation bar links*/
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.5vw 1vw;
+  margin: 0px;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+
 #loginbar {
   position: fixed;
   top: 50px;
@@ -39,17 +51,7 @@ header {
   display: none;
 }
 
-/* Navigation bar links*/
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 0.5vw 1vw;
-  margin: 0px;
-  text-decoration: none;
-  font-size: 1.5vw;
-}
+
 
 .navigation {
   position: fixed;
@@ -201,20 +203,27 @@ header {
 
 }
 
-footer a {
-  flex: 50%;
+footer {
+  background-color: #2c5364;
+  height: 350px;
+  border-top: 4px solid #ff8235;
   color: white;
-  margin: 20px;
-  width: 100%;
-  font-size: 2vw;
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 0;
+
 }
 
-/* Style the list inside the menu */
-/* header ul {
-  font-size: 7px;
-  list-style-type: none;
-  padding: 0;
-} */
+footer a {
+  flex: 30%;
+  color: white;
+  margin: 5px;
+  /* width: 30%; */
+  font-size: 2.5vw;
+  text-decoration: none;
+}
+
+
 
 .certs {
   cursor: pointer;
@@ -248,13 +257,7 @@ footer a {
   width: 50%;
 }
 
-footer {
-  background-color: #2c5364;
-  height: 500px;
-  border-top: 4px solid #ff8235;
-  color: white;
-  padding: 50px;
-}
+
 
 
 #myImg {
@@ -411,6 +414,10 @@ footer {
 
   #navbar a {
     font-size: 3.5vw;
+  }
+
+  footer a {
+    font-size: 6vw;
   }
 
 
