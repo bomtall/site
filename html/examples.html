@@ -47,7 +47,7 @@
 
 				<figure class="imgcontainer">
 					<img class="imgcontainerimg" onclick="openModal(this)" src="../images/fontainebleau2.jpeg"
-						alt="Tom - Portrait">
+						alt="Tom -Climbing in Fontainebleau, France.">
 				</figure>
 
 				<!--Decorative spacing elements-->
@@ -60,10 +60,14 @@
 
 					<h2 id="pageSubtitle">Welcome</h2>
 					<p>
-						On my blog I share some of my work from my career in Data Analytics so far; projects from work
-						and
-						university as well as some relevant personal projects.
-						<br>I hope you enjoy taking a look.
+						On my blog I share some of my data analytics projects from work and university as well as some
+						relevant personal projects.
+						I also references I have found useful when learning to code and analyse data. On here I also
+						write summaries of academic or
+						computer science events I have attended and recommend upcoming events.
+					</p>
+					<p>
+						I hope you enjoy taking a look.
 					</p>
 
 				</article>
@@ -80,7 +84,25 @@
 				<div class="rightcolumn">
 					<h3>Blog Entry 01/12/2022 - Animating Data using MatPlotLib</h3>
 					<p>
-						Following a trip to Dublin to attend EuroPython 2022
+						One of the workshops I attended at EuroPython 2022 in Dublin was all about animating data using
+						MatplotLib and Python. The workshop was put on by Stephanie Molin, author of the book <a
+							href="https://www.packtpub.com/product/hands-on-data-analysis-with-pandas-second-edition/9781800563452"><i>Hands-On
+								Data
+								Analysis with Pandas</i></a>. I really enjoyed the workshop which showed me lots of new
+						things including the value in knowing libraries in-depth. The deep dive she gave into MatPlotLib
+						was really insightful and thorough.
+					</p>
+					<p>
+						Obviously, I was keen to use my new skills when I got back
+						to work. The first opportunity that came up, was some telemetry data which needed summarising. I
+						was emailed half a million data points in an Excel document. The data was temperature readings,
+						and the team were aware that the temperature had been exceeding a limit that it should not be.
+						They wanted to visualise and summarise this data. I created a Power BI report with some graphs
+						and slicers as well as some summary statistics calculated using Python. I wanted to take it a
+						step further though using my new knowledge learned at EuroPython. I decided to animate the data
+						using MatPlotLib and create a .mp4 file which I then hosted on Azure blob storage. It was the
+						first time I hosted anything on Azure myself and this was cool too, since I can generate a URL
+						and SAS token, embed the video in an iframe and include it on this website.
 					</p>
 				</div>
 			</div>
@@ -106,65 +128,7 @@
 			<div id="caption"></div>
 		</div>
 
-		<script>
-			let slideIndex = 1;
-			showSlides(slideIndex);
-
-			// Next/previous controls
-			function plusSlides(n) {
-				showSlides(slideIndex += n);
-			}
-
-			// Thumbnail image controls
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
-				let i;
-				let slides = document.getElementsByClassName("mySlides");
-				let dots = document.getElementsByClassName("demo");
-				let captionText = document.getElementById("caption");
-				if (n > slides.length) { slideIndex = 1 }
-				if (n < 1) { slideIndex = slides.length }
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-				slides[slideIndex - 1].style.display = "block";
-				dots[slideIndex - 1].className += " active";
-				captionText.innerHTML = dots[slideIndex - 1].alt;
-			}
-
-
-			// Get the modal
-			var modal = document.getElementById("myModal");
-
-			// Get the image and insert it inside the modal - use its "alt" text as a caption
-			//var img = document.getElementById("myImg");
-			var modalFrame = document.getElementById("frame01")
-			var modalImg = document.getElementById("img01");
-			var captionText = document.getElementById("caption");
-
-			// Get the <span> element that closes the modal
-			var span = document.getElementsByClassName("close")[0];
-
-			// When the user clicks on <span> (x), close the modal
-			span.onclick = function () { close_modal() }
-
-			$(document).ready(function () {
-				$("#admin").click(function () {
-
-					if ($("#loginbar").is(":visible")) {
-						$("#loginbar").toggle();
-					} else if (confirm("This login is only for administrators of the site") == true) { $("#loginbar").toggle(); }
-				});
-			});
-
-
-		</script>
+		<script type="text/javascript" src="../script/image_viewer.js"></script>
 </body>
 
 </html>
