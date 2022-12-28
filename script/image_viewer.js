@@ -1,55 +1,63 @@
-window.openModal = function (item) {
+
+
+
+window.openViewer = function (item) {
+
+    // Determine if it is an image or an iframe
     if (!item.classList.contains("imgcontainerimg")) {
-        modalFrame.style.width = "100%";
-        modalFrame.style.height = "90%";
-        modalFrame.style.border = "0px";
-        modalFrame.src = item.src;
-        modalImg.style.display = "none";
+
+        // Settings for images
+        imageFrame.style.width = "100%";
+        imageFrame.style.height = "90%";
+        imageFrame.style.border = "0px";
+        imageFrame.src = item.src;
+        image.style.display = "none";
+
     } else {
-        modalImg.style.display = "block";
-        modalImg.src = item.src;
-        modalFrame.style.width = "0%";
-        modalFrame.style.height = "0px";
-        modalFrame.style.border = "0px";
+        image.style.display = "block";
+        image.src = item.src;
+        imageFrame.style.width = "0%";
+        imageFrame.style.height = "0px";
+        imageFrame.style.border = "0px";
     }
-    modal.style.display = "block";
+    viewer.style.display = "block";
     if (item.alt == undefined) {
-        captionText.innerHTML = "";
+        caption.innerHTML = "PDF Document";
     }
-    else { captionText.innerHTML = item.alt; }
-}
-
-function close_modal() {
-    modal.style.display = "none";
+    else { caption.innerHTML = item.alt; }
 }
 
 
+// close image viewer
+function closeViewer() {
+    viewer.style.display = "none";
+}
 
+
+// Add on click methods to buttons for each certificate
 var cert = document.getElementById("certificate")
 
 if (typeof (cert) != 'undefined' && cert != null) {
-    document.getElementById("btn").onclick = function () { openModal(cert) };
+    document.getElementById("btn").onclick = function () { openViewer(cert) };
 }
 
 var cert2 = document.getElementById("certificate2")
 
 if (typeof (cert2) != 'undefined' && cert2 != null) {
-    document.getElementById("btn2").onclick = function () { openModal(cert2) };
+    document.getElementById("btn2").onclick = function () { openViewer(cert2) };
 }
 
 
+// Get the image viewer
+var viewer = document.getElementById("imageViewer");
 
-// Get the modal
-var modal = document.getElementById("myModal");
+// Get empty elements ready for images/certificates and captions to be inserted
+var imageFrame = document.getElementById("frame01")
+var image = document.getElementById("img01");
+var caption = document.getElementById("caption");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-//var img = document.getElementById("myImg");
-var modalFrame = document.getElementById("frame01")
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-// Get the <span> element that closes the modal
+// Get the element to close the viewer
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () { close_modal() }
+// When the user clicks on the cross, close the viewer
+span.onclick = function () { closeViewer() }

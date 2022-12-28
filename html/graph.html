@@ -37,11 +37,11 @@
     </nav>
     <nav id="loginbar">
         <form name="loginForm" onsubmit="return validateLogin()">
-            <label for="adminemail">Admin Email:</label>
-            <input type="email" id="adminemail"></input>
-            <label for="adminpassword">Password:</label>
-            <input type="password" id="adminpassword"></input>
-            <input type="submit" value="Log in"></input>
+            <label for="adminemail" class="loginInputs">Admin Email:</label>
+            <input type="email" id="adminemail" class="loginInputs"></input>
+            <label for="adminpassword" id="adminPasswordLabel" class="loginInputs">Password:</label>
+            <input type="password" id="adminpassword" class="loginInputs"></input>
+            <input type="submit" value="Log in" class="loginInputs"></input>
         </form>
     </nav>
 
@@ -58,7 +58,7 @@
 
 
             <figure class="imgcontainer">
-                <img class="imgcontainerimg" onclick="openModal(this)" src="../images/work.jpg" alt="Tom - Portrait">
+                <img class="imgcontainerimg" onclick="openViewer(this)" src="../images/work.jpg" alt="Tom - Portrait">
             </figure>
 
             <!--Decorative spacing elements-->
@@ -201,19 +201,24 @@
                         aria-hidden="true"></i></a>
             </nav>
         </footer>
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <iframe class="modal-content" id="frame01" src=""></iframe>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-        </div>
     </main>
+    <!-- Hidden Image Viewer -->
+    <div id="imageViewer" class="image_viewer">
+        <span class="close">&times;</span>
+
+        <!--iFrame with empty src attribute-->
+        <iframe class="viewer-content" id="frame01" src=""></iframe>
+
+        <!--iFrame with empty src attribute-->
+        <img class="viewer-content" id="img01">
+
+        <!--Empty Caption-->
+        <div id="caption"></div>
+    </div>
 
 
 </body>
 <script type="text/javascript" src="../script/graph.js"></script>
 <script type="text/javascript" src="../script/image_viewer.js"></script>
 <script type="text/javascript" src="../script/navbar.js"></script>
-<script type="text/javascript" src="../script/main_script.js"></script>
+<script type="text/javascript" src="../script/admin_login.js"></script>

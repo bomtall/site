@@ -24,11 +24,11 @@
 	<!--Pop-out Admin Login Bar-->
 	<nav id="loginbar" class="sticky">
 		<form name="loginForm" onsubmit="return validateLogin()">
-			<label for="adminemail">Admin Email:</label>
-			<input type="email" id="adminemail"></input>
-			<label for="adminpassword">Password:</label>
-			<input type="password" id="adminpassword"></input>
-			<input type="submit" value="Log in"></input>
+			<label for="adminemail" class="loginInputs">Admin Email:</label>
+			<input type="email" id="adminemail" class="loginInputs"></input>
+			<label for="adminpassword" id="adminPasswordLabel" class="loginInputs">Password:</label>
+			<input type="password" id="adminpassword" class="loginInputs"></input>
+			<input type="submit" value="Log in" class="loginInputs"></input>
 		</form>
 	</nav>
 
@@ -45,7 +45,7 @@
 
 			<!--Main page photo-->
 			<figure class="imgcontainer">
-				<img class="imgcontainerimg" onclick="openModal(this)"
+				<img class="imgcontainerimg" onclick="openViewer(this)"
 					src="../images/profile_pic_edits/profile-pic (12).png" alt="Tom - Portrait">
 			</figure>
 
@@ -235,7 +235,7 @@
 
 			<div class="leftcolumn">
 				<figure class="imgcontainer climb">
-					<img src="../images/kalymnos3.png" class="imgcontainerimg" onclick="openModal(this)"
+					<img src="../images/kalymnos3.png" class="imgcontainerimg" onclick="openViewer(this)"
 						alt="Climbing in Kalymnos, Greece">
 				</figure>
 			</div>
@@ -246,7 +246,7 @@
 			</div>
 			<div class="rightcolumn">
 				<figure class="imgcontainer climb">
-					<img src="../images/font.jpeg" class="imgcontainerimg" onclick="openModal(this)"
+					<img src="../images/font.jpeg" class="imgcontainerimg" onclick="openViewer(this)"
 						alt="Climbing in Fontainebleau, France">
 				</figure>
 			</div>
@@ -272,17 +272,23 @@
 		</nav>
 	</footer>
 
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
+	<!-- Hidden Image Viewer -->
+	<div id="imageViewer" class="image_viewer">
 		<span class="close">&times;</span>
-		<iframe class="modal-content" id="frame01" src=""></iframe>
-		<img class="modal-content" id="img01">
+
+		<!--iFrame with empty src attribute-->
+		<iframe class="viewer-content" id="frame01" src=""></iframe>
+
+		<!--iFrame with empty src attribute-->
+		<img class="viewer-content" id="img01">
+
+		<!--Empty Caption-->
 		<div id="caption"></div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../script/navbar.js"></script>
-	<script type="text/javascript" src="../script/main_script.js"></script>
+	<script type="text/javascript" src="../script/admin_login.js"></script>
 	<script type="text/javascript" src="../script/image_viewer.js"></script>
 
 
