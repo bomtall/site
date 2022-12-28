@@ -5,11 +5,11 @@ function dimensions() {
     let w = 0;
     let h = 0;
     if ($(window).width() < 500) {
-        w = 600;
-        h = 600;
+        w = 700;
+        h = 700;
     } else {
-        w = 600;
-        h = 600;
+        w = 700;
+        h = 700;
     }
 
     w = w - margin.left - margin.right;

@@ -4,10 +4,9 @@
 
 
 
-/* #my_dataviz {
-    position: relative;
-    width: 100%;
-} */
+#my_dataviz {
+    margin: auto;
+}
 
 #my_dataviz :hover {
     cursor: crosshair;
