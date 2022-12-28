@@ -5,8 +5,8 @@ function dimensions() {
     let w = 0;
     let h = 0;
     if ($(window).width() < 500) {
-        w = 300;
-        h = 300;
+        w = 600;
+        h = 600;
     } else {
         w = 600;
         h = 600;
@@ -26,8 +26,9 @@ var plot = dimensions();
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
     .append("svg")
-    .attr("width", plot.width + margin.left + margin.right)
-    .attr("height", plot.height + margin.top + margin.bottom)
+    .attr("viewBox", `0 0 ${plot.width + margin.left + margin.right} ${plot.height + margin.top + margin.bottom}`)
+    // .attr("width", plot.width + margin.left + margin.right)
+    // .attr("height", plot.height + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")")
@@ -79,10 +80,6 @@ function loc_mousemove() {
     if (y.invert(d3.mouse(this)[1]) != undefined) {
         yco = y.invert(d3.mouse(this)[1]).toFixed(2);
     } else { yco = 0; }
-
-
-
-    //let coord = [x.invert(d3.mouse(this)[0]).toFixed(2), y.invert(d3.mouse(this)[1]).toFixed(2)]
 
 
     focusText
