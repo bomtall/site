@@ -25,7 +25,6 @@ var plot = dimensions();
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
     .append("svg")
-
     .attr("class", "graph-svg-component")
     .attr("viewBox", `0 0 ${plot.width + margin.left + margin.right} ${plot.height + margin.top + margin.bottom}`)
     // .attr("color", "#30e8bf")
