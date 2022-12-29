@@ -98,8 +98,8 @@ main {
 
 @media (max-width: 600px) {
     .landingTitle {
-        font-size: 28px;
-        letter-spacing: 5px;
+        font-size: 24px;
+        letter-spacing: 3px;
     }
 
 }
