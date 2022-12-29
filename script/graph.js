@@ -1,23 +1,61 @@
 
+//-----------------------------------------------------------Small Functions-------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
-
-function dimensions() {
-    let w = 0;
-    let h = 0;
-    if ($(window).width() < 500) {
-        w = 300;
-        h = 300;
-    } else {
-        w = 700;
-        h = 700;
+function sortFunction(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
     }
+    else {
+        return (a[0] < b[0]) ? -1 : 1;
+    }
+}
 
-    w = w - margin.left - margin.right;
-    h = h - margin.top - margin.bottom
+function selectPlot() {
 
-    return { width: w, height: h }
+    let plot = document.querySelector('input[name="selectPlot"]:checked').value
+    if (plot == "line") {
+        changeGraph();
+    } else if (plot == "circle") {
+        drawCircle()
+    } else { oneOverX() }
 
 }
+
+function getSignVals() {
+    signVal = 1;
+    xSignVal = 1
+
+    if (neg.checked == true) {
+        signVal = -1;
+    }
+
+    if (xNeg.checked == true) {
+        xSignVal = -1
+    }
+
+    if (doubleNeg.checked == true) {
+        signVal = -1
+        xSignVal = -1
+    }
+
+    return [signVal, xSignVal]
+}
+
+function plotArea(radio) {
+    if (radio.value == "show") {
+        circle
+            .style('fill', 'lightgreen')
+    } else {
+        circle
+            .style('fill', 'none')
+
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------SVG Initialisation---------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 // set margins and size of plot
 var margin = { top: 10, right: 10, bottom: 10, left: 10 };
@@ -34,8 +72,6 @@ var svg = d3.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")")
     ;
 
-
-
 //Create a rect on top of the svg area: this rectangle recovers mouse position
 svg
     .append('rect')
@@ -47,6 +83,12 @@ svg
     .on('mousemove', loc_mousemove)
     .on('mouseout', loc_mouseout)
     ;
+
+
+
+//------------------------------------------------------------Tooltips-------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+
 
 var focusText = svg
     .append('g')
@@ -93,15 +135,8 @@ function loc_mouseout() {
         .style('opacity', 0);
 }
 
-
-function sortFunction(a, b) {
-    if (a[0] === b[0]) {
-        return 0;
-    }
-    else {
-        return (a[0] < b[0]) ? -1 : 1;
-    }
-}
+//-------------------------------------------------------Scales & Axes-------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 // X scale function
 var x = d3.scaleLinear()
@@ -124,16 +159,8 @@ svg.append("g")
     .call(d3.axisLeft(y));
 
 
-var path = svg.append("path");
-
-var path2 = svg.append("path");
-var circle = svg.append("circle");
-
-var pos = document.getElementById('positive')
-var neg = document.getElementById('negative')
-var xNeg = document.getElementById('xNegative')
-var doubleNeg = document.getElementById("doubleNegative")
-pos.checked = true;
+//-----------------------------------------------------------Grid------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 const xAxisGrid = d3.axisBottom(x).tickSize(-plot.width).tickFormat('').ticks(10);
 const yAxisGrid = d3.axisLeft(y).tickSize(-plot.height).tickFormat('').ticks(10);
@@ -148,6 +175,20 @@ svg.append('g')
     .attr('opacity', 0.05)
     .call(yAxisGrid);
 
+
+//-----------------------------------------------------------Global Variables------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+
+var path = svg.append("path");
+var path2 = svg.append("path");
+var circle = svg.append("circle");
+
+var pos = document.getElementById('positive')
+var neg = document.getElementById('negative')
+var xNeg = document.getElementById('xNegative')
+var doubleNeg = document.getElementById("doubleNegative")
+pos.checked = true;
+
 var shiftX = document.getElementById("sliderX");
 var shiftY = document.getElementById("sliderY");
 var exponent = document.getElementById("sliderExp");
@@ -159,8 +200,13 @@ rScale = d3.scaleLinear()
     .range([0, plot.width]);
 
 
+//---------------------------------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------Draw Functions-------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
-//-----------------------------------------------------------Plot Circles------------------------------------------------------------------//
+
+//-----------------------------------------------------------Plot Circles----------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 function drawCircle() {
 
@@ -211,39 +257,8 @@ function drawCircle() {
 
 }
 
-function plotArea(radio) {
-    if (radio.value == "show") {
-        circle
-            .style('fill', 'lightgreen')
-    } else {
-        circle
-            .style('fill', 'none')
-
-    }
-}
-
-
-function getSignVals() {
-    signVal = 1;
-    xSignVal = 1
-
-    if (neg.checked == true) {
-        signVal = -1;
-    }
-
-    if (xNeg.checked == true) {
-        xSignVal = -1
-    }
-
-    if (doubleNeg.checked == true) {
-        signVal = -1
-        xSignVal = -1
-    }
-
-    return [signVal, xSignVal]
-}
-
-//------------------------------------------------------Plot Lines-------------------------------------------------------------------------------//
+//------------------------------------------------------Plot Lines-----------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 function changeGraph() {
 
     $("#circleControls").hide();
@@ -345,20 +360,8 @@ function changeGraph() {
     })
 }
 
-function selectPlot() {
-
-    let plot = document.querySelector('input[name="selectPlot"]:checked').value
-    if (plot == "line") {
-        changeGraph();
-    } else if (plot == "circle") {
-        drawCircle()
-    } else { oneOverX() }
-
-}
-
-
-
-//----------------------------------------------------1/x---------------------------------------------------
+//------------------------------------------------------------1/x------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 function oneOverX() {
     $("#circleControls").hide();
@@ -371,9 +374,7 @@ function oneOverX() {
         .attr("stroke", "none")
 
 
-    let xShift = document.getElementById("sliderX").value,
-        yShift = document.getElementById("sliderY").value,
-        xMult = document.getElementById("sliderMult").value,
+    let xMult = document.getElementById("sliderMult").value,
         exp = document.getElementById("sliderExp").value,
 
         signs = getSignVals();
@@ -382,9 +383,7 @@ function oneOverX() {
     const data1 = [];
     const data2 = [];
     for (let i = 0; i < numPoints; i++) {
-        let xi = Math.random() * 100.00000
-        //let yi1 = signs[0] * (1 / (xMult * (signs[1] * -xi) + parseFloat(xShift))) + parseFloat(yShift)
-        //let yi2 = signs[0] * (1 / (xMult * (signs[1] * xi) + parseFloat(xShift))) + parseFloat(yShift)
+        let xi = Math.random() * 100.0
         let yi1 = signs[0] * (1 / (xMult * (signs[1] * -xi)) ** parseFloat(exp))
         let yi2 = signs[0] * (1 / (xMult * (signs[1] * xi)) ** parseFloat(exp))
 
@@ -433,7 +432,10 @@ function oneOverX() {
     MathJax.typeset();
 
 }
-//------------------------------------------------------------Initial State----------------------------------------
+
+
+//------------------------------------------------------------Initial State--------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 $(document).ready(function () {
 

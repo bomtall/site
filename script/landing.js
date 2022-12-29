@@ -222,7 +222,7 @@ const length = path.node().getTotalLength();
 
 function repeat() {
     // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
-    path.attr("stroke-dasharray", length + " " + length)
+    path.attr("stroke-dasharray", length / 2 + " " + length / 2)
         .attr("stroke-dashoffset", length)
         .transition()
         .ease(d3.easeLinear)
