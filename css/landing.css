@@ -2,36 +2,30 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
     text-align: center;
 }
-
 
 main {
     margin: 0px;
     padding: 0px;
 }
 
-
 .graph-svg-component {
     background-color: #97f3df;
 }
-
 
 .landingTitle {
     font-size: 50px;
     letter-spacing: 5px;
 }
 
-
 #my_dataviz {
     background-color: #97f3df;
     padding: 0px;
     margin: 0px;
 }
-
 
 #about p {
     font-size: 28px;
@@ -42,7 +36,6 @@ main {
     padding-right: 10vw;
     margin-top: 25px;
 }
-
 
 .banner {
     position: relative;
@@ -57,7 +50,6 @@ main {
     border-image: linear-gradient(#30e8bf, #ff8235) 1;
     margin-bottom: 0;
     padding: 0;
-
 }
 
 .navigation+main {
@@ -96,10 +88,12 @@ main {
     padding: 0;
 }
 
+/*----------------------------------------------------Media Rule------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
 @media (max-width: 600px) {
     .landingTitle {
         font-size: 20px;
         letter-spacing: 3px;
     }
-
 }

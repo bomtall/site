@@ -2,21 +2,9 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
-  color: #2c5364;
-  padding: 0px;
-  margin: 0;
-}
+/*-----------------------------------------------Navigation Bars------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
-/* Header contains title, main page photo and the page intro paragraph */
-header {
-  text-align: center;
-  width: 100%;
-  margin-top: 30px;
-}
-
-/*Navigation bar styles*/
 #navbar {
   overflow: hidden;
   background: linear-gradient(#0f2027, #2c5364 25%, #203a43, #0f2027);
@@ -51,8 +39,6 @@ header {
   display: none;
 }
 
-
-
 .navigation {
   position: fixed;
   top: 0;
@@ -67,6 +53,23 @@ header {
   display: block;
   float: right;
   cursor: pointer;
+}
+
+/*----------------------------------------------------Main Content----------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+body {
+  font-family: 'Roboto', Open Arial, Helvetica, sans-serif;
+  color: #2c5364;
+  padding: 0px;
+  margin: 0;
+}
+
+/* Header contains title, main page photo and the page intro paragraph */
+header {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .pageTitle {
@@ -95,8 +98,6 @@ header {
   align-content: center;
 }
 
-
-
 #pageSubtitle {
   text-align: center;
   font-size: 28px;
@@ -107,14 +108,14 @@ header {
   padding: 0px;
   margin: 0px;
   -webkit-background-clip: text;
-
-
 }
+
+/*----------------------------------------------Border Spacing Elements-----------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
 .hiddenSpacerBlue,
 .hiddenSpacerOrange {
   display: none;
-
 }
 
 .spacer {
@@ -140,46 +141,19 @@ header {
   border-left: 1px solid;
 }
 
-.imgcontainer {
-  display: block;
-  width: 20%;
-  height: auto;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: 0px auto;
-  text-align: center;
 
-  background-origin: border-box;
-
-  background-image: linear-gradient(#30e8bf, #ff8235);
-  border: 4px solid transparent;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 3px 8px rgba(0, 0, 0, 0.8);
-
-}
-
-.imgcontainerimg {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  border: 0px;
-  cursor: pointer;
-  transition: 0.3s;
-
-}
-
-.imgcontainerimg:hover {
-  opacity: 0.7;
-}
 
 .standardImg {
   width: 80%;
   height: auto;
 }
 
-
 .climb {
   width: 50%;
 }
+
+/*----------------------------------------------Structural Elements---------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
 /* Column container */
 .row {
@@ -203,8 +177,10 @@ header {
   padding: 20px;
   font-size: 18px;
   border-image: linear-gradient(#ff8235, #30e8bf, #ff8235) 1;
+}
 
-
+.borderlessColumn {
+  border: 0px;
 }
 
 footer {
@@ -216,7 +192,6 @@ footer {
   text-align: center;
   margin-bottom: 0;
   padding-top: 30px;
-
 }
 
 footer a {
@@ -228,17 +203,11 @@ footer a {
   text-decoration: none;
 }
 
-
-
 .certs {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
   height: 320px;
-}
-
-.borderlessColumn {
-  border: 0px;
 }
 
 .node text {
@@ -262,8 +231,37 @@ footer a {
   width: 50%;
 }
 
+/*--------------------------------------------------Image Viewer------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
+.imgcontainer {
+  display: block;
+  width: 20%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0px auto;
+  text-align: center;
 
+  background-origin: border-box;
+
+  background-image: linear-gradient(#30e8bf, #ff8235);
+  border: 4px solid transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.imgcontainerimg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.imgcontainerimg:hover {
+  opacity: 0.7;
+}
 
 #myImg {
   border-radius: 5px;
@@ -274,8 +272,6 @@ footer a {
 #myImg:hover {
   opacity: 0.7;
 }
-
-/*-------------------------------------------------------------Image Viewer-----------------------------------------------------------------------*/
 
 /*Image viewer dark background */
 .image_viewer {
@@ -345,10 +341,6 @@ footer a {
   }
 }
 
-
-
-
-
 /* Cross to close image viewer */
 .close {
   position: absolute;
@@ -367,6 +359,8 @@ footer a {
   cursor: pointer;
 }
 
+/*----------------------------------------------------Media Rule------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
 
 /* Media rule */
 @media (max-width: 600px) {
@@ -378,8 +372,6 @@ footer a {
   .loginInputs {
     display: block;
   }
-
-
 
   /* Make columns stack */
   .row {
