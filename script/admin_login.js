@@ -23,12 +23,12 @@ function validateLogin() {
 };
 
 // function to make gcse's appear
-$(document).ready(function () {
-    $("#gcses").click(function () {
-        $("#gcses_list").toggle();
-    });
+// $(document).ready(function () {
+//     $("#gcses").click(function () {
+//         $("#gcses_list").toggle();
+//     });
 
-});
+// });
 
 
 

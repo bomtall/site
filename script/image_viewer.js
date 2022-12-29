@@ -1,52 +1,37 @@
 
 
-
-window.openViewer = function (item) {
+// function to display selected content in the image viewer
+function openViewer(item) {
 
     // Determine if it is an image or an iframe
     if (!item.classList.contains("imgcontainerimg")) {
 
-        // Settings for images
+        // Settings for iframes
         imageFrame.style.width = "100%";
         imageFrame.style.height = "90%";
-        imageFrame.style.border = "0px";
         imageFrame.src = item.src;
         image.style.display = "none";
+        caption.innerHTML = "PDF Document";
 
     } else {
+
+        // settings for images
         image.style.display = "block";
         image.src = item.src;
         imageFrame.style.width = "0%";
         imageFrame.style.height = "0px";
-        imageFrame.style.border = "0px";
+        caption.innerHTML = item.alt;
     }
-    viewer.style.display = "block";
-    if (item.alt == undefined) {
-        caption.innerHTML = "PDF Document";
-    }
-    else { caption.innerHTML = item.alt; }
-}
 
+    // display image viewer
+    viewer.style.display = "block";
+    imageFrame.style.border = "0px";
+}
 
 // close image viewer
 function closeViewer() {
     viewer.style.display = "none";
 }
-
-
-// Add on click methods to buttons for each certificate
-var cert = document.getElementById("certificate")
-
-if (typeof (cert) != 'undefined' && cert != null) {
-    document.getElementById("btn").onclick = function () { openViewer(cert) };
-}
-
-var cert2 = document.getElementById("certificate2")
-
-if (typeof (cert2) != 'undefined' && cert2 != null) {
-    document.getElementById("btn2").onclick = function () { openViewer(cert2) };
-}
-
 
 // Get the image viewer
 var viewer = document.getElementById("imageViewer");
@@ -61,3 +46,14 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the cross, close the viewer
 span.onclick = function () { closeViewer() }
+
+// Get both certificates as variables
+var cert = document.getElementById("certificate")
+var cert2 = document.getElementById("certificate2")
+
+// Add on click methods to buttons for each certificate
+if (cert != null && cert != undefined) {
+    document.getElementById("btn").onclick = function () { openViewer(cert) };
+    document.getElementById("btn2").onclick = function () { openViewer(cert2) };
+}
+

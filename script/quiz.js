@@ -163,15 +163,18 @@ function markQuiz() {
 
     }
 
-    $("#nickname").attr("disabled", true);
-    console.log(nickname.disabled);
+    $("#submitQuiz")
+        .attr("disabled", true)
+        .removeClass("finishQuiz")
+        .css({
+            "animation": 'none',
+            "background-color": "#2c5364",
+            "opacity": 0.5
+        })
 
     // show user their total score
     output.innerHTML = nickname.value + ", your score is " + score;
 
-
-
-    //---------------------------------------------NEED TO ADD RESET OF GLOBAL ARRAYS AND QUIZ---------------------------------------------//
 
 }
 

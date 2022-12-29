@@ -34,7 +34,7 @@
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #fff;
+    color: white;
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
@@ -44,15 +44,14 @@
     animation-iteration-count: infinite;
 }
 
-#submitQuiz:hover {
-    background-color: #3e8e41
-}
 
-#submitQuiz:active {
+.finishQuiz:active {
     background-color: #3e8e41;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: translateY(4px);
 }
+
+
 
 .nickname {
     margin-right: auto;
@@ -96,9 +95,6 @@
 
     }
 }
-
-
-
 
 .hintBtn {
     display: block;
@@ -146,15 +142,6 @@
     }
 }
 
-.hint:hover {
-    background-color: #3e8e41
-}
-
-.hint:active {
-    background-color: #3e8e41;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: translateY(4px);
-}
 
 .hintText {
     display: none;
