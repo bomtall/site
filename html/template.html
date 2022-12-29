@@ -156,28 +156,27 @@
                     aria-hidden="true"></i></a>
         </nav>
     </footer>
+    <!-- Hidden Image Viewer -->
+    <div id="imageViewer" class="image_viewer">
+        <span class="close">&times;</span>
+
+        <!--iFrame with empty src attribute-->
+        <iframe class="viewer-content" id="frame01" src="../images/font.jpeg"></iframe>
+
+        <!--iFrame with empty src and alt attribute-->
+        <img class="viewer-content" src="../images/font.jpeg" id="img01" alt="Empty">
+
+        <!--Empty Caption-->
+        <div id="caption"></div>
+    </div>
+
+    <!--JQuery-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--My JavaScript Modules-->
+    <script src="../script/admin_login.js"></script>
+    <script src="../script/image_viewer.js"></script>
 
 </body>
 
-<!-- Hidden Image Viewer -->
-<div id="imageViewer" class="image_viewer">
-    <span class="close">&times;</span>
-
-    <!--iFrame with empty src attribute-->
-    <iframe class="viewer-content" id="frame01" src="../images/font.jpeg"></iframe>
-
-    <!--iFrame with empty src and alt attribute-->
-    <img class="viewer-content" src="../images/font.jpeg" id="img01" alt="Empty">
-
-    <!--Empty Caption-->
-    <div id="caption"></div>
-</div>
-
 </html>
-
-<!--JQuery-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!--My JavaScript Modules-->
-<script src="../script/admin_login.js"></script>
-<script src="../script/image_viewer.js"></script>
