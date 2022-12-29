@@ -171,6 +171,10 @@ header {
   opacity: 0.7;
 }
 
+.standardImg {
+  width: 80%;
+  height: auto;
+}
 
 
 .climb {
