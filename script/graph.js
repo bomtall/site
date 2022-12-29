@@ -5,8 +5,8 @@ function dimensions() {
     let w = 0;
     let h = 0;
     if ($(window).width() < 500) {
-        w = 700;
-        h = 700;
+        w = 300;
+        h = 300;
     } else {
         w = 700;
         h = 700;
@@ -19,9 +19,9 @@ function dimensions() {
 
 }
 
-// set margins for graph
+// set margins and size of plot
 var margin = { top: 10, right: 10, bottom: 10, left: 10 };
-var plot = dimensions();
+var plot = { width: 700, height: 700 };
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -103,27 +103,29 @@ function sortFunction(a, b) {
     }
 }
 
-// X Axis
+// X scale function
 var x = d3.scaleLinear()
     .domain([-100, 100])
     .range([0, plot.width]);
 
+// Adding the x axis
 svg.append("g")
     .attr("transform", "translate(0," + (plot.height) / 2 + ")")
     .call(d3.axisBottom(x));
 
-
-// Y Axis
+// Y scale function
 var y = d3.scaleLinear()
     .domain([-100, 100])
     .range([plot.height, 0]);
 
+// Adding the y axis
 svg.append("g")
     .attr("transform", "translate(" + (plot.width) / 2 + ")")
     .call(d3.axisLeft(y));
 
 
 var path = svg.append("path");
+
 var path2 = svg.append("path");
 var circle = svg.append("circle");
 
@@ -263,11 +265,19 @@ function changeGraph() {
 
         signs = getSignVals();
 
+    // Number of coordinate pairs to generate    
     const numPoints = 1000;
+
+    // 2d array to hold coordinate pairs
     const data = [];
+
+    // loop to generate random x values and apply function f(x) to give y values
     for (let i = 0; i < numPoints; i++) {
+
         let xi = Math.random() * 100.00 * (Math.round(Math.random()) ? 1 : -1);
+
         let yi = signs[0] * (((((signs[1] * parseFloat(xi)) * parseFloat(xMult)) + (parseFloat(xShift))) ** parseFloat(exp)) + parseFloat(yShift));
+
         data.push([parseFloat(xi), parseFloat(yi)]);
     }
 
