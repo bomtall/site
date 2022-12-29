@@ -35,10 +35,10 @@
     <nav id="loginbar">
         <form name="loginForm" onsubmit="return validateLogin()">
             <label for="adminemail" class="loginInputs">Admin Email:</label>
-            <input type="email" id="adminemail" class="loginInputs"></input>
+            <input type="email" id="adminemail" class="loginInputs">
             <label for="adminpassword" id="adminPasswordLabel" class="loginInputs">Password:</label>
-            <input type="password" id="adminpassword" class="loginInputs"></input>
-            <input type="submit" value="Log in" class="loginInputs"></input>
+            <input type="password" id="adminpassword" class="loginInputs">
+            <input type="submit" value="Log in" class="loginInputs">
         </form>
     </nav>
 
@@ -77,7 +77,7 @@
 
         </header>
 
-        <section class="row">
+        <div class="row">
 
             <!--Decorative spacing elements-->
             <div class="spacer" aria-hidden="true">
@@ -113,7 +113,7 @@
                 <p>If you need more help, navigate back to the graph page and build more intuition.</p>
             </section>
 
-        </section>
+        </div>
 
 
         <!--Decorative spacing elements-->
@@ -122,16 +122,16 @@
             <div class="hiddenSpacerOrange spaceRight"></div>
         </div>
 
-        <section class="row">
+        <div class="row">
 
             <section class="leftcolumn">
-                <article>
-                    <h3>Finish Quiz</h3>
-                    <p>Click submit to mark your answers, questions will be highlighted so you can see what you got
-                        right and wrong.</p>
-                    <input type="button" id="submitQuiz" class="finishQuiz" onclick="return markQuiz()"
-                        value="Check Answers">
-                </article>
+
+                <h3>Finish Quiz</h3>
+                <p>Click submit to mark your answers, questions will be highlighted so you can see what you got
+                    right and wrong.</p>
+                <input type="button" id="submitQuiz" class="finishQuiz" onclick="return markQuiz()"
+                    value="Check Answers">
+
             </section>
 
             <!--Decorative spacing elements-->
@@ -141,12 +141,12 @@
             </div>
 
             <section class="rightcolumn">
-                <article>
-                    <h3>Results</h3>
-                    <p id="outputbox"></p>
-                    <p>Still want more? Write your own functions using the Desmos Graphic Calculator, check it out <a
-                            href="https://www.desmos.com/calculator">here</a></a></p>
-                </article>
+
+                <h3>Results</h3>
+                <p id="outputbox"></p>
+                <p>Still want more? Write your own functions using the Desmos Graphic Calculator, check it out <a
+                        href="https://www.desmos.com/calculator">here</a></p>
+
             </section>
 
             <!--Decorative spacing elements-->
@@ -155,7 +155,7 @@
                 <div class="hiddenSpacerOrange spaceRight"></div>
             </div>
 
-        </section>
+        </div>
 
     </main>
 
