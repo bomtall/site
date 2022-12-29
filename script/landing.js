@@ -221,14 +221,13 @@ title.append('tspan')
 const length = path.node().getTotalLength();
 
 function repeat() {
-    // Animate the path by setting the initial offset and dasharray and then transition the offset to 0
+    // Animate path using transition from one stroke-dashoffset value to another.
     path.attr("stroke-dasharray", length / 2 + " " + length / 2)
         .attr("stroke-dashoffset", length)
         .transition()
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0)
         .duration(6000)
-        // .on("end", () => setTimeout(repeat, 1000)); // this will repeat the animation after waiting 1 second
         .on("end", () => repeat())
 }
 
