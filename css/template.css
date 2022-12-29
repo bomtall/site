@@ -319,7 +319,7 @@ footer a {
   height: 150px;
 }
 
-/* Add Animation */
+/* Add oversize then snap back animation */
 .viewer-content,
 #caption {
   animation-name: zoom;
@@ -415,7 +415,7 @@ footer a {
     font-size: 16px;
   }
 
-  .modal-content {
+  .viewer-content {
     width: 100%;
   }
 
